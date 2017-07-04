@@ -23,6 +23,8 @@ public class User implements Serializable {
 	private String mobile;
 	@Column
 	private String image;
+	@Column
+	private String password;
 
 	public int getId() {
 		return id;
@@ -62,6 +64,15 @@ public class User implements Serializable {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
