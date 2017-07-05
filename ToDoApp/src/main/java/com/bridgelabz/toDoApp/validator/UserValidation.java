@@ -26,12 +26,23 @@ public class UserValidation implements Validator {
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
 
-		ValidationUtils.rejectIfEmpty(errors, "name", "required.name", "Name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "firstname", "required.firstname", "FirstName is required.");
 
-		if (!(user.getName() != null && user.getName().isEmpty()))
+		if (!(user.getFirstname() != null && user.getFirstname().isEmpty()))
 		{
 			pattern = Pattern.compile(STRING_PATTERN);
-			matcher = pattern.matcher(user.getName());
+			matcher = pattern.matcher(user.getFirstname());
+			if (!matcher.matches()) {
+				errors.rejectValue("name", "name.containNonChar", "Enter a valid name");
+			}
+
+		}
+		ValidationUtils.rejectIfEmpty(errors, "lastname", "required.lastname", "lastname is required.");
+
+		if (!(user.getLastname() != null && user.getLastname().isEmpty()))
+		{
+			pattern = Pattern.compile(STRING_PATTERN);
+			matcher = pattern.matcher(user.getLastname());
 			if (!matcher.matches()) {
 				errors.rejectValue("name", "name.containNonChar", "Enter a valid name");
 			}
@@ -56,30 +67,29 @@ public class UserValidation implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "required.password", "Password is required.");
 
-		// password matching validation
+		                               // password matching validation
 		if (!(user.getPassword() != null && user.getPassword().isEmpty())) 
 		{
 			pattern = Pattern.compile(PASSWORD_PATTERN);
 			matcher = pattern.matcher(user.getPassword());
 			if (!matcher.matches()) {
-				errors.rejectValue("Password", "password.incorrect", "Password does not match");
+				errors.rejectValue("Password", "password.incorrect", " Enter Password ");
 			}
 
 		}
 		
 	
 
-		  ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone",  
-		    "required.phone", "Phone is required.");  
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "mobile", "required.mobile", "Phone is required.");  
 		  
-		// phone number validation  
+		   // phone number validation  
 		  if (!(user.getMobile() != null && user.getMobile().isEmpty())) 
 		  {  
 		   pattern = Pattern.compile(MOBILE_PATTERN);  
 		   matcher = pattern.matcher(user.getMobile());  
 		   if (!matcher.matches())
 		   {  
-		    errors.rejectValue("phone", "phone.incorrect",  
+		    errors.rejectValue("mobile", "mobile.incorrect",  
 		      "Enter a correct phone number");  
 		   }  
 	   }
