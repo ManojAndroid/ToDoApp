@@ -1,31 +1,36 @@
 package com.bridgelabz.toDoApp.service.serviceImplem;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bridgelabz.toDoApp.dao.daoInterface.UserDao;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 
+
 public class UserServiceImplem implements UserService {
+	
 	@Autowired
-	private UserDao userDao;
+	private UserDao userDaoImp;
 
 	public boolean signUp(User user)
 	{
 
-		return userDao.signUp(user);
+		return userDaoImp.signUp(user);
 	}
 
-	public User authUser(String email, String password)
+	public boolean signIn(String email, String password)
 	{
 
-		return userDao.authUser(email, password);
+		return userDaoImp.signIn(email, password);
 	}
 
 	public User getUserByEmail(String email) 
 	{
 
-		return userDao.getUserByEmail(email);
+		return userDaoImp.getUserByEmail(email);
 	}
 
 }

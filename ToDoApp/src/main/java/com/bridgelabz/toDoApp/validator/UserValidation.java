@@ -13,7 +13,7 @@ public class UserValidation implements Validator {
 	private Pattern pattern;
 	private Matcher matcher;
 
-	private static String EMAIL_PATTERN = "^([a-zA-Z0-9\\-\\.\\_]+)'+'(\\@)([a-zA-Z0-9\\-\\.]+)'+'(\\.)([a-zA-Z]{2,4})$";
+	private static String EMAIL_PATTERN = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
 	private static String STRING_PATTERN = "[A-Za-z]+";
 	private static String MOBILE_PATTERN = "[0-9]{10}";
 	private static String PASSWORD_PATTERN = "[A-Za-z0-9]{5,10}";
@@ -32,7 +32,8 @@ public class UserValidation implements Validator {
 		{
 			pattern = Pattern.compile(STRING_PATTERN);
 			matcher = pattern.matcher(user.getFirstname());
-			if (!matcher.matches()) {
+			if (!matcher.matches())
+			{
 				errors.rejectValue("name", "name.containNonChar", "Enter a valid name");
 			}
 
@@ -43,7 +44,8 @@ public class UserValidation implements Validator {
 		{
 			pattern = Pattern.compile(STRING_PATTERN);
 			matcher = pattern.matcher(user.getLastname());
-			if (!matcher.matches()) {
+			if (!matcher.matches()) 
+			{
 				errors.rejectValue("name", "name.containNonChar", "Enter a valid name");
 			}
 
@@ -51,15 +53,16 @@ public class UserValidation implements Validator {
 		
 		
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "required.email", "Email is required.");
+		ValidationUtils.rejectIfEmpty(errors, "email", "required.email", "Email is required.");
 
-		// email validation in spring
+		         // email validation
 
-		if (!(user.getEmail() != null && user.getEmail().isEmpty())) 
+		if (!(user.getEmail() != null || user.getEmail().isEmpty())) 
 		{
 			pattern = Pattern.compile(EMAIL_PATTERN);
 			matcher = pattern.matcher(user.getEmail());
-			if (!matcher.matches()) {
+			if (!matcher.matches())
+			{
 				errors.rejectValue("email", "email.incorrect", "Enter a correct email");
 			}
 
@@ -67,7 +70,7 @@ public class UserValidation implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "required.password", "Password is required.");
 
-		                               // password matching validation
+		              // passwordvalidation
 		if (!(user.getPassword() != null && user.getPassword().isEmpty())) 
 		{
 			pattern = Pattern.compile(PASSWORD_PATTERN);

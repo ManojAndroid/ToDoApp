@@ -5,6 +5,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/java/com/bridgelabz/toDoApp/validator"/>
+        <wb-resource deploy-path="/" source-path="/src/main/java/com/bridgelabz/toDoApp/controller"/>
+        <wb-resource deploy-path="/" source-path="/src/main/java/com/bridgelabz/toDoApp/model"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <property name="context-root" value="ToDoApp"/>
         <property name="java-output-path" value="/ToDoApp/target/classes"/>
     </wb-module>

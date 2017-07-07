@@ -6,7 +6,7 @@ public interface UserDao
 {
 	public boolean signUp(User user);
 
-	public User authUser(String email, String password);
+	public boolean signIn(String email, String password);
 
 	public User getUserByEmail(String email);
 }
