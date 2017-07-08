@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
+import com.bridgelabz.toDoApp.util.CryptoUtil;
 import com.bridgelabz.toDoApp.validator.UserValidation;
 
 @RestController
@@ -29,7 +30,7 @@ public class UserController {
 
 	@PostMapping(value = "/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<String> signUp(@RequestBody User user, BindingResult result, HttpServletRequest request,
-			HttpServletResponse response) 
+			HttpServletResponse response) throws Exception 
 	{
 		
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
@@ -44,6 +45,11 @@ public class UserController {
 			return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
 
 		}
+		
+			String pass = user.getPassword();
+			String encPasas = CryptoUtil.getDigest(pass);
+			user.setPassword( encPasas );
+			
 			userService.signUp(user);
 			return new ResponseEntity<String>("Sucessfully Registered",HttpStatus.OK);
 	}
