@@ -21,7 +21,7 @@ public class UserServiceImplem implements UserService {
 		return userDaoImp.signUp(user);
 	}
 
-	public boolean signIn(String email, String password)
+	public User signIn(String email, String password)
 	{
 
 		return userDaoImp.signIn(email, password);

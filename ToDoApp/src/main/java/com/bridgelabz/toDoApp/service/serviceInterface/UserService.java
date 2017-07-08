@@ -6,7 +6,7 @@ public interface UserService
 {
 	public boolean signUp(User user);
 
-	public boolean signIn(String email, String password);
+	public User signIn(String email, String password);
 
 	public User getUserByEmail(String email);
 

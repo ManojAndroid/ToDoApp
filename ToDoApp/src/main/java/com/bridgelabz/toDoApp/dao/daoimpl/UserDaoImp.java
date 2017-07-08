@@ -21,40 +21,29 @@ public class UserDaoImp implements UserDao {
 
 	{
 		Session session = sessionFactory.openSession();
-		Transaction transaction=session.beginTransaction();
-		
-		try
-		{
-		session.saveOrUpdate(user);
-		transaction.commit();
+		Transaction transaction = session.beginTransaction();
+
+		try {
+			session.saveOrUpdate(user);
+			transaction.commit();
 			return true;
 
-		} 
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			exception.printStackTrace();
 			return false;
 		}
 
 	}
 
-	public boolean signIn(String email, String password)
-	{
+	public User signIn(String email, String password) {
 
-		try {
 			Session session = sessionFactory.openSession();
 			Criteria criteria = session.createCriteria(User.class);
-			 criteria.add(Restrictions.conjunction().add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)));
-			return true;
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
+			criteria.add(Restrictions.conjunction().add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)));
+			return (User) criteria.uniqueResult();
 	}
 
 	public User getUserByEmail(String email)
-
 	{
 		// TODO Auto-generated method stub
 		return null;

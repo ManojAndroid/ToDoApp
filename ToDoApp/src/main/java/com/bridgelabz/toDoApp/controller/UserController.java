@@ -20,6 +20,7 @@ import com.bridgelabz.toDoApp.validator.UserValidation;
 
 @RestController
 public class UserController {
+	
 	@Autowired
 	private UserService userService;
 
@@ -27,7 +28,7 @@ public class UserController {
 	private UserValidation userValidation;
 
 	@PostMapping(value = "/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<Void> signUp(@RequestBody User user, BindingResult result, HttpServletRequest request,
+	public ResponseEntity<String> signUp(@RequestBody User user, BindingResult result, HttpServletRequest request,
 			HttpServletResponse response) 
 	{
 		
@@ -36,19 +37,15 @@ public class UserController {
 		response.setDateHeader("Expires", 0);
 
 		userValidation.validate(user, result);
-		/*System.out.println(user);
-		System.out.println(result);*/
+		System.out.println(user);
+		System.out.println(result);
 		if (result.hasErrors()) 
 		{
-			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
 
 		}
-		else 
-		{
 			userService.signUp(user);
-			return new ResponseEntity<Void>(HttpStatus.OK);
-		}
-
+			return new ResponseEntity<String>("Sucessfully Registered",HttpStatus.OK);
 	}
 
 }
