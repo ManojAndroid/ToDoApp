@@ -19,7 +19,7 @@
 	<bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/abc" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/abc?useSSL=true" />
 		<property name="user" value="root" />
 		<property name="password" value="manoj" />
 		<property name="maxPoolSize" value="100" />
@@ -41,7 +41,7 @@
 		<!--Hibernate properties -->
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>

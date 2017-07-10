@@ -10,7 +10,7 @@ public class CryptoUtil
 	{
 		
 		 try {
-	            // Create MessageDigest instance for MD5
+	            // Create MessageDigest instance for SHA1
 	            MessageDigest md = MessageDigest.getInstance("SHA1");
 	            //Add password bytes to digest
 	            md.update(pass.getBytes());

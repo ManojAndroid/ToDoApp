@@ -1,0 +1,5 @@
+ERROR	2017-07-10 15:44:52,938	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-5]	Registration Unsuccessful!.... try Again
+ERROR	2017-07-10 17:27:26,947	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-5]	Registration Unsuccessful!.... try Again
+ERROR	2017-07-10 17:29:38,919	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-5]	Registration Unsuccessful!.... try Again
+ERROR	2017-07-10 18:01:12,213	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-7]	Registration Failed.... try Again
+ERROR	2017-07-10 18:53:39,643	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8014-exec-7]	Registration Failed.... try Again
