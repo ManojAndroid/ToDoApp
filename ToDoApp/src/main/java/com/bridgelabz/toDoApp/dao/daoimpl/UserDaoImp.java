@@ -1,5 +1,8 @@
 package com.bridgelabz.toDoApp.dao.daoimpl;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -35,12 +38,21 @@ public class UserDaoImp implements UserDao {
 
 	}
 
-	public User signIn(String email, String password) {
+	public User signIn(String email, String password,HttpServletRequest request) {
 
 			Session session = sessionFactory.openSession();
 			Criteria criteria = session.createCriteria(User.class);
 			criteria.add(Restrictions.conjunction().add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)));
-			return (User) criteria.uniqueResult();
+		User signinresult= (User) criteria.uniqueResult();
+		if(signinresult!=null)
+		{
+			 HttpSession httpSession=request.getSession();
+		     httpSession.setAttribute("UserSession", signinresult);
+		     System.out.println("session");
+		     
+		     return signinresult;
+		}
+		return null;
 	}
 
 	public User getUserByEmail(String email)

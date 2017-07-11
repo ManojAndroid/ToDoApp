@@ -49,9 +49,7 @@ public class UserController {
 			errorResponse.setList(list);
 			errorResponse.setStatus(-1);
 			errorResponse.setMessage("binding result error");
-			
 			return new ResponseEntity<Response>(errorResponse, HttpStatus.NOT_ACCEPTABLE);
-
 		}
 		try 
 		{
