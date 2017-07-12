@@ -71,5 +71,4 @@ public class UserController {
 			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
-
 }

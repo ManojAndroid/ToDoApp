@@ -713,3 +713,28 @@ ERROR	2017-07-11 17:04:32,703	20016	com.bridgelabz.toDoApp.controller.LoginContr
 ERROR	2017-07-11 17:06:10,691	118004	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging Unsuccessful!.... try Again
 ERROR	2017-07-11 17:09:31,791	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging Unsuccessful!.... try Again
 ERROR	2017-07-11 17:14:12,828	281037	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-1]	Registration Failed.... try Again
+ERROR	2017-07-11 17:29:42,108	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-9]	Registration Failed.... try Again
+ERROR	2017-07-11 17:31:36,581	114473	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-11]	Registration Failed.... try Again
+ERROR	2017-07-11 17:31:47,336	125228	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-11]	Registration Failed.... try Again
+ERROR	2017-07-11 17:32:01,556	139448	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-11]	Registration Failed.... try Again
+ERROR	2017-07-11 17:32:37,360	175252	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-15]	Logging Unsuccessful!.... try Again
+ERROR	2017-07-11 17:33:23,342	221234	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-17]	Logging Unsuccessful!.... try Again
+ERROR	2017-07-11 17:39:15,580	0	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-6]	Registration Failed.... try Again
+ERROR	2017-07-11 17:39:25,507	9927	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8011-exec-7]	Registration Failed.... try Again
+ERROR	2017-07-11 18:13:55,358	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging Unsuccessful!.... try Again
+ERROR	2017-07-11 18:14:19,810	24452	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-10]	Logging successful!
+ERROR	2017-07-11 18:40:08,413	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 18:55:49,248	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 18:59:43,085	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:02:03,418	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:06:16,338	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:07:21,167	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:08:17,168	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:09:11,579	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:10:02,001	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:11:26,863	84862	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!
+ERROR	2017-07-11 19:18:30,824	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:30:12,990	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:31:41,345	88355	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!
+ERROR	2017-07-11 19:32:10,300	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-11 19:44:49,008	758708	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!

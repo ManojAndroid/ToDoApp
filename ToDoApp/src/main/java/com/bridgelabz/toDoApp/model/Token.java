@@ -1,26 +1,18 @@
 package com.bridgelabz.toDoApp.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 
 public class Token implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
-private int id;
+   private static final long serialVersionUID = 1L;
+  
    private String accesstoken;
    private String refreshtoken;
-   private Date createdon;
-	  
-   public int getId() 
-   {
-		return id;
-	}
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+   private long refreshtokenexpire;
+   private long accesstokenexpire;
+   
 	public String getAccesstoken()
 	{
 		return accesstoken;
@@ -37,18 +29,27 @@ private int id;
 	{
 		this.refreshtoken = refreshtoken;
 	}
-	public Date getCreatedon() 
+	public long getRefreshtokenexpire() 
 	{
-		return createdon;
+		return refreshtokenexpire;
 	}
-	public void setCreatedon(Date createdon)
+	public void setRefreshtokenexpire(long refreshtokenexpire)
 	{
-		this.createdon = createdon;
+		this.refreshtokenexpire = refreshtokenexpire;
+	}
+	public long getAccesstokenexpire() 
+	{
+		return accesstokenexpire;
+	}
+	public void setAccesstokenexpire(long accesstokenexpire) 
+	{
+		this.accesstokenexpire = accesstokenexpire;
 	}
 	@Override
 	public String toString() {
-		return "Token [id=" + id + ", accesstoken=" + accesstoken + ", refreshtoken=" + refreshtoken + ", createdon="
-				+ createdon + "]";
+		return "Token [accesstoken=" + accesstoken + ", refreshtoken=" + refreshtoken + ", refreshtokenexpire="
+				+ refreshtokenexpire + ", accesstokenexpire=" + accesstokenexpire + "]";
 	}
-
+	
+	
 }
