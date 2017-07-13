@@ -1,16 +1,10 @@
 package com.bridgelabz.toDoApp.util;
-
-
 import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import com.bridgelabz.toDoApp.model.Token;
-
 @Component
 public class UserToken extends Token
-
 {
 	@Autowired
 	UserToken userToken;
@@ -27,9 +21,10 @@ public class UserToken extends Token
 
 	/************ Refresh Token Generate Method *******************/
 
-	public String generateRefreshToken() {
+	public String generateRefreshToken()
+	{
 		String refreshtoken = UUID.randomUUID().toString();
-		userToken.setRefreshtokenexpire((System.currentTimeMillis()/1000+(1*60)));
+		userToken.setRefreshtokenexpire((System.currentTimeMillis()/1000+(5*60)));
 		return refreshtoken;
 	}
 

@@ -12,5 +12,6 @@ com/bridgelabz/toDoApp/validator/UserValidation.class
 com/bridgelabz/toDoApp/controller/LogOutController.class
 com/bridgelabz/toDoApp/JSONResponse/Response.class
 com/bridgelabz/toDoApp/service/serviceImplem/UserServiceImplem.class
+com/bridgelabz/toDoApp/validator/TokenValidation.class
 com/bridgelabz/toDoApp/service/serviceInterface/UserService.class
 com/bridgelabz/toDoApp/controller/LoginController.class

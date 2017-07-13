@@ -1,9 +1,7 @@
 package com.bridgelabz.toDoApp.dao.daoInterface;
 
 import javax.servlet.http.HttpServletRequest;
-
 import com.bridgelabz.toDoApp.model.User;
-
 public interface UserDao 
 {
 	public boolean signUp(User user);

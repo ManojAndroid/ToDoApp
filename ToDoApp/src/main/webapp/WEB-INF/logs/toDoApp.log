@@ -941,3 +941,238 @@ ERROR	2017-07-12 20:36:37,405	35478	com.bridgelabz.toDoApp.controller.LoginContr
 ERROR	2017-07-12 20:37:05,779	63852	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
 ERROR	2017-07-12 20:39:09,769	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
 ERROR	2017-07-12 20:39:29,058	19289	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-7]	Logging successful!
+ERROR	2017-07-13 09:44:58,199	1	org.springframework.web.context.ContextLoader	[localhost-startStop-1]	Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem] for bean with name 'userService' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp] for bean with name 'userDaoImp' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:403)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:389)
+	at org.springframework.context.support.AbstractApplicationContext.getBeanNamesForType(AbstractApplicationContext.java:1177)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:199)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 33 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:515)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1197)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:310)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:272)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:247)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 38 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem] for bean with name 'userService' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:515)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1197)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:310)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:272)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:247)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 38 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp] for bean with name 'userDaoImp' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:515)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1197)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:310)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:272)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:247)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 38 more
+ERROR	2017-07-13 09:47:14,834	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!
+ERROR	2017-07-13 09:48:08,512	53678	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-10]	Logging successful!
+ERROR	2017-07-13 09:48:45,814	90980	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging successful!
+ERROR	2017-07-13 09:48:51,916	97082	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-2]	Logging successful!
+ERROR	2017-07-13 09:49:18,692	123858	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-07-13 09:49:20,017	125183	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 09:50:08,795	173961	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!
+ERROR	2017-07-13 09:52:45,696	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-07-13 09:52:57,868	12172	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 09:54:28,178	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-7]	Logging successful!
+ERROR	2017-07-13 09:55:03,075	34897	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-9]	Logging successful!
+ERROR	2017-07-13 09:55:09,805	41627	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-10]	Logging successful!
+ERROR	2017-07-13 09:56:19,164	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-07-13 09:56:36,155	16991	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 09:56:43,068	23904	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-7]	Logging successful!
+ERROR	2017-07-13 09:57:10,734	51570	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-9]	Logging successful!
+ERROR	2017-07-13 09:57:36,404	77240	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
+ERROR	2017-07-13 09:57:46,616	87452	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
+ERROR	2017-07-13 09:57:52,880	93716	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
+ERROR	2017-07-13 09:57:55,318	96154	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
+ERROR	2017-07-13 09:57:58,221	99057	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
+ERROR	2017-07-13 09:59:37,092	1	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 09:59:47,700	10609	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-10]	Logging successful!
+ERROR	2017-07-13 10:00:12,240	35149	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-2]	Logging successful!
+ERROR	2017-07-13 10:02:33,484	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-07-13 10:02:35,925	2441	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 10:04:11,900	98416	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!
+ERROR	2017-07-13 10:04:43,430	129946	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-10]	Logging successful!
+ERROR	2017-07-13 10:05:37,862	184378	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging successful!
+ERROR	2017-07-13 10:10:39,601	486117	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 10:10:56,625	503141	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 10:11:01,602	508118	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-4]	Logging successful!
+ERROR	2017-07-13 10:43:28,707	2455223	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
+ERROR	2017-07-13 10:44:20,886	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-07-13 10:46:27,746	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging successful!
+ERROR	2017-07-13 10:47:29,686	1	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-07-13 10:47:45,006	15321	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-07-13 10:48:02,667	32982	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-7]	Logging successful!

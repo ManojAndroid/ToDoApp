@@ -40,13 +40,6 @@ public class UserAccessTokenService
 		{
 		return map;
 		}
-		
-		else if(comparetime.equals("tokenValid"))
-		{
-		
-		map.put(uid, userToken);
-		return map;
-		}
 		else if(comparetime.equals("loginAgainTokenInvalid"))
 		{
 		
@@ -58,6 +51,14 @@ public class UserAccessTokenService
 		map.put(uid, userToken);
 		return map;
 		}
+		
+		else if(comparetime.equals("tokenValid"))
+		{
+		
+		map.put(uid, userToken);
+		return map;
+		}
+		
 		else
 		{
 			userToken.setAccesstoken(accesstoken);
