@@ -10,7 +10,7 @@ import com.bridgelabz.toDoApp.dao.daoInterface.UserDao;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 
-
+@Service
 public class UserServiceImplem implements UserService {
 	
 	@Autowired
@@ -22,7 +22,7 @@ public class UserServiceImplem implements UserService {
 		return userDaoImp.signUp(user);
 	}
 
-	public User signIn(String email, String password,HttpServletRequest request)
+	public User signIn(String email, String password, HttpServletRequest request)
 	{
 
 		return userDaoImp.signIn(email, password, request );

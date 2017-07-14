@@ -1,15 +1,35 @@
 package com.bridgelabz.toDoApp.dao.daoInterface;
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.bridgelabz.toDoApp.model.ToDo;
+/**
+ * @author bridgeit
+ *
+ */
 @Component
 public interface ToDoTaskDao 
 {
- public void toDoSaveTask(ToDo todo);
- public void ToDoUpdateTask(ToDo todo);
- public int ToDodeleteTask(int id);
- public ToDo gateAll(int id);
+ /**
+ * @param todo
+ */
+public void toDoSaveTask(ToDo todo);
+ /**
+ * @param todo
+ */
+public void ToDoUpdateTask(ToDo todo);
+ /**
+ * @param id
+ * @return
+ */
+public int ToDodeleteTask(int id);
+ /**
+ * @param id
+ * @return
+ */
+public List<ToDo> gateAll(int id);
  
 }

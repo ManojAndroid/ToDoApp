@@ -1,75 +1,90 @@
 package com.bridgelabz.toDoApp.model;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "User_Table")
-public class User implements Serializable
-{
+public class User implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GenericGenerator(name = "gen", strategy = "increment")
 	@GeneratedValue(generator = "gen")
+	@Column(name="userid")
 	private int id;
 	private String firstname;
 	private String lastname;
 	private String email;
 	private String mobile;
 	private String password;
-	
+ 
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getFirstname() 
-	{
+
+	public String getFirstname() {
 		return firstname;
 	}
-	public void setFirstname(String firstname)
-	{
+
+	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-	
-	public String getLastname()
-	{
+
+	public String getLastname() {
 		return lastname;
 	}
-	public void setLastname(String lastname)
-	{
+
+	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	
-	public String getEmail()
-	{
+
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) 
-	{
+
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public String getMobile()
-	{
+
+	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(String mobile)
-	{
+
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	/*
+	 * @OneToMany( cascade = CascadeType.ALL)
+	 * 
+	 * @JoinTable(name = "User_Table", joinColumns = { @JoinColumn(name =
+	 * "USER_ID") }, inverseJoinColumns = { @JoinColumn(name = "USERTASK_ID") })
+	 */
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
+				+ ", mobile=" + mobile + ", password=" + password + "]";
+	}
+	
+
 }

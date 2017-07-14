@@ -21,6 +21,11 @@ import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 import com.bridgelabz.toDoApp.util.CryptoUtil;
 import com.bridgelabz.toDoApp.util.UserToken;
 
+/**
+ * this is 
+ * @author bridgeit
+ *
+ */
 @RestController
 public class LoginController {
 
@@ -29,18 +34,25 @@ public class LoginController {
 	private UserService userService;
 	@Autowired
 	UserAccessTokenService tokenService;
+	/**
+	 * @param user 
+	 * @param request 
+	 * @param response 
+	 * @return 
+	 * @throws Exception 
+	 */
 	@PostMapping(value = "/signin")
 	public ResponseEntity<Response> signIn(@RequestBody User user, HttpServletRequest request,
 			HttpServletResponse response) throws Exception 
 	{
-		Map<Integer, UserToken> map = tokenService.getUserToken(request);
+		/*Map<Integer, UserToken> map = tokenService.getUserToken(request);*/
 		user.setPassword(CryptoUtil.getDigest(user.getPassword()));
 		User signinresult = userService.signIn(user.getEmail(), user.getPassword(), request);
 		
 		if (signinresult != null) 
 		{
 			logger.error("Logging successful!");
-			System.out.println("Your token number is"+map.keySet() +" "+ map.values().toString());
+			/*System.out.println("Your token number is"+map.keySet() +" "+ map.values().toString());*/
 			return new ResponseEntity<Response>(HttpStatus.OK);
 		} 
 		else 

@@ -12,9 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bridgelabz.toDoApp.JSONResponse.Response;
 import com.bridgelabz.toDoApp.model.User;
 
+/**
+ * this is a simple logout controller where we check session is 
+ * @author bridgeit
+ *@version
+ *@since
+ */
 @RestController
 public class LogOutController {
 	
+	/**
+	 * @param request 
+	 * @param response 
+	 * @return 
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "logout")
 	public ResponseEntity<Response> logOut( HttpServletRequest request,
 			HttpServletResponse response) throws Exception 

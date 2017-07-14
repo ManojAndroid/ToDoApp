@@ -24,6 +24,10 @@ import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 import com.bridgelabz.toDoApp.util.CryptoUtil;
 import com.bridgelabz.toDoApp.validator.UserValidation;
 
+/**
+ * @author bridgeit
+ *
+ */
 @RestController
 public class UserController {
 	private static final Logger logger = Logger.getLogger(UserController.class);
@@ -37,6 +41,12 @@ public class UserController {
 	@Autowired
 	 private ErrorResponse errorResponse;
 
+	/**
+	 * @param user
+	 * @param result
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping(value = "/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Response> signUp(@RequestBody User user, BindingResult result) throws Exception {
 
