@@ -76,4 +76,12 @@ public class ToDoTaskImpl implements ToDoTaskDao
 			List<ToDo> toDo= query.list();
 			return toDo;
 	}
+
+	@Override
+	public List<ToDo> gateSingleTask(int id) {
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from ToDo where taskid = "+id);
+		List<ToDo> toDo= query.list();
+		return toDo;
+	}
 }

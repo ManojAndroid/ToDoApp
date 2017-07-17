@@ -25,9 +25,10 @@ public class ToDoAppController {
 	ToDoTaskServices toDoTaskServices;
 	
 	/**
-	 * @param toDo
-	 * @param request
-	 * @return
+	 * toDoSave, method is used to save the user task in database 
+	 * @param toDo  {@link ToDo}
+	 * @param request {@link HttpServletRequest}
+	 * @return {@link ResponseEntity}
 	 */
 	@PostMapping(value = "/todocreate")
 	public ResponseEntity<Response> toDoSave(@RequestBody ToDo toDo, HttpServletRequest request) {
@@ -51,9 +52,10 @@ public class ToDoAppController {
 	}
 
 	/**
-	 * @param toDo
-	 * @param taskid
-	 * @return
+	 * toDoUpdate, This method is used to update user task and save in database
+	 * @param toDo {@link ToDo}
+	 * @param taskid it is user task id in integer form,
+	 * @return {@link ResponseEntity}
 	 */
 	@PutMapping(value = "/todoupdate")
 	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo,@RequestParam ("taskid") int taskid)
@@ -72,8 +74,9 @@ public class ToDoAppController {
 	}
 
 	/**
-	 * @param id
-	 * @return
+	 * toDoDelete, This method is used to delete user individual task from  database,
+	 * @param id   it is user task id in integer form,
+	 * @return {@link ResponseEntity}
 	 */
 	@RequestMapping(value = "/tododelete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Response> toDoDelete(@PathVariable("id") int id) {
@@ -89,9 +92,11 @@ public class ToDoAppController {
 		}
 	}
 		
+		
 		/**
-		 * @param id
-		 * @return
+		 * toDoTaskList, this method is used to getAllUsER task from database,
+		 * @param request {@link HttpServletRequest}
+		 * @return {@link ResponseEntity}
 		 */
 		@RequestMapping(value = "/getlist", method = RequestMethod.GET)
 		public ResponseEntity<Response> toDoTaskList(HttpServletRequest request)
@@ -113,5 +118,28 @@ public class ToDoAppController {
 
 			}
 	}
+		/**
+		 * getSingleTask,This method is used to get user single task from database
+		 * @param toDo {@link ToDo}
+		 * @return {@link ResponseEntity}
+		 */
+		@RequestMapping(value = "/getsingletask/{id}", method = RequestMethod.GET)
+		public ResponseEntity<Response> getSingleTask(@PathVariable("id") int id)
+		{
+         
+			
+			try
+			{
+			List<ToDo>  toDosingleTask =toDoTaskServices.getSingleTask(id);
+		    System.out.println(toDosingleTask.toString());
+		    return new ResponseEntity<Response>(HttpStatus.OK);
+			}
+			catch (Exception exception) 
+			{
+				exception.printStackTrace();
+				return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
 
+			}
+	}
 }
+

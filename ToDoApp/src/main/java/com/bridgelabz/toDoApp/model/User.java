@@ -25,6 +25,7 @@ public class User implements Serializable {
 	private String email;
 	private String mobile;
 	private String password;
+	
  
 	public int getId() {
 		return id;
@@ -73,18 +74,12 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	/*
-	 * @OneToMany( cascade = CascadeType.ALL)
-	 * 
-	 * @JoinTable(name = "User_Table", joinColumns = { @JoinColumn(name =
-	 * "USER_ID") }, inverseJoinColumns = { @JoinColumn(name = "USERTASK_ID") })
-	 */
-
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
 				+ ", mobile=" + mobile + ", password=" + password + "]";
 	}
+
 	
 
 }

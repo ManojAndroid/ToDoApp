@@ -3,29 +3,45 @@ package com.bridgelabz.toDoApp.service.serviceImplem;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.bridgelabz.toDoApp.model.User;
+import com.bridgelabz.toDoApp.dao.daoimpl.TokenImplement;
+import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.util.UserToken;
 import com.bridgelabz.toDoApp.validator.TokenValidation;
 
 @Component
 public class UserAccessTokenService
 {
-	
 	@Autowired
-	UserToken userToken;
+	TokenImplement tokenImplement ;
 	
 	@Autowired
 	TokenValidation tokenValidation;
 	
     Map<Integer, UserToken> map = new HashMap<Integer, UserToken>();
+    
+    public  void tokenSave( Token token)
+    {
+    	
+    	tokenImplement.tokenSave(token);
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    
-
+/*
 	public Map<Integer, UserToken> getUserToken(HttpServletRequest request) 
 	{
 		HttpSession httpSession = request.getSession();
@@ -67,5 +83,5 @@ public class UserAccessTokenService
 			return map;
 		}
 		
-	}
+	}*/
 }

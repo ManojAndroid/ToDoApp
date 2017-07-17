@@ -37,6 +37,7 @@
 			<list>
 				<value>com.bridgelabz.toDoApp.model.User</value>
 				<value>com.bridgelabz.toDoApp.model.ToDo</value>
+				<value>com.bridgelabz.toDoApp.model.Token</value>
 			</list>
 		</property>
 		<!--Hibernate properties -->

@@ -31,5 +31,10 @@ public int ToDodeleteTask(int id);
  * @return
  */
 public List<ToDo> gateAll(int id);
+/**
+ * @param id
+ * @return
+ */
+public List<ToDo>gateSingleTask(int id);
  
 }

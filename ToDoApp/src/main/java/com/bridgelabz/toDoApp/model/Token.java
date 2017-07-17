@@ -1,18 +1,35 @@
 package com.bridgelabz.toDoApp.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+@Entity
+@Table(name="Token_Table")
 public class Token implements Serializable
 {
 
    private static final long serialVersionUID = 1L;
-  
-   private String accesstoken;
-   private String refreshtoken;
-   private long refreshtokenexpire;
-   private long accesstokenexpire;
-   
+   @Id
+   @GenericGenerator(name="gen",strategy="increment")
+   @GeneratedValue(generator="gen")
+   @Column(name="tokenid")
+    private int id;
+    private String accesstoken;
+    private String refreshtoken;
+    private Date createdtime;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="userid")
+    private User user;
 	public String getAccesstoken()
 	{
 		return accesstoken;
@@ -29,27 +46,34 @@ public class Token implements Serializable
 	{
 		this.refreshtoken = refreshtoken;
 	}
-	public long getRefreshtokenexpire() 
-	{
-		return refreshtokenexpire;
+	public Date getCreatedtime() {
+		return createdtime;
 	}
-	public void setRefreshtokenexpire(long refreshtokenexpire)
+	public void setCreatedtime(Date createdtime)
 	{
-		this.refreshtokenexpire = refreshtokenexpire;
+		this.createdtime = createdtime;
 	}
-	public long getAccesstokenexpire() 
-	{
-		return accesstokenexpire;
+	
+	public int getId() {
+		return id;
 	}
-	public void setAccesstokenexpire(long accesstokenexpire) 
-	{
-		this.accesstokenexpire = accesstokenexpire;
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	@Override
-	public String toString() {
-		return "Token [accesstoken=" + accesstoken + ", refreshtoken=" + refreshtoken + ", refreshtokenexpire="
-				+ refreshtokenexpire + ", accesstokenexpire=" + accesstokenexpire + "]";
+	public String toString() 
+	{
+		return "Token [accesstoken=" + accesstoken + ", refreshtoken=" + refreshtoken + ", createdtime=" + createdtime
+				+ "]";
 	}
+	
 	
 	
 }

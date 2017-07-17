@@ -28,6 +28,7 @@ public void toDoSaveTask(ToDo todo)
 /**
  * @param todo
  */
+
 public void ToDoUpdateTask(ToDo todo)
 {
 	toDoTaskDao.ToDoUpdateTask(todo);
@@ -48,6 +49,10 @@ public int ToDodeleteTask(int id)
 public List<ToDo> getAllTaskList(int id)
 {
 	 return toDoTaskDao.gateAll(id);
+}
+public List<ToDo> getSingleTask(int id)
+{
+	 return toDoTaskDao.gateSingleTask(id);
 }
 
 

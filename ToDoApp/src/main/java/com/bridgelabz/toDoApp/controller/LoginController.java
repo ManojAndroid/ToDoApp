@@ -1,7 +1,6 @@
 package com.bridgelabz.toDoApp.controller;
 
 
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,12 +8,10 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.bridgelabz.toDoApp.JSONResponse.Response;
-import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
+import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
 import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
@@ -34,6 +31,10 @@ public class LoginController {
 	private UserService userService;
 	@Autowired
 	UserAccessTokenService tokenService;
+	@Autowired
+	UserToken userToken;
+	Token token=new Token();
+	
 	/**
 	 * @param user 
 	 * @param request 
@@ -42,23 +43,30 @@ public class LoginController {
 	 * @throws Exception 
 	 */
 	@PostMapping(value = "/signin")
-	public ResponseEntity<Response> signIn(@RequestBody User user, HttpServletRequest request,
+	public ResponseEntity<Token> signIn(@RequestBody User user, HttpServletRequest request,
 			HttpServletResponse response) throws Exception 
 	{
-		/*Map<Integer, UserToken> map = tokenService.getUserToken(request);*/
+		
 		user.setPassword(CryptoUtil.getDigest(user.getPassword()));
 		User signinresult = userService.signIn(user.getEmail(), user.getPassword(), request);
 		
 		if (signinresult != null) 
 		{
-			logger.error("Logging successful!");
-			/*System.out.println("Your token number is"+map.keySet() +" "+ map.values().toString());*/
-			return new ResponseEntity<Response>(HttpStatus.OK);
+			  logger.error("Logging successful!");
+			  Token token=userToken.generateToken();
+			  token.setUser(signinresult);
+			  tokenService. tokenSave(token);
+			  
+			  response.setHeader("accesstoken",token.getAccesstoken() );
+			  response.setHeader("refreshtoken", token.getRefreshtoken());
+			long gettime= token.getCreatedtime().getTime();
+			response.setHeader("createdtime", gettime+" ");
+			  return new ResponseEntity<Token>(token,HttpStatus.OK);
 		} 
 		else 
 		{
 			logger.error("Logging Unsuccessful!.... try Again");
-			return new ResponseEntity<Response>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Token>(HttpStatus.NOT_FOUND);
 		}
 	}
 }
