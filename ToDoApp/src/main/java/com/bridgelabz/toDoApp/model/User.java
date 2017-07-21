@@ -10,9 +10,6 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "User_Table")
 public class User implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

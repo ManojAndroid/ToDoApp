@@ -49,7 +49,7 @@ public class UserController {
 	 */
 	@PostMapping(value = "/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Response> signUp(@RequestBody User user, BindingResult result) throws Exception {
-
+   System.out.println("insidebackend");
 		userValidation.validate(user, result);
 		
 		if (result.hasErrors())
