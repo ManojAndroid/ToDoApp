@@ -27,10 +27,11 @@ public class LogOutController {
 	 * @return 
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "logout")
+	@RequestMapping(value = "/logout")
 	public ResponseEntity<Response> logOut( HttpServletRequest request,
 			HttpServletResponse response) throws Exception 
 	{
+		System.out.println("Inside the logout");
 		HttpSession httpSession = request.getSession(false);
 		User userobject = (User) httpSession.getAttribute("UserSession");
 		if (userobject != null) {

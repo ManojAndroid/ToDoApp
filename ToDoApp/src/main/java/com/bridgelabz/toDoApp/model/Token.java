@@ -27,7 +27,7 @@ public class Token implements Serializable
     private String accesstoken;
     private String refreshtoken;
     private Date createdtime;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name="userid")
     private User user;
 	public String getAccesstoken()

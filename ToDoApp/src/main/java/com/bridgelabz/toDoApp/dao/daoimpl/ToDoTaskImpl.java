@@ -25,7 +25,7 @@ public class ToDoTaskImpl implements ToDoTaskDao
 	/* (non-Javadoc)
 	 * @see com.bridgelabz.toDoApp.dao.daoInterface.ToDoTaskDao#toDoSaveTask(com.bridgelabz.toDoApp.model.ToDo)
 	 */
-	@Override
+	
 	public void toDoSaveTask(ToDo toDo) 
 	{
 		Session session = sessionFactory.openSession();
@@ -38,7 +38,7 @@ public class ToDoTaskImpl implements ToDoTaskDao
 	/* (non-Javadoc)
 	 * @see com.bridgelabz.toDoApp.dao.daoInterface.ToDoTaskDao#ToDoUpdateTask(com.bridgelabz.toDoApp.model.ToDo)
 	 */
-	@Override
+	
 	public void ToDoUpdateTask(ToDo todo)
 	{
 		Session session = sessionFactory.openSession();
@@ -51,7 +51,7 @@ public class ToDoTaskImpl implements ToDoTaskDao
 	/* (non-Javadoc)
 	 * @see com.bridgelabz.toDoApp.dao.daoInterface.ToDoTaskDao#ToDodeleteTask(int)
 	 */
-	@Override
+	
 	public int ToDodeleteTask(int id)
 	{
 		System.out.println(id);
@@ -67,20 +67,18 @@ public class ToDoTaskImpl implements ToDoTaskDao
 	/* (non-Javadoc)
 	 * @see com.bridgelabz.toDoApp.dao.daoInterface.ToDoTaskDao#gateAll(int)
 	 */
-	@Override
-	public List<ToDo> gateAll(int id)
+
+	public List<ToDo> gateAll(int userid)
 	{
 
 			Session session = sessionFactory.openSession();
-			Query query = session.createQuery("from ToDo where userid = "+id);
+			Query query = session.createQuery("from ToDo where userid = "+userid);
 			List<ToDo> toDo= query.list();
 			return toDo;
 	}
-
-	@Override
-	public List<ToDo> gateSingleTask(int id) {
+	public List<ToDo> gateSingleTask(int noteid) {
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("from ToDo where taskid = "+id);
+		Query query = session.createQuery("from ToDo where taskid = "+noteid);
 		List<ToDo> toDo= query.list();
 		return toDo;
 	}

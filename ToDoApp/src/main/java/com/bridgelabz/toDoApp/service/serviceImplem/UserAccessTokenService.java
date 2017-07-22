@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import com.bridgelabz.toDoApp.dao.daoimpl.TokenImplement;
 import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.util.UserToken;
-import com.bridgelabz.toDoApp.validator.TokenValidation;
 
 @Component
 public class UserAccessTokenService
@@ -18,17 +17,16 @@ public class UserAccessTokenService
 	@Autowired
 	TokenImplement tokenImplement ;
 	
-	@Autowired
-	TokenValidation tokenValidation;
-	
-    Map<Integer, UserToken> map = new HashMap<Integer, UserToken>();
-    
     public  void tokenSave( Token token)
     {
     	
     	tokenImplement.tokenSave(token);
     	
-    	
+    }
+    
+    public Token getToken(String accesstoken)
+    {
+    	return 	tokenImplement.getToken(accesstoken);
     }
     
     

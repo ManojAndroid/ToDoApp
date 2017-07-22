@@ -77,7 +77,7 @@ public class UserController {
 			exception.printStackTrace();
 			logger.error("Registration Failed");
 			errorResponse.setStatus(-1);
-			errorResponse.setMessage("DataBase server error....");
+			errorResponse.setMessage("  Internal server error....");
 			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);
 		}
 	}

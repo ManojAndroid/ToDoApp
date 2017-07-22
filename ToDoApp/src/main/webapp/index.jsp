@@ -11,12 +11,11 @@
 <body>
 	<ui-view> </ui-view>
 </body>
-<script type="text/javascript"
-	src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript"
-	src="bower_components/angular/angular.min.js"></script>
-<script type="text/javascript"
-	src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript"src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript"src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript"src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/css/bootstrap.min.css"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controller/signinController.js"></script>
 <script type="text/javascript" src="js/controller/signupController.js"></script>

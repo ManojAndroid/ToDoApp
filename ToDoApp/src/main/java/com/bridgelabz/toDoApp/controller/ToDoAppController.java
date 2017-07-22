@@ -23,123 +23,136 @@ import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
 public class ToDoAppController {
 	@Autowired
 	ToDoTaskServices toDoTaskServices;
-	
+
 	/**
-	 * toDoSave, method is used to save the user task in database 
-	 * @param toDo  {@link ToDo}
-	 * @param request {@link HttpServletRequest}
+	 * toDoSave, method is used to save the user task in database
+	 * 
+	 * @param toDo
+	 *            {@link ToDo}
+	 * @param request
+	 *            {@link HttpServletRequest}
 	 * @return {@link ResponseEntity}
 	 */
 	@PostMapping(value = "/todocreate")
 	public ResponseEntity<Response> toDoSave(@RequestBody ToDo toDo, HttpServletRequest request) {
-		
+
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
 		System.out.println(user);
 		toDo.setUser(user);
-		try
-		{
+		try {
 
 			toDoTaskServices.toDoSaveTask(toDo);
 			return new ResponseEntity<Response>(HttpStatus.OK);
-		} 
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
 
 	/**
 	 * toDoUpdate, This method is used to update user task and save in database
-	 * @param toDo {@link ToDo}
-	 * @param taskid it is user task id in integer form,
+	 * 
+	 * @param toDo
+	 *            {@link ToDo}
+	 * @param taskid
+	 *            it is user task id in integer form,
 	 * @return {@link ResponseEntity}
 	 */
-	@PutMapping(value = "/todoupdate")
-	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo,@RequestParam ("taskid") int taskid)
-	{
-		try 
-		{
+	@PutMapping(value = "/todoupdate/{userid}")
+	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo, @RequestParam("userid") int taskid,HttpServletRequest request) {
+		
+		HttpSession httpSession = request.getSession();
+		User user = (User) httpSession.getAttribute("UserSession");
+		
+		
+		
+		try {
 			toDoTaskServices.ToDoUpdateTask(toDo);
-			return new ResponseEntity<Response>(HttpStatus.OK);
-		} 
-		catch (Exception exception)
-		{
-			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
-		}
-
-	}
-
-	/**
-	 * toDoDelete, This method is used to delete user individual task from  database,
-	 * @param id   it is user task id in integer form,
-	 * @return {@link ResponseEntity}
-	 */
-	@RequestMapping(value = "/tododelete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Response> toDoDelete(@PathVariable("id") int id) {
-		try
-		{
-			toDoTaskServices.ToDodeleteTask(id);
 			return new ResponseEntity<Response>(HttpStatus.OK);
 		} 
 		catch (Exception exception) 
 		{
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+	}
+
+	/**
+	 * toDoDelete, This method is used to delete user individual task from
+	 * database,
+	 * 
+	 * @param id
+	 *            it is user task id in integer form,
+	 * @return {@link ResponseEntity}
+	 */
+	@RequestMapping(value = "/tododelete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Response> toDoDelete(@PathVariable("id") int id) 
+	{
+		try {
+			toDoTaskServices.ToDodeleteTask(id);
+			return new ResponseEntity<Response>(HttpStatus.OK);
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-		
-		
-		/**
-		 * toDoTaskList, this method is used to getAllUsER task from database,
-		 * @param request {@link HttpServletRequest}
-		 * @return {@link ResponseEntity}
-		 */
-		@RequestMapping(value = "/getlist", method = RequestMethod.GET)
-		public ResponseEntity<Response> toDoTaskList(HttpServletRequest request)
-		{
 
-			HttpSession httpSession = request.getSession();
-			User user = (User) httpSession.getAttribute("UserSession");
-			int uid=user.getId();
-			try
-			{
-			List<ToDo>  toDoAllTask =	toDoTaskServices.getAllTaskList(uid);
-		    System.out.println(toDoAllTask.toString());
-		    return new ResponseEntity<Response>(HttpStatus.OK);
-			}
-			catch (Exception exception) 
-			{
-				exception.printStackTrace();
-				return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
+	/**
+	 * toDoTaskList, this method is used to getAllUsER task from database,
+	 * 
+	 * @param request
+	 *            {@link HttpServletRequest}
+	 * @return {@link ResponseEntity}
+	 */
+	@RequestMapping(value = "/getlist", method = RequestMethod.GET)
+	public ResponseEntity<Response> toDoTaskList(HttpServletRequest request) {
 
+		HttpSession httpSession = request.getSession();
+		User user = (User) httpSession.getAttribute("UserSession");
+		int uid = user.getId();
+		try {
+			List<ToDo> toDoAllTask = toDoTaskServices.getAllTaskList(uid);
+			if(toDoAllTask!=null)
+			{
+				System.out.println(toDoAllTask.toString());
+				return new ResponseEntity<Response>(HttpStatus.OK);
 			}
-	}
-		/**
-		 * getSingleTask,This method is used to get user single task from database
-		 * @param toDo {@link ToDo}
-		 * @return {@link ResponseEntity}
-		 */
-		@RequestMapping(value = "/getsingletask/{id}", method = RequestMethod.GET)
-		public ResponseEntity<Response> getSingleTask(@PathVariable("id") int id)
-		{
-         
+			System.out.println(toDoAllTask.toString());
+			return new ResponseEntity<Response>(HttpStatus.UNAUTHORIZED);
 			
-			try
-			{
-			List<ToDo>  toDosingleTask =toDoTaskServices.getSingleTask(id);
-		    System.out.println(toDosingleTask.toString());
-		    return new ResponseEntity<Response>(HttpStatus.OK);
-			}
-			catch (Exception exception) 
-			{
-				exception.printStackTrace();
-				return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
+		} catch (Exception exception)
+		{
+			exception.printStackTrace();
+			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
 
+		}
+	}
+
+	/**
+	 * getSingleTask,This method is used to get user single task from database
+	 * 
+	 * @param toDo
+	 *            {@link ToDo}
+	 * @return {@link ResponseEntity}
+	 */
+	@RequestMapping(value = "/getsingletask/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Response> getSingleTask(@PathVariable("id") int id) {
+
+		try {
+			List<ToDo> toDosingleTask = toDoTaskServices.getSingleTask(id);
+			if (toDosingleTask != null) {
+				System.out.println(toDosingleTask.toString());
+				return new ResponseEntity<Response>(HttpStatus.OK);
 			}
+
+			return new ResponseEntity<Response>(HttpStatus.UNAUTHORIZED);
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+		}
 	}
 }
-

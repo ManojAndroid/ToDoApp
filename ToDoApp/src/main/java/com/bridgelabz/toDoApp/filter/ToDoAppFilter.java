@@ -9,17 +9,16 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.bridgelabz.toDoApp.util.UserToken;
+import com.fasterxml.jackson.databind.ObjectMapper;
 public class ToDoAppFilter implements Filter
 {
 
-	@Override
+	
 	public void init(FilterConfig filterConfig) 
 			throws ServletException 
 	{
 
 	}
-
-	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException ,NullPointerException
 	{
@@ -28,35 +27,33 @@ public class ToDoAppFilter implements Filter
 		
 	    WebApplicationContext context =WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
 	    UserToken userToken=context.getBean(UserToken.class);
-		
-		/*
+	    ObjectMapper mapper = new ObjectMapper();
+	
 		String accesstken=httpServletRequest.getHeader("accesstoken");
-		String refreshtoken=httpServletRequest.getHeader("refreshtoken");
-		String createdtime=httpServletRequest.getHeader("createdtime");*/
-		
-		/*long getcreatedtime=Long.parseLong(createdtime);
-		System.out.println(getcreatedtime);
-		
-		boolean validaterequest=userToken.validateToken();
+		boolean validaterequest=userToken.validateToken(accesstken);
 		System.out.println(validaterequest);
 		if(validaterequest==true)
 		{
 			System.out.println("token is valid");
+			response.setContentType("application/json");
+			String jsonResp = "{\"status\":\"200\",\"sucessMessage\":\"Access token is valid\"}";
+			response.getWriter().write(jsonResp);
 			
-			httpServletResponse.sendRedirect("/home");
+			
 		}
-		else
-		{
-			System.out.println("token is invalid");
-
-			httpServletResponse.sendRedirect("/signin");
-		}
+		/*String jsonInString = mapper.writeValueAsString( validaterequest );
+		response.getWriter().write(jsonInString);
+			System.out.println("token is invalid");*/
+		
+		response.setContentType("application/json");
+		String jsonResp = "{\"status\":\"-4\",\"errorMessage\":\"Access token is expired. Generate new Access Tokens\"}";
+		response.getWriter().write(jsonResp);
 		
 		chain.doFilter(request, response);
-		*/  
+		
 	}
 
-	@Override
+	
 	public void destroy() 
 	{
 
