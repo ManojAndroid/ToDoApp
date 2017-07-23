@@ -7,12 +7,12 @@
 			<ul>
 				<li><input type="email"name="email" ng-trim="true" class="txtuser" placeholder="User Email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/" ng-model="email" required="required"></li>
 				
-				 <span style="color:Red" ng-show="signin.email.$error.required"> Enter  Email! </span> 
-				<span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid Email!!</span>
+<!-- 				 <span style="color:Red" ng-show="signin.email.$error.required"> Enter  Email! </span> 
+ -->				<span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid Email!!</span>
 				
 				<li><input type="password" name="pass" class="txtpass" placeholder=" User Password" ng-model="password" required="required" ng-pattern="/^[A-Za-z]{5,10}$/"></li>
 				<!-- <span style="color:Red" ng-show="signin.pass.$error.required"> Enter Password! </span> -->
-				<span style="color:Red" ng-show="signin.pass.$touched && signin.pass.$error.pattern"> Entered Password Length is not valid!</span>
+				<span style="color:Red" ng-show="signin.pass.$dirty&&signin.pass.$error.pattern"> Entered Password Length is not valid!</span>
 				
 				<li><input type="submit" ng-click="userLogin()" ng-disabled="signin.$invalid" class="txtbtn" value="Signin"></li>
 		

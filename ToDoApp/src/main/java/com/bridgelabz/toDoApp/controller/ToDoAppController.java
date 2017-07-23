@@ -33,18 +33,20 @@ public class ToDoAppController {
 	 *            {@link HttpServletRequest}
 	 * @return {@link ResponseEntity}
 	 */
-	@PostMapping(value = "/todocreate")
+	@PostMapping(value = "/rest/todocreate")
 	public ResponseEntity<Response> toDoSave(@RequestBody ToDo toDo, HttpServletRequest request) {
 
-		HttpSession httpSession = request.getSession();
+		/*HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
 		System.out.println(user);
-		toDo.setUser(user);
-		try {
-
+		toDo.setUser(user);*/
+		try 
+		{
 			toDoTaskServices.toDoSaveTask(toDo);
 			return new ResponseEntity<Response>(HttpStatus.OK);
-		} catch (Exception exception) {
+		} 
+		catch (Exception exception)
+		{
 			exception.printStackTrace();
 			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -60,14 +62,11 @@ public class ToDoAppController {
 	 *            it is user task id in integer form,
 	 * @return {@link ResponseEntity}
 	 */
-	@PutMapping(value = "/todoupdate/{userid}")
-	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo, @RequestParam("userid") int taskid,HttpServletRequest request) {
+	@PutMapping(value = "/rest/todoupdate")
+	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo, @RequestParam("taskid") int taskid,HttpServletRequest request) {
 		
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
-		
-		
-		
 		try {
 			toDoTaskServices.ToDoUpdateTask(toDo);
 			return new ResponseEntity<Response>(HttpStatus.OK);
@@ -88,7 +87,7 @@ public class ToDoAppController {
 	 *            it is user task id in integer form,
 	 * @return {@link ResponseEntity}
 	 */
-	@RequestMapping(value = "/tododelete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/rest/tododelete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Response> toDoDelete(@PathVariable("id") int id) 
 	{
 		try {
@@ -107,7 +106,7 @@ public class ToDoAppController {
 	 *            {@link HttpServletRequest}
 	 * @return {@link ResponseEntity}
 	 */
-	@RequestMapping(value = "/getlist", method = RequestMethod.GET)
+	@RequestMapping(value = "/rest/getlist", method = RequestMethod.GET)
 	public ResponseEntity<Response> toDoTaskList(HttpServletRequest request) {
 
 		HttpSession httpSession = request.getSession();
@@ -138,7 +137,7 @@ public class ToDoAppController {
 	 *            {@link ToDo}
 	 * @return {@link ResponseEntity}
 	 */
-	@RequestMapping(value = "/getsingletask/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/rest/getsingletask/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Response> getSingleTask(@PathVariable("id") int id) {
 
 		try {

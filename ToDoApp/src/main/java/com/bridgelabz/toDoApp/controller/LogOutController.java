@@ -27,7 +27,7 @@ public class LogOutController {
 	 * @return 
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/logout")
+	@RequestMapping(value = "/rest/logout")
 	public ResponseEntity<Response> logOut( HttpServletRequest request,
 			HttpServletResponse response) throws Exception 
 	{

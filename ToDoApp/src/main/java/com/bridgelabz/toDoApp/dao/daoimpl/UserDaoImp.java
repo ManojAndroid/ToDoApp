@@ -62,7 +62,8 @@ public class UserDaoImp implements UserDao {
 		return null;
 	}
 
-	public User getUserByEmail(String email) {
+	public User getUserByEmail(String email) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,7 +1,5 @@
 package com.bridgelabz.toDoApp.service.serviceImplem;
 
-import java.util.HashMap;
-import java.util.Map;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import com.bridgelabz.toDoApp.dao.daoimpl.TokenImplement;
 import com.bridgelabz.toDoApp.model.Token;
-import com.bridgelabz.toDoApp.util.UserToken;
 
 @Component
 public class UserAccessTokenService

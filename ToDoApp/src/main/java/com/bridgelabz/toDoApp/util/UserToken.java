@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.bridgelabz.toDoApp.model.Token;
+import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
 @Component
@@ -19,23 +20,6 @@ public class UserToken
 
 	@Autowired
 	UserAccessTokenService tokenServices;
-	
-	/************ Access Token Generate Method *******************/
-	public void generateAccessToken() 
-	{
-		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
-		token.setCreatedtime(new Date());
-
-	}
-
-	/************ Refresh Token Generate Method *******************/
-
-	public void generateRefreshToken()
-	{
-		token.setRefreshtoken(UUID.randomUUID().toString().replace("-", ""));
-		token.setCreatedtime(new Date());
-	}
-	
 	public Token generateToken()
 	{
 		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
@@ -48,23 +32,28 @@ public class UserToken
 	/************ validateToken Generate Method *******************/
 
 	
-      public boolean validateToken(String accesstoken)
+      public User validateToken(String accesstoken)
       {
     	Token token=tokenServices.getToken(accesstoken);
+    	System.out.println("token"+token);
     	if(token!=null)
     	{
-    		long diff =	(token.getCreatedtime().getTime()) - (new Date().getTime());
+    		long diff =	(new Date().getTime())-(token.getCreatedtime().getTime());
+    		System.out.println("created time"+(token.getCreatedtime().getTime()));
+    		System.out.println("current time"+(new Date().getTime()));
+    		System.out.println("difference time"+diff);
     		long differencetimeinminute=TimeUnit.MILLISECONDS.toMinutes(diff);
+    		System.out.println("difference"+differencetimeinminute);
     		if(differencetimeinminute>2)
     		{
-    			return false;
+    			return null;
     		}	
-    	
-    			return true; 
+    		System.out.println( "user Token IN Validation"+token.getUser());
+    			return (token.getUser()); 
     	
     	}
     		
-    	return false;	
+    	return null;	
     	  
       }
 }

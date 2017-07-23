@@ -47,4 +47,5 @@ public class TokenImplement implements TokenInterface
 		Token token=(Token) query.uniqueResult();
 		return token;
 	}
+	
 }
