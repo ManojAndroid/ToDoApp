@@ -35,7 +35,7 @@ public class LoginController {
 	UserAccessTokenService tokenService;
 	@Autowired
 	UserToken userToken;
-	Token token = new Token();
+	/*Token token = new Token();*/
 	@Autowired
 	private ErrorResponse errorResponse;
 
@@ -63,12 +63,17 @@ public class LoginController {
 				response.setHeader("refreshtoken", token.getRefreshtoken());
 				long gettime = token.getCreatedtime().getTime();
 				response.setHeader("createdtime", gettime + " ");
+				
+				token.setUser(null);
 				return new ResponseEntity<Token>(token, HttpStatus.OK);
 			}
 
 			logger.error("Logging Unsuccessful!.... try Again");
 			return new ResponseEntity<Token>(HttpStatus.NOT_FOUND);
-		} catch (Exception exception) {
+		} 
+		
+		catch (Exception exception) 
+		{
 			exception.printStackTrace();
 			logger.error("Registration Failed");
 			errorResponse.setStatus(-1);

@@ -13,6 +13,7 @@
 	<context:component-scan base-package="com.bridgelabz.toDoApp" />
 	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
 	<mvc:resources location="/template/" mapping="/template/**"></mvc:resources>
+	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
 	<mvc:resources location="/js/" mapping="js/**"></mvc:resources>
 	<mvc:resources location="/bower_components/" mapping="/bower_components/**"></mvc:resources>
 	

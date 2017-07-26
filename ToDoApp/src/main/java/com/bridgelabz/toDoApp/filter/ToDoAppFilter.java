@@ -12,8 +12,8 @@ import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.util.UserToken;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class ToDoAppFilter implements Filter {
-
+public class ToDoAppFilter implements Filter
+{
 	public void init(FilterConfig filterConfig) throws ServletException 
 	{
 
@@ -25,7 +25,9 @@ public class ToDoAppFilter implements Filter {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
 		UserToken userToken = context.getBean(UserToken.class);
-		String accesstken = httpServletRequest.getHeader("accesstoken");
+		
+		String accesstken = httpServletRequest.getHeader("accToken");
+		System.out.println(accesstken);
 		User validaterequest = userToken.validateToken(accesstken);
 		System.out.println("in filter User"+validaterequest);
 		if (validaterequest !=null)
@@ -40,7 +42,6 @@ public class ToDoAppFilter implements Filter {
 		response.getWriter().write(jsonResp);
 		return;
 		}
-		
 	}
 
 	public void destroy() 

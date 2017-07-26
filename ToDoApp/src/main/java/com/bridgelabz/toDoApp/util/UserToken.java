@@ -20,6 +20,14 @@ public class UserToken
 
 	@Autowired
 	UserAccessTokenService tokenServices;
+	
+	public Token generateNewAccessToken()
+	{
+	
+		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
+		return token;
+	}
+	
 	public Token generateToken()
 	{
 		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
@@ -54,6 +62,29 @@ public class UserToken
     	}
     		
     	return null;	
+    	  
+      }
+      public boolean refreshTokenValidation(String refreshtoken)
+      {
+    	Token token=tokenServices.getRefreshToken(refreshtoken);
+    	System.out.println("token"+token);
+    	if(token!=null)
+    	{
+    		long diff =	(new Date().getTime())-(token.getCreatedtime().getTime());
+    		System.out.println("created time"+(token.getCreatedtime().getTime()));
+    		System.out.println("current time"+(new Date().getTime()));
+    		System.out.println("difference time"+diff);
+    		long differencetimeinminute=TimeUnit.MILLISECONDS.toMinutes(diff);
+    		System.out.println("difference"+differencetimeinminute);
+    		if(differencetimeinminute>10)
+    		{
+    			return false;
+    		}	
+    			return true; 
+    	
+    	}
+    		
+    	return false;	
     	  
       }
 }

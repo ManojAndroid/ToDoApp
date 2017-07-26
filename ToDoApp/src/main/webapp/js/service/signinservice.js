@@ -6,6 +6,7 @@ myApp.service('signinService', function($http) {
 			url : "signin",
 			method : "post",
 			data : user
+			
 		})
 	};
 });

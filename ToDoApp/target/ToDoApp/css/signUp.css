@@ -1,0 +1,107 @@
+ .contain
+       {
+		width:960px;
+		margin:0 auto;
+		font-family: 'Cuprum', sans-serif;
+	}
+	.txuser, .txpass
+	{
+		width:382px;
+		height:40px;
+		background:#ffffff;
+		padding:5px 10px 5px 24px;
+		border-top:0px;
+		border-right:0px;
+		border-left:0px solid #cdcdcd;
+		border-bottom:2px solid #cdcdcd;
+		color:#808080;
+		font-size:14pt;
+		font-family:'calibri';
+		background: #ffffff url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+		font-family: 'Cuprum', sans-serif;
+		
+	}
+	.txpass:focus,.txuser:focus,
+	.txpass:active,.txuser:active
+	{
+		color:#800000;
+		border-bottom:2px solid #800000;
+		background: #ffffff url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+		outline:none;
+	}
+	.p {
+    margin: 5% 32% 10px;
+}
+	.txbtn{
+		width:130px;
+		height:36px;
+		margin-top:24px;
+		font-size:18px;
+		color:#fff;
+		font-weight:bold;
+		border:none;
+		background:#10151c;
+		cursor:pointer;
+		border-radius:5px;
+		outline:none;
+		-moz-outline:none;
+		-webkit-outline:none;
+		font-family: 'Cuprum', sans-serif;
+		
+		
+	}
+	.txbtn:hover{
+		
+		background:#000000;
+		border-bottom:4px solid #800000;
+	
+	}
+	.txbtn:focus{
+		outline:none;
+		-moz-outline:none;
+		-webkit-outline:none;
+	}
+	#txuser { background-position: -4px 10px !important }
+	#txpass { background-position: -4px -53px !important }
+	.formlogin{
+		width:481px;
+		height:540px;
+		margin:0 auto;
+		border-bottom:50px solid #273344;
+		-webkit-box-shadow: 0px 0px 29px -2px rgba(0,0,0,0.64);
+		-moz-box-shadow: 0px 0px 29px -2px rgba(0,0,0,0.64);
+		box-shadow: 0px 0px 29px -2px rgba(0,0,0,0.64);
+		border-radius:4px;
+	}
+	
+	.formlogin ul{
+		display:block;
+		list-style-type:none;
+		
+	}
+	.formlogin ul li{
+		padding:10px 10px;
+	}
+	.formlogin ul li:last-child{
+		position:relative;
+		left:25%;
+	}
+	
+	.headt
+	{
+		width:100%;
+		height:50px;
+		background:#18283f;
+		margin:0;
+		border-top-left-radius:4px;
+		border-top-right-radius:4px;
+	}
+	.headt h3
+	{
+		text-align:center;
+		padding-top:10px;
+		font-size:24px;
+		color:#fff;
+		font-family: 'Cuprum', sans-serif;
+		
+	} 

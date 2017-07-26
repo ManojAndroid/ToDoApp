@@ -47,5 +47,13 @@ public class TokenImplement implements TokenInterface
 		Token token=(Token) query.uniqueResult();
 		return token;
 	}
-	
+	public Token getRefreshToken(String accesstoken)
+	{
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		Query query = session.createQuery(" from Token where accesstoken = :access");
+		query.setParameter("access", accesstoken);
+		Token token=(Token) query.uniqueResult();
+		return token;
+	}
 }

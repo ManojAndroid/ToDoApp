@@ -26,6 +26,11 @@ public class UserAccessTokenService
     	return 	tokenImplement.getToken(accesstoken);
     }
     
+    public Token getRefreshToken(String accesstoken)
+    {
+    	return 	tokenImplement.getRefreshToken(accesstoken);
+    }
+    
     
     
     

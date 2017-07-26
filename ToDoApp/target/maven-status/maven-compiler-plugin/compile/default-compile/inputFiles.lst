@@ -1,5 +1,4 @@
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/model/ToDo.java
-/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/validator/TokenValidation.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceImplem/UserAccessTokenService.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/validator/UserValidation.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/filter/ToDoAppFilter.java
@@ -7,6 +6,7 @@
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/LoginController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceInterface/UserService.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceImplem/UserServiceImplem.java
+/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/GenerateNewAccessTokenController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceImplem/ToDoTaskServices.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/UserController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/dao/daoimpl/ToDoTaskImpl.java

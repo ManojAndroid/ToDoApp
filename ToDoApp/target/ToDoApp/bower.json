@@ -1,0 +1,15 @@
+{
+  "name": "toDo",
+  "homepage": "https://github.com/ManojAndroid/ToDoApp",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

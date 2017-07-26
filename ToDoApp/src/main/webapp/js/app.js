@@ -18,7 +18,9 @@ $stateProvider
 	   url:'/home',
 	   templateUrl:"template/Home.html",
 	   controller:"homeController"
-	 });
+	 })
+	 
+	console.log("inside APPPJSwwww");
 
  $urlRouterProvider.otherwise('/signin');
 

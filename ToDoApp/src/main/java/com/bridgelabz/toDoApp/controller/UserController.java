@@ -47,7 +47,7 @@ public class UserController {
 	 * @return
 	 * @throws Exception
 	 */
-	@PostMapping(value = "/rest/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
+	@PostMapping(value = "/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Response> signUp(@RequestBody User user, BindingResult result) throws Exception {
    System.out.println("insidebackend");
 		userValidation.validate(user, result);
@@ -68,7 +68,7 @@ public class UserController {
 			logger.info("Registered successfully!");
 			userResponse.setStatus(1);
 			userResponse.setMessage("Sucessfully Registered");
-			userResponse.setUser(user);
+			userResponse.setUser(null);
 			
 			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
 		}
