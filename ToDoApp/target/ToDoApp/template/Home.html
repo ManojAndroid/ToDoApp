@@ -13,32 +13,24 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span
-					class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
-				<li><a href="#"><span aria-hidden="true"><font
-							size=5px><u>Manoj S</u></font></span></a></li>
+				<a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+				<li><a href=""><span aria-hidden="true"><font size="5px;" color="black"><u>Manoj S</u></font></span></a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href=""><span> <img src="images/refresh.svg"
-							alt="Refresh"></span></a></li>
-				<li><a href=""><span> <img src="images/list.svg"
-							alt="List"></span></a></li>
+				<li><a href=""><span> <img src="images/refresh.svg"alt="Refresh"></span></a></li>
+				<li><a href=""><span> <img src="images/list.svg"alt="List"></span></a></li>
 				<li><a href=""><span> <img src="images/grid.svg"></span></a></li>
-				<li><a href=""><span> <img src="images/refresh.svg"
-							alt="Refresh"></span></a></li>
-				<li><a href=""><span> <img src="images/list.svg"
-							alt="List"></span></a></li>
+				<li><a href=""><span> <img src="images/refresh.svg"alt="Refresh"></span></a></li>
+				<li><a href=""><span> <img src="images/list.svg"alt="List"></span></a></li>
 				<li><a href=""><span> <img src="images/grid.svg"></span></a></li>
 			</ul>
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..."
-						id="searchicon" name="search" value="">
+					<input type="text" class="form-control" placeholder="Search..."id="searchicon" name="search" value="">
 					<div class="input-group-btn">
-						<button type="submit" class="btn btn-success">
-							<span class="glyphicon glyphicon-search"></span>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span>
 						</button>
 					</div>
 				</div>
@@ -54,15 +46,10 @@
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand"><br></li>
 				<li class="sidebar-brand"></li>
-				<li><a href=""><span aria-hidden="true"><img
-							src="images/noteicon.png"></span>&nbsp &nbsp &nbsp Notes</a></li>
-				<li><a href=""><span aria-hidden="true"><img
-							src="images/remindericon.svg"></span>&nbsp &nbsp &nbsp Reminders</a></li>
-				<li><a href=""><span aria-hidden="true"><img
-							src="images/archive.svg"></span>&nbsp &nbsp &nbsp Archive</a></li>
-				<li><a href=""><span aria-hidden="true"><img
-							src="images/icons8-Trash Can-20.png"></span>&nbsp &nbsp &nbsp
-						Trash</a></li>
+				<li><a href=""><span aria-hidden="true"><img src="images/noteicon.png"></span>&nbsp &nbsp &nbsp Notes</a></li>
+				<li><a href=""><span aria-hidden="true"><img src="images/remindericon.svg"></span>&nbsp &nbsp &nbsp Reminders</a></li>
+				<li><a href=""><span aria-hidden="true"><img src="images/archive.svg"></span>&nbsp &nbsp &nbsp Archive</a></li>
+				<li><a href=""><span aria-hidden="true"><img src="images/icons8-Trash Can-20.png"></span>&nbsp &nbsp &nbsp Trash</a></li>
 			</ul>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -72,14 +59,31 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<div>
-							<input type="text" placeholder="Take A Notes......">
-
+					
+					
+						<div id="card">
+							<div id="headercard">
+								<input type="text" style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;
+									placeholder="Title" contenteditable="true"   ng-show="myVarheader">
+							     </div>
+							<div id="contentcard"  contenteditable="true"
+								spellcheck="true" ng-click="noteInput()"> &nbsp &nbsp  Take Notes......
+							</div>
+							<div id="footer"  ng-show="myVarfooter">
+							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
+							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
+							<img alt="reminder" src="images/color.png">&nbsp &nbsp &nbsp &nbsp
+							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
+							<img alt="reminder" src="images/archive.svg">&nbsp &nbsp &nbsp &nbsp
+							<img alt="reminder" src="images/list.png">&nbsp &nbsp &nbsp &nbsp
+							<input type="button" ng-click="hideTitle()" class="buttonsave" value="Done">
+							</div>
 						</div>
 					</div>
 				</div>
-				
+                  
 			</div>
+
 		</div>
 	</div>
 
@@ -88,6 +92,18 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
+		$scope.noteInput = function() {
+
+			$scope.myVarheader = true;
+			$scope.myVarfooter = true;
+
+		}
+		$scope.hideTitle = function() {
+
+			$scope.myVarheader = false;
+			$scope.myVarfooter = false;
+
+		}
 	</script>
 </div>
 <!-- /#wrapper -->

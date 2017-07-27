@@ -60,7 +60,6 @@ public class LoginController {
 				tokenService.tokenSave(token);
 
 				response.setHeader("accesstoken", token.getAccesstoken());
-				response.setHeader("refreshtoken", token.getRefreshtoken());
 				long gettime = token.getCreatedtime().getTime();
 				response.setHeader("createdtime", gettime + " ");
 				

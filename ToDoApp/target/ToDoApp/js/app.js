@@ -20,7 +20,7 @@ $stateProvider
 	   controller:"homeController"
 	 })
 	 
-
+	console.log("inside APPPJSwwww");
 
  $urlRouterProvider.otherwise('/signin');
 

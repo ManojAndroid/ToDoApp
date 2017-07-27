@@ -14,6 +14,7 @@ myApp.controller('signinController', function($scope, $state,signinService)
 	{
 			if (response.status == 200)
 			{
+				localStorage.setItem("accesstoken",response.headers("accesstoken"));
 				console.log(response.data);
 				$state.go('home');
 			} 

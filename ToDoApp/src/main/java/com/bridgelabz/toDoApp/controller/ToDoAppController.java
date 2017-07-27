@@ -36,10 +36,10 @@ public class ToDoAppController {
 	@PostMapping(value = "/rest/todocreate")
 	public ResponseEntity<Response> toDoSave(@RequestBody ToDo toDo, HttpServletRequest request) {
 
-		/*HttpSession httpSession = request.getSession();
+		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
 		System.out.println(user);
-		toDo.setUser(user);*/
+		toDo.setUser(user);
 		try 
 		{
 			toDoTaskServices.toDoSaveTask(toDo);
@@ -107,25 +107,26 @@ public class ToDoAppController {
 	 * @return {@link ResponseEntity}
 	 */
 	@RequestMapping(value = "/rest/getlist", method = RequestMethod.GET)
-	public ResponseEntity<Response> toDoTaskList(HttpServletRequest request) {
+	public ResponseEntity<List<ToDo>> toDoTaskList(HttpServletRequest request) {
 
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
 		int uid = user.getId();
 		try {
 			List<ToDo> toDoAllTask = toDoTaskServices.getAllTaskList(uid);
+			
 			if(toDoAllTask!=null)
 			{
 				System.out.println(toDoAllTask.toString());
-				return new ResponseEntity<Response>(HttpStatus.OK);
+				return new ResponseEntity<List<ToDo>>(toDoAllTask,HttpStatus.OK);
 			}
 			System.out.println(toDoAllTask.toString());
-			return new ResponseEntity<Response>(HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<List<ToDo>>(HttpStatus.UNAUTHORIZED);
 			
 		} catch (Exception exception)
 		{
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<List<ToDo>>(HttpStatus.INTERNAL_SERVER_ERROR);
 
 		}
 	}

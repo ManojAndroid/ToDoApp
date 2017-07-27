@@ -42,6 +42,9 @@ public class TokenImplement implements TokenInterface
 	{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
+		
+		System.out.println(accesstoken);
+		
 		Query query = session.createQuery(" from Token where accesstoken = :access");
 		query.setParameter("access", accesstoken);
 		Token token=(Token) query.uniqueResult();

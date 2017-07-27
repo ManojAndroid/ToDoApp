@@ -1,19 +1,21 @@
-<div class="container" >
+<div class="contain" >
 	<div class="frmlogin">
 		<form method="post" name="signin">
 			<div class="headtab">
 				<h3>User SignIn Page</h3>
 			</div>
 			<ul>
-				<li><input type="email"name="email" ng-trim="true" class="txtuser" placeholder="User Email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/" ng-model="email" required="required"></li>
+				 <li><input type="email" name="email" class="txtuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>
+			
+			<span style="color:Red" ng-show="signin.email.$error.required"> Enter Email! </span>
+				<span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid  Email!!</span>
 				
- 				<span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid Email!!</span>
+				<li><input type="password" name="password" class="txtpass" placeholder="User password"ng-model="password"></li>
+			
+			    <span style="color:Red" ng-show="signin.password.$error.required"> Enter  Password! </span>
 				
-				<li><input type="password" name="pass" class="txtpass" placeholder=" User Password" ng-model="password" required="required" ng-pattern="/^[A-Za-z]{5,10}$/"></li>
-				
-				<span style="color:Red" ng-show="signin.pass.$dirty&&signin.pass.$error.pattern"> Entered Password Length is not valid!</span>
-				
-				<li><input type="button" ng-click="userLogin()" ng-disabled="signin.$invalid" class="txtbtn" value="Signin"></li>
+				<li><button name="txtbtn" ng-click="userLogin()" ng-disabled="signin.$invalid"class="txtbtn">SignIn</button></li>
+		
 		</form>
 		<p class="pc">if not Registered?<a ui-sref="signup">Signup</a> Here</p>
 		</ul>

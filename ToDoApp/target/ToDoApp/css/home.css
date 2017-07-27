@@ -10,14 +10,16 @@
 #container
 {
 	height: 70px;
+	border-color: 1 px solid #fb0;
+	
 }
 #wrapper.toggled {
 	padding-left: 250px;
 }
 
 #header {
-	background-color: #31596d;
-	border-color: 1 px solid #239fdd;
+	background-color: #fb0;
+	border-color: 1 px solid #fb0;
 }
 
 #searchicon {
@@ -44,7 +46,6 @@
 #wrapper.toggled #sidebar-wrapper {
 	width: 250px;
 }
-
 #page-content-wrapper {
 	padding: 15px;
 	width: 100%;
@@ -92,6 +93,7 @@
 }
 #p{
     font-size: -webkit-xxx-large;
+    color: black;
     }
 .sidebar-nav>.sidebar-brand {
 	height: 65px;
@@ -108,24 +110,45 @@
 	color: #fff;
 }
 
-/* @media ( min-width : 768px) {
-	#wrapper {
-		padding-left: 250px;
-	}
-	#wrapper.toggled {
-		padding-left: 0;
-	}
-	#sidebar-wrapper {
-		width: 250px;
-	}
-	#wrapper.toggled #sidebar-wrapper {
-		width: 0;
-	}
-	#page-content-wrapper {
-		padding: 20px;
-	}
-	#wrapper.toggled #page-content-wrapper {
-		position: relative;
-		margin-right: 0;
-	}
-} */
+/* title card csss */
+
+#headercard {
+	height: 70px;
+	outline: none;
+	
+}
+
+#footer {
+	height: 50px;
+	outline: none;
+	padding-top: 3%;
+}
+
+#contentcard {
+    max-height: inherit;
+	outline: none;
+	padding-top:-2%;
+}
+
+#card {
+	
+	margin-top:10%;
+	opacity: 0.95;
+	alpha: 0.65;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
+		rgba(0, 0, 0, 0.75);
+	width:45%;
+	background-color: transparent;
+	margin-left: 238px;
+	
+	
+}
+.buttonsave{
+	
+    float: right;
+    background: none;
+    border: none;
+}
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}

@@ -1,4 +1,4 @@
-myApp.controller('signinController', function($scope, $state,refreshTokenService) 
+myApp.controller('signinController', function($scope, $state,signinService) 
 		{
 	console.log("inside the controller");
 	$scope.userLogin = function() 

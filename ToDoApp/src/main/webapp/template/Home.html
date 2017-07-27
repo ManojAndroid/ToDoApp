@@ -62,28 +62,27 @@
 					
 					
 						<div id="card">
-							<div id="headercard">
-								<input type="text" style="width: 100%; padding: 20px;cursor:default; height: 40px; outline: none; border: none; font-style: callibri"
-									placeholder="Title" contenteditable="true" ng-click="noteInput()" aria-multiline="true" spellcheck="true">
-							     </div>
-							<div id="contentcard"  contenteditable="true" aria-multiline="true"
-								spellcheck="true" ng-hide="myVar"> &nbsp &nbsp  Take Notes......
-							</div>
-							<div id="footer">
+						
+							<div id="headercard" ng-show="myVarheader" >
+								<input type="text" placeholder="Title" ng-model="title" style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
+						    </div>
+						    
+							<div id="contentcard" contenteditable1  contenteditable="true"  placeholder="Take a note......" ng-model="description" ng-click="noteInput()"> </div>
+							
+							<div id="footer"  ng-show="myVarfooter" >
 							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
 							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
 							<img alt="reminder" src="images/color.png">&nbsp &nbsp &nbsp &nbsp
 							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
 							<img alt="reminder" src="images/archive.svg">&nbsp &nbsp &nbsp &nbsp
 							<img alt="reminder" src="images/list.png">&nbsp &nbsp &nbsp &nbsp
-							<input type="button" class="buttonsave" value="Done">
+							<input type="button" ng-click="hideTitle()" class="buttonsave" value="Done">
 							</div>
 						</div>
 					</div>
 				</div>
                   
 			</div>
-
 		</div>
 	</div>
 
@@ -92,6 +91,7 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
+	
 	</script>
 </div>
 <!-- /#wrapper -->
