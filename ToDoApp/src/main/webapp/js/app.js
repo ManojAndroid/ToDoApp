@@ -36,16 +36,16 @@ myApp.directive('contenteditable1', function() {
 				return;
 			}
 			ngModel.$render = function() {
-				return element.html(ngModel.$viewValue);
+				return element.text(ngModel.$viewValue);
 			};
 			element.bind('blur', function() {
-				if (ngModel.$viewValue !== $.trim(element.html())) {
+				if (ngModel.$viewValue !== $.trim(element.text())) {
 					return scope.$apply(read);
 				}
 			});
 			return read = function() {
 				console.log("read()");
-				return ngModel.$setViewValue($.trim(element.html()));
+				return ngModel.$setViewValue($.trim(element.text()));
 			};
 		}
 	};

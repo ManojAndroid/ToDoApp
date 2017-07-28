@@ -24,6 +24,7 @@
 }
 
 #header {
+	
 	background-color: #fb0;
 	border-color: 1 px solid #fb0;
 }
@@ -121,10 +122,12 @@
 #headercard {
 	
 	outline: none;
+	border-bottom:1px solid #c3c6cc;
 	
 }
 
 #footer {
+	border-top:1px solid #c3c6cc;
 	height: 50px;
 	outline: none;
 	padding-top: 3%;
@@ -139,6 +142,52 @@
 }
 
 #card {
+	
+	margin-top:10%;
+	opacity: 0.95;
+	alpha: 0.65;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
+		rgba(0, 0, 0, 0.25);
+	width:45%;
+	background-color: transparent;
+	margin-left: 238px;
+	
+	
+}
+.buttonsave{
+	
+    float: right;
+    background: none;
+    border: none;
+}
+
+
+
+/* **********************************gridview *******************************/
+/* title card csss */
+
+#headercardgrid {
+	
+	outline: none;
+	border-bottom:1px solid #c3c6cc;
+	
+}
+
+#footergrid {
+	border-top:1px solid #c3c6cc;
+	outline: none;
+	padding-top: 3%;
+}
+
+#contentcardgrid {
+    max-height: inherit;
+	outline: none;
+	padding-top:5%;
+	padding-left: 4%;
+	padding-bottom: 4%;
+}
+
+#cardgrid {
 	
 	margin-top:10%;
 	opacity: 0.95;

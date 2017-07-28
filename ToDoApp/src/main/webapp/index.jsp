@@ -28,6 +28,6 @@
 <script type="text/javascript" src="js/service/signupService.js"></script>
 <script type="text/javascript" src="js/controller/homeController.js"></script>
 <script type="text/javascript" src="js/service/homeService.js"></script>
-<script type="text/javascript" src="js/home.js"></script>
+
 
 </html>

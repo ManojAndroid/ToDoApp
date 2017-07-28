@@ -6,6 +6,16 @@ myApp.controller('homeController', function($scope, $state, homeService) {
 		$scope.myVarfooter = true;
 
 	}
+	$scope.getNote=function()
+	{
+    var records=  homeService.noteGetAll();
+    records.then(function(resp)
+    {
+    	console.log(resp.data);
+    	$scope.records=resp.data.reverse();
+    	
+    });
+	}
 
 	$scope.hideTitle = function() {
 
@@ -18,16 +28,14 @@ myApp.controller('homeController', function($scope, $state, homeService) {
 		;
 		console.log(note);
 		$scope.title = "";
-		$('#contentcard').html("");
+		$('#contentcard').text("");
 
 		var httpObj = homeService.noteCreate(note);
-
-		httpObj.then(function(response) {
-			if (response.status == 200) {
+		httpObj.then(function(response)
+				{
+			if (response.status == 200) 
+			{
 				console.log(response.data);
-
-				/*$scope.records=homeService.noteGetAll().then(function());*/
-
 				console.log(records);
 				
 			} else {
@@ -37,6 +45,7 @@ myApp.controller('homeController', function($scope, $state, homeService) {
 			}
 
 		});
-
+		
 	};
+	$scope.getNote();
 });

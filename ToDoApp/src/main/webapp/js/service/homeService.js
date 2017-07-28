@@ -28,7 +28,6 @@ myApp.service('homeService', function($http) {
 		return $http({
 			url : "rest/getlist",
 			method : "GET",
-			data : notedata,
 			headers: {'accToken': localStorage.getItem("accesstoken")}
 			
 		})
