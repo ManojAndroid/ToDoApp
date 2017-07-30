@@ -10,7 +10,7 @@ myApp.service('homeService', function($http) {
 			
 		})
 	};
-	
+	/***************Note Update******************/
 	
 	this.noteUpdate = function(notedata) {
 		return $http({
@@ -21,6 +21,22 @@ myApp.service('homeService', function($http) {
 			
 		})
 	};
+	
+	
+	/***************Note Delete******************/
+	
+	
+	this.noteDelete = function(taskid) {
+		return $http({
+			url : "rest/tododelete",
+			method : "put",
+			data : taskid,
+			headers: {'accToken': localStorage.getItem("accesstoken")}
+			
+		})
+	};
+	
+	
 	
 	
 	this.noteGetAll = function() 

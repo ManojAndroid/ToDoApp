@@ -18,6 +18,7 @@
 	src="bower_components/angular/angular.min.js"></script>
 <script type="text/javascript"
 	src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 
 <script type="text/javascript"
 	src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

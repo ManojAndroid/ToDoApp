@@ -1,4 +1,4 @@
-var myApp = angular.module('toDoApp', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+var myApp = angular.module('toDoApp', ['ui.router','ngSanitize']).config(function ($stateProvider, $urlRouterProvider) {
 	
 	console.log("inside APPPJS");
 	
@@ -36,16 +36,16 @@ myApp.directive('contenteditable1', function() {
 				return;
 			}
 			ngModel.$render = function() {
-				return element.text(ngModel.$viewValue);
+				return element.html(ngModel.$viewValue);
 			};
 			element.bind('blur', function() {
-				if (ngModel.$viewValue !== $.trim(element.text())) {
+				if (ngModel.$viewValue !== $.trim(element.html())) {
 					return scope.$apply(read);
 				}
 			});
 			return read = function() {
 				console.log("read()");
-				return ngModel.$setViewValue($.trim(element.text()));
+				return ngModel.$setViewValue($.trim(element.html()));
 			};
 		}
 	};

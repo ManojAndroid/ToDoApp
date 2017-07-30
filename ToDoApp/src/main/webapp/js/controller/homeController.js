@@ -1,11 +1,31 @@
 myApp.controller('homeController', function($scope, $state, homeService) {
 	console.log("insidehomecontroller");
-	$scope.noteInput = function() {
+	
+	
+	
+	
+	
+	
+	$scope.noteInput = function()
+	{
 
 		$scope.myVarheader = true;
 		$scope.myVarfooter = true;
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ /**************get All Notes************************/
 	$scope.getNote=function()
 	{
     var records=  homeService.noteGetAll();
@@ -16,11 +36,48 @@ myApp.controller('homeController', function($scope, $state, homeService) {
     	
     });
 	}
+	
 
 	$scope.hideTitle = function() {
 
 		$scope.myVarheader = !$scope.myVarheader;
 		$scope.myVarfooter = !$scope.myVarfooter;
+		
+		
+		/********************Note Delete**************/
+		
+$scope.deleteNote=function(taskid)
+	{
+		
+		var httpObj = homeService.noteDelete(note);
+		httpObj.then(function(response)
+				{
+			if (response.status == 200) 
+			{
+				console.log(response.data);
+				console.log(records);
+				
+			} else {
+				console.log(" note Creation Faild!!");
+				console.log(response.data.status);
+
+			}
+
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		var note = {};
 		note.title = $scope.title;

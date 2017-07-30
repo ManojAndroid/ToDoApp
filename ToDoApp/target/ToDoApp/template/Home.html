@@ -23,7 +23,7 @@
 				<li><a href=""><span> <img src="images/grid.svg"></span></a></li>
 				<li><a href=""><span> <img src="images/refresh.svg"alt="Refresh"></span></a></li>
 				<li><a href=""><span> <img src="images/list.svg"alt="List"></span></a></li>
-				<li><a href=""><span> <img src="images/grid.svg"></span></a></li>
+				<li><a href=""><span> <img src="images/Logout .png"></span></a></li>
 			</ul>
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
@@ -62,28 +62,50 @@
 					
 					
 						<div id="card">
-							<div id="headercard">
-								<input type="text" style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;
-									placeholder="Title" contenteditable="true"   ng-show="myVarheader">
-							     </div>
-							<div id="contentcard"  contenteditable="true"
-								spellcheck="true" ng-click="noteInput()"> &nbsp &nbsp  Take Notes......
-							</div>
-							<div id="footer"  ng-show="myVarfooter">
-							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
-							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
-							<img alt="reminder" src="images/color.png">&nbsp &nbsp &nbsp &nbsp
-							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
-							<img alt="reminder" src="images/archive.svg">&nbsp &nbsp &nbsp &nbsp
-							<img alt="reminder" src="images/list.png">&nbsp &nbsp &nbsp &nbsp
+						
+							<div id="headercard" ng-show="myVarheader" >
+								<input type="text" placeholder="Title" ng-model="title" style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
+						    </div>
+						    
+							<div id="contentcard" contenteditable1  contenteditable="true"  placeholder="Take a note......" ng-model="description" ng-click="noteInput()"> </div>
+							
+							<div id="footer"  ng-show="myVarfooter" >
+							<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
+						    <img alt="color" src="images/color.png">&nbsp &nbsp &nbsp &nbsp<img alt="reminder" src="images/remindericon.svg">&nbsp &nbsp &nbsp &nbsp
+							<img alt="archive" src="images/archive.svg">&nbsp &nbsp &nbsp &nbsp<img alt="reminder" src="images/list.png">&nbsp &nbsp &nbsp &nbsp
 							<input type="button" ng-click="hideTitle()" class="buttonsave" value="Done">
 							</div>
 						</div>
+							<!------------------------- List view --------------------->
+						 <div  ng-repeat="x in records" id="card" >
+							
+								<div id="contentcard" ng-bind-html="x.title"><font size="5px" color="black" ></font></div>
+								<div  id="contentcard" ng-bind-html="x.description"></div>
+								<div id="footer">
+								<input type="button" ng-click="editNote()" class="buttonsave" value="editNote">
+								</div>
+						</div> 
+
+							<!------------------------- grid view --------------------->
+                         <!--  <div  ng-repeat="x in records" id="cardgrid" >
+							
+								<div id="contentcardgrid" ><font size="5px" color="black">{{x.title}}</font></div>
+								<div  id="contentcardgrid">{{x.description}}<div>
+								<div id="footer">
+								<input type="button" ng-click="editNote()" class="buttonsave" value="editNote">
+								</div>
+						</div>  -->
+
+
+
+
+
+
+
 					</div>
 				</div>
                   
 			</div>
-
 		</div>
 	</div>
 
@@ -92,18 +114,7 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
-		$scope.noteInput = function() {
-
-			$scope.myVarheader = true;
-			$scope.myVarfooter = true;
-
-		}
-		$scope.hideTitle = function() {
-
-			$scope.myVarheader = false;
-			$scope.myVarfooter = false;
-
-		}
+	
 	</script>
 </div>
 <!-- /#wrapper -->
