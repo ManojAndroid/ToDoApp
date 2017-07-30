@@ -14,16 +14,7 @@ myApp.controller('homeController', function($scope, $state, homeService) {
 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
  /**************get All Notes************************/
 	$scope.getNote=function()
@@ -36,20 +27,15 @@ myApp.controller('homeController', function($scope, $state, homeService) {
     	
     });
 	}
+	/********************Note Delete**************/
 	
-
-	$scope.hideTitle = function() {
-
-		$scope.myVarheader = !$scope.myVarheader;
-		$scope.myVarfooter = !$scope.myVarfooter;
-		
-		
-		/********************Note Delete**************/
-		
-$scope.deleteNote=function(taskid)
+	
+	$scope.deleteNote=function(taskid)
 	{
+      console.log("inside delete method")
+		console.log("note id"+taskid);
 		
-		var httpObj = homeService.noteDelete(note);
+		var httpObj = homeService.noteDelete(taskid);
 		httpObj.then(function(response)
 				{
 			if (response.status == 200) 
@@ -62,30 +48,27 @@ $scope.deleteNote=function(taskid)
 				console.log(response.data.status);
 
 			}
+				
 
 		});
+	}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+	
+
+	$scope.hideTitle = function() {
+
+		$scope.myVarheader = !$scope.myVarheader;
+		$scope.myVarfooter = !$scope.myVarfooter;
 		
 
 		var note = {};
 		note.title = $scope.title;
 		note.description = $scope.description;
-		;
 		console.log(note);
 		$scope.title = "";
 		$('#contentcard').text("");
+		
 
 		var httpObj = homeService.noteCreate(note);
 		httpObj.then(function(response)

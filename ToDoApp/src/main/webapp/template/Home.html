@@ -77,12 +77,12 @@
 							</div>
 						</div>
 							<!------------------------- List view --------------------->
-					  <div  ng-repeat="x in records" id="card" ng-switch-default > 
+					  <div  ng-repeat="x in records" ng-mouseover= id="card" ng-switch-default > 
 							
 								<font size="5px" color="black"><div id="contentcard" ng-bind-html="x.title"></div></font>
 								<div  id="contentcard" ng-bind-html="x.description"></div>
 								<div id="footer">
-								<input type="button" ng-click="deleteNote(x.id)" class="buttonsave" value="editNote">
+								<input type="button" ng-click="deleteNote(x.id)" class="buttonsave" value="deleteNote">
 								</div>
 						</div>  
 
@@ -93,6 +93,10 @@
 							 	 <div class="col-lg-4" id="cardgrid"> 
 								<font size="5px" color="black"><div id="contentcardgrid" ng-bind-html="x.title"></div></font>
 								<div  id="contentcardgrid" ng-bind-html="x.description"></div> 
+								
+								<div id="footer">
+								<input type="button" ng-click="deleteNote(x.id)" class="buttonsave" value="deleteNote">
+								</div>
 								</div>
 						</div>  
 					
