@@ -13,7 +13,7 @@ myApp.service('homeService', function($http) {
 	
 	/***************Note Update******************/
 	
-	this.noteUpdate = function(notedata) {
+	this.noteUpdate = function(taskid) {
 		return $http({
 			url : "rest/todoupdate",
 			method : "put",
@@ -22,12 +22,23 @@ myApp.service('homeService', function($http) {
 			
 		})
 	};
+	/***************user Log Out******************/
 	
 	
+	this.logoutUser = function() {
+		
+		return $http({
+			url : "rest/logout",
+			method : "post",
+			headers: {'accToken': localStorage.getItem("accesstoken")}
+			
+		})
+	};
 	/***************Note Delete******************/
 	
 	
-	this.noteDelete = function(taskid) {
+	this.noteDelete = function(taskid)
+	{
 		return $http({
 			url : "rest/tododelete/"+taskid,
 			method : "DELETE",

@@ -13,6 +13,13 @@
 	border-color: 1 px solid #fb0;
 	
 }
+
+
+
+img {
+    vertical-align: middle;
+    margin-left: 5%;
+}
 /* div placeholder */
 [contenteditable=true]:empty:before {
   content:attr(placeholder);
@@ -128,23 +135,30 @@
 }
 
 #footer {
-	border-top:1px solid #c3c6cc;
 	height: 50px;
 	outline: none;
 	padding-top: 3%;
 }
 
+#footergrid {
+	height: 50px;
+	outline: none;
+	padding-top:13%;
+}
+
 #contentcard {
     max-height: inherit;
 	outline: none;
-	padding-top:5%;
 	padding-left: 4%;
 	padding-bottom: 4%;
+	padding-top: 3%;
+	 word-break:break-all;
+	
 }
 
 #card {
 	
-	margin-top:10%;
+	margin-top:7%;
 	opacity: 0.95;
 	alpha: 0.65;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
@@ -175,7 +189,7 @@
 }
 
 #footergrid {
-	border-top:1px solid #c3c6cc;
+	
 	outline: none;
 	padding-top: 3%;
 }
@@ -183,9 +197,9 @@
 #contentcardgrid {
     max-height: inherit;
 	outline: none;
-	padding-top:5%;
 	padding-left: 4%;
 	padding-bottom: 4%;
+	 word-break:break-all;
 }
 
 #cardgrid 
@@ -200,10 +214,73 @@
 	background-color: transparent;
 	
 }
+.pindiv{
+	 float: right;
+}
 .buttonsave{
 	
     float: right;
     background: none;
     border: none;
+}
+#profile
+{
+    width: 35px;
+    margin-top: 9px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+#profilepp {
+    width: 350px;
+    height: 450%;
+    margin-right: 14%;
+}
+#profileppright
+{
+    float: right;
+    margin-top: -134px;
+    width: 60%;
+    height: 77%;
+    padding-top:6%;
+    padding-left: 10%;
+}
+#profilepupimag
+{
+    width: 120px;
+    margin-top: 9px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+#profilefooter
+{
+	background-color: #bcb8b5;
+    border-top: 1px solid #666463;
+    height: 32%;
+    margin-top: 5%;
+    padding-top: 2%;
+	
+}
+#profsignoutbtn
+{
+	float: right;
+}
+#profilrbtn
+{
+    margin-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#rounddiv {
+      border-radius: 75px;
+    background: #90948a;
+    padding: 37px;
+    width: 100px;
+    height: 100px;
+    margin-left: 5%;
+    margin-top:4%;
+    text-transform: uppercase;
+    padding-top: 5%;
+    padding-left:9%;
 }
 

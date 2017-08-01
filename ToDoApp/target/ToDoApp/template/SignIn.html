@@ -4,8 +4,9 @@
 			<div class="headtab">
 				<h3>User SignIn Page</h3>
 			</div>
+			
 			<ul>
-				 <li><input type="email" name="email" class="txtuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>
+				 <li  class="col-sm-4"><input type="email" name="email" class="txtuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>
 			
 			<span style="color:Red" ng-show="signin.email.$error.required"> Enter Email! </span>
 				<span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid  Email!!</span>

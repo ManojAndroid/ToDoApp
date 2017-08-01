@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.toDoApp.JSONResponse.Response;
@@ -27,7 +27,7 @@ public class LogOutController {
 	 * @return 
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/rest/logout")
+	@PostMapping(value = "/rest/logout" )
 	public ResponseEntity<Response> logOut( HttpServletRequest request,
 			HttpServletResponse response) throws Exception 
 	{
