@@ -6,10 +6,10 @@
 			</div>
 			
 			<ul>
-				 <li  class="col-sm-4"><input type="email" name="email" class="txtuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>
+				 <li><input type="email" name="email" class="txtuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>
 			
-			<span style="color:Red" ng-show="signin.email.$error.required"> Enter Email! </span>
-				<span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid  Email!!</span>
+			    <span style="color:Red" ng-show="signin.email.$error.required"> Enter Email! </span>
+				<li><span style="color:Red" ng-show="signin.email.$dirty&&signin.email.$error.pattern"> *Enter Valid  Email!!</span></li>
 				
 				<li><input type="password" name="password" class="txtpass" placeholder="User password"ng-model="password"></li>
 			

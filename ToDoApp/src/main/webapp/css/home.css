@@ -7,23 +7,19 @@
 	transition: all 0.5s ease;
 }
 
-#container
-{
+#container {
 	height: 70px;
 	border-color: 1 px solid #fb0;
-	
 }
 
-
-
 img {
-    vertical-align: middle;
-    margin-left: 5%;
+	vertical-align: middle;
+	margin-left: 5%;
 }
 /* div placeholder */
 [contenteditable=true]:empty:before {
-  content:attr(placeholder);
-  color:gray;
+	content: attr(placeholder);
+	color: gray;
 }
 
 #wrapper.toggled {
@@ -31,7 +27,6 @@ img {
 }
 
 #header {
-	
 	background-color: #fb0;
 	border-color: 1 px solid #fb0;
 }
@@ -60,9 +55,10 @@ img {
 #wrapper.toggled #sidebar-wrapper {
 	width: 250px;
 }
+
 #page-content-wrapper {
 	padding: 15px;
-    padding-left: 14%;
+	padding-left: 14%;
 	width: 100%;
 }
 
@@ -72,7 +68,6 @@ img {
 }
 
 /* Sidebar Styles */
-
 .sidebar-nav {
 	position: absolute;
 	top: 0;
@@ -98,18 +93,20 @@ img {
 	color: #fff;
 	text-decoration: none;
 }
-#navbar
-{
+
+#navbar {
 	margin-top: 10px;
 }
 
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
 	text-decoration: none;
 }
-#p{
-    font-size: -webkit-xxx-large;
-    color: black;
-    }
+
+#p {
+	font-size: -webkit-xxx-large;
+	color: black;
+}
+
 .sidebar-nav>.sidebar-brand {
 	height: 65px;
 	font-size: 18px;
@@ -126,12 +123,9 @@ img {
 }
 
 /* title card csss */
-
 #headercard {
-	
 	outline: none;
-	border-bottom:1px solid #c3c6cc;
-	
+	border-bottom: 1px solid #c3c6cc;
 }
 
 #footer {
@@ -143,144 +137,144 @@ img {
 #footergrid {
 	height: 50px;
 	outline: none;
-	padding-top:13%;
+	padding-top: 13%;
 }
 
 #contentcard {
-    max-height: inherit;
+	max-height: inherit;
 	outline: none;
 	padding-left: 4%;
 	padding-bottom: 4%;
 	padding-top: 3%;
-	 word-break:break-all;
-	
+	word-break: break-all;
 }
 
 #card {
-	
-	margin-top:7%;
+	margin-top: 7%;
 	opacity: 0.95;
 	alpha: 0.65;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 		rgba(0, 0, 0, 0.25);
-	width:50%;
+	width: 50%;
 	background-color: transparent;
-	margin-left:120px;
-	
-	
-}
-.buttonsave{
-	
-    float: right;
-    background: none;
-    border: none;
+	margin-left: 120px;
 }
 
-
+.buttonsave {
+	float: right;
+	background: none;
+	border: none;
+}
 
 /* **********************************gridview *******************************/
 /* title card csss */
-
 #headercardgrid {
-	
 	outline: none;
-	border-bottom:1px solid #c3c6cc;
-	
+	border-bottom: 1px solid #c3c6cc;
 }
 
 #footergrid {
-	
 	outline: none;
 	padding-top: 3%;
 }
 
 #contentcardgrid {
-    max-height: inherit;
+	max-height: inherit;
 	outline: none;
 	padding-left: 4%;
 	padding-bottom: 4%;
-	 word-break:break-all;
+	word-break: break-all;
 }
 
-#cardgrid 
-{
-	margin-top:4%;
-	margin-right:4%;
+#cardgrid {
+	margin-top: 4%;
+	margin-right: 4%;
 	opacity: 0.95;
 	alpha: 0.65;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 		rgba(0, 0, 0, 0.25);
-	width:22%;
+	width: 22%;
 	background-color: transparent;
-	
 }
-.pindiv{
-	 float: right;
+
+.pindiv {
+	float: right;
 }
-.buttonsave{
-	
-    float: right;
-    background: none;
-    border: none;
+
+.buttonsave {
+	float: right;
+	background: none;
+	border: none;
 }
-#profile
-{
-    width: 35px;
-    margin-top: 9px;
-    margin-right: 20px;
-    border-radius: 20px;
+
+#profile {
+	width: 35px;
+	margin-top: 9px;
+	margin-right: 20px;
+	border-radius: 20px;
 }
 
 #profilepp {
-    width: 350px;
-    height: 450%;
-    margin-right: 14%;
-}
-#profileppright
-{
-    float: right;
-    margin-top: -134px;
-    width: 60%;
-    height: 77%;
-    padding-top:6%;
-    padding-left: 10%;
-}
-#profilepupimag
-{
-    width: 120px;
-    margin-top: 9px;
-    margin-right: 20px;
-    border-radius: 20px;
-}
-#profilefooter
-{
-	background-color: #bcb8b5;
-    border-top: 1px solid #666463;
-    height: 32%;
-    margin-top: 5%;
-    padding-top: 2%;
-	
-}
-#profsignoutbtn
-{
-	float: right;
-}
-#profilrbtn
-{
-    margin-top: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-#rounddiv {
-      border-radius: 75px;
-    background: #90948a;
-    padding: 37px;
-    width: 100px;
-    height: 100px;
-    margin-left: 5%;
-    margin-top:4%;
-    text-transform: uppercase;
-    padding-top: 5%;
-    padding-left:9%;
+	width: 350px;
+	height: 450%;
+	margin-right: 14%;
 }
 
+#profileppright {
+	float: right;
+	margin-top: -134px;
+	width: 60%;
+	height: 77%;
+	padding-top: 6%;
+	padding-left: 10%;
+}
+
+#profilepupimag {
+	width: 120px;
+	margin-top: 9px;
+	margin-right: 20px;
+	border-radius: 20px;
+}
+
+#profilefooter {
+	background-color: #bcb8b5;
+	border-top: 1px solid #666463;
+	height: 32%;
+	margin-top: 7%;
+	padding-top: 2%;
+}
+
+#profsignoutbtn {
+	float: right;
+}
+
+#profilrbtn {
+	margin-top: 12px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#rounddiv {
+	border-radius: 75px;
+	background: #90948a;
+	padding: 37px;
+	width: 100px;
+	height: 100px;
+	margin-left: 5%;
+	margin-top: 4%;
+	text-transform: uppercase;
+	padding-top: 5%;
+	padding-left: 9%;
+}
+
+#rounddivsmall {
+	border-radius: 27px;
+	background: #90948a;
+	width: 37px;
+	height: 37px;
+	margin-right: 10px;
+	margin-top: 19%;
+	text-transform: uppercase;
+	padding-top: 5%;
+	padding-left:17%;
+}

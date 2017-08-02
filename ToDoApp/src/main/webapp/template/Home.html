@@ -25,9 +25,11 @@
 				 <li>
 				<!-- ------------ PROFILE POPUP -------------------->
 				 <div class="dropdown btn-group">
-						<img alt="list" src="images/usericon.png" id="profile"data-toggle="dropdown">
-						<div class="
-											dropdown-menu" id="profilepp">
+						<!-- <img alt="list" src="images/usericon.png" id="profile"data-toggle="dropdown"> -->
+						<div id="rounddivsmall" data-toggle="dropdown">
+									<font size="5">{{firstletter}}</font>
+								</div>
+						<div class="dropdown-menu" id="profilepp">
 							<div>
 								<div id="rounddiv">
 									<font size="100px">{{firstletter}}</font>
@@ -54,11 +56,11 @@
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..."id="searchicon" name="search" value="">
+					<input type="text" class="form-control" placeholder="Search..."id="searchicon" ng-model="searchNote"   >
 					<div class="input-group-btn">
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span>
 						</button>
-					</div>
+					</div> 
 				</div>
 			</form>
 		</div>
@@ -107,17 +109,12 @@
 						
 						<!------------------------- List view --------------------->
 						
-						<div ng-repeat="x in records" ng-mouseover="showimg=true" ng-mouseleave="showimg=false">
+						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true" ng-mouseleave="showimg=false">
+						
 							<div id="card" ng-show="listview">
-								<!-- <div  ng-show="showimg">
-									<div>
-										<img alt="" src="images/icons8-Delete-20.png"> 
-										<img alt="" src="images/icons8-Pin.png" class="pindiv">
-									</div>
-								</div> -->
 								<font size="5px" color="black">
-								<div id="contentcard"ng-bind-html="x.title" ></div></font>
-								<div id="contentcard" ng-bind-html="x.description"></div>
+								<div id="contentcard"ng-bind-html="x.title"  ng-click="openModal(x)"></div></font>
+								<div id="contentcard" ng-bind-html="x.description" ng-click="openModal(x)"></div>
 								<div id="footer">
 									<div ng-show="showimg">
 										<img alt="reminder" src="images/remindericon.svg">
@@ -142,23 +139,18 @@
 						<!-- ----------------------- grid view ------------------- -->
 
 
-						<div ng-repeat="x in records" ng-mouseover="showimg=true"
+						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true"
 							ng-mouseleave="showimg=false">
 							<div class="col-lg-4" id="cardgrid" ng-show="gridview">
-								<!-- <div  ng-show="showimg">
-									<img alt="" src="images/icons8-Delete-20.png"> <img
-										alt="" src="images/icons8-Pin.png" class="pindiv">
-								</div>
- -->
-								<font size="5px" color="black"><div id="contentcardgrid"ng-bind-html="x.title"></div></font>
-								<div id="contentcardgrid" ng-bind-html="x.description"></div>
+								<font size="5px" color="black"><div id="contentcardgrid"ng-bind-html="x.title" ng-click="openModal(x)"></div></font>
+								<div id="contentcardgrid" ng-bind-html="x.description" ng-click="openModal(x)"></div>
 								<div id="footergrid">
 									<div ng-show="showimg">
-										<img alt="reminder" src="images/remindericon.svg"> <img
-											alt="reminder" src="images/remindericon.svg"> <img
-											alt="color" src="images/color.png"> <img alt="reminder"
-											src="images/remindericon.svg"> <img alt="archive"
-											src="images/archive.svg">
+										<img alt="reminder" src="images/remindericon.svg">
+									    <img alt="reminder" src="images/remindericon.svg">
+									    <img alt="color" src="images/color.png"> 
+									    <img alt="reminder" src="images/remindericon.svg">
+									    <img alt="archive"src="images/archive.svg">
 										<div class="dropdown btn-group">
 											<img alt="reminder" src="images/list.png"
 												data-toggle="dropdown">
@@ -172,7 +164,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 

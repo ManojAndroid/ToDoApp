@@ -5,9 +5,10 @@
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 				aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
 			</button>
 		</div>
 
@@ -18,21 +19,48 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href=""><span> <img src="images/refresh.svg"alt="Refresh"></span></a></li>
-				<li><a href=""><img src="images/list.svg"alt="List" ng-click="showDiv = !showDiv"></a></li>
-				<li><a href=""> <img src="images/grid.svg"  ></a></li>
-				<li><a href=""><span> <img src="images/refresh.svg"alt="Refresh"></span></a></li>
-				<li><a href=""><span> <img src="images/list.svg"alt="List"></span></a></li>
-				<li><a href=""><span> <img src="images/Logout .png"></span></a></li>
+				<li><a href=""> <img src="images/refresh.svg"alt="Refresh"></a></li>
+				<li><a ng-click="showlist()" ng-hide="listview1"> <img src="images/list.svg" alt="list view"  ></a></li>
+				<li><a ng-click="showgrid()" ng-hide="gridview1"> <img src="images/grid.svg"  ></a></li>
+				 <li>
+				<!-- ------------ PROFILE POPUP -------------------->
+				 <div class="dropdown btn-group">
+						<!-- <img alt="list" src="images/usericon.png" id="profile"data-toggle="dropdown"> -->
+						<div id="rounddivsmall" data-toggle="dropdown">
+									<font size="5">{{firstletter}}</font>
+								</div>
+						<div class="dropdown-menu" id="profilepp">
+							<div>
+								<div id="rounddiv">
+									<font size="100px">{{firstletter}}</font>
+								</div>
+							</div>
+							<div id="profileppright">
+								<h4>
+									<font color="#0e0e0f">{{name}}</font>
+								</h4>
+								<h6>{{email}}</h6>
+								<a href="#">Google+ Profile–Privacy</a> <br>
+								<button class="btn btn-primary">my Account</button>
+							</div>
+							<div id="profilefooter">
+								<div id="profilrbtn">
+									<button>add Account</button>
+									<button id="profsignoutbtn" ng-click="logout()">SignOut</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				 </li>
 			</ul>
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..."id="searchicon" name="search" value="">
+					<input type="text" class="form-control" placeholder="Search..."id="searchicon" ng-model="searchNote"   >
 					<div class="input-group-btn">
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span>
 						</button>
-					</div>
+					</div> 
 				</div>
 			</form>
 		</div>
@@ -46,94 +74,111 @@
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand"><br></li>
 				<li class="sidebar-brand"></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/noteicon.png"></span>  Notes</a></li>
+				<li><a href=""><span aria-hidden="true"><img src="images/noteicon.png"></span> Notes</a></li>
 				<li><a href=""><span aria-hidden="true"><img src="images/remindericon.svg"></span> Reminders</a></li>
 				<li><a href=""><span aria-hidden="true"><img src="images/archive.svg"></span> Archive</a></li>
 				<li><a href=""><span aria-hidden="true"><img src="images/icons8-Trash Can-20.png"></span> Trash</a></li>
 			</ul>
 		</div>
+		
 		<!-- /#sidebar-wrapper -->
 		<!-- Page Content -->
-		<div id="page-content-wrapper"  ng-switch="showDiv">
+		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
 						<div id="card">
-							<div id="headercard" ng-show="myVarheader" >
+							<div id="headercard" ng-show="myVarheader">
 								<input type="text" placeholder="Title" ng-model="title" style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
-						    </div>
-							<div id="contentcard" contenteditable1  contenteditable="true"  placeholder="Take a note......" ng-model="description" ng-click="noteInput()"> </div>
-							<div id="footer"  ng-show="myVarfooter" >
-							<img alt="reminder" src="images/remindericon.svg">
-							<img alt="reminder" src="images/remindericon.svg">
-						    <img alt="color" src="images/color.png">
-						    <img alt="reminder" src="images/remindericon.svg">
-							<img alt="archive" src="images/archive.svg">
-							<img alt="reminder" src="images/list.png">
-							<input type="button" ng-click="hideTitle()" class="buttonsave" value="Done">
-						</div>
-						</div>
-							<!------------------------- List view --------------------->
-					  <div  ng-repeat="x in records" id="card" ng-switch-default ng-mouseover="listview=true" ng-mouseleave="listview=false"> 
-							<div ng-show="listview" >
-							<div ><img alt="" src="images/icons8-Delete-20.png">
-							<img alt="" src="images/icons8-Pin.png" class="pindiv"></div>
 							</div>
-								<font size="5px" color="black"><div id="contentcard" ng-bind-html="x.title"></div></font>
-								<div  id="contentcard" ng-bind-html="x.description"></div>
-								<div id="footer" >
-								<div ng-show="listview">
+							<div id="contentcard" contenteditable1 contenteditable="true"
+								placeholder="Take a note......" ng-model="description"
+								ng-click="noteInput()"></div>
+							<div id="footer" ng-show="myVarfooter">
+							<div>
 								<img alt="reminder" src="images/remindericon.svg">
-								<img alt="reminder" src="images/remindericon.svg">
-								<img alt="color" src="images/color.png"> 
-								<img alt="reminder"src="images/remindericon.svg">
-								<img alt="archive" src="images/archive.svg">
-									 <div class="dropdown btn-group">
-										<img alt="reminder" src="images/list.png" data-toggle="dropdown">
-										<ul class="dropdown-menu">
-											<li><a ng-click="deleteNote(x.id)">Delete Note</a> </li>
-											<li><a>add label</a></li>
-											<li><a>add drawing</a></li>
-										</ul>
-									</div> 
-								</div>
+								 <img alt="reminder" src="images/remindericon.svg"> 
+								 <img alt="color" src="images/color.png">
+								 <img alt="reminder"src="images/remindericon.svg">
+								 <img alt="archive"src="images/archive.svg">
+								 <img alt="reminder"src="images/list.png"> 
+								 <input type="button"ng-click="hideTitle()" class="buttonsave" value="Done">
 							</div>
-						</div>  
-
-							<!-- ----------------------- grid view ------------------- -->
-
-
-						<div ng-repeat="x in records" ng-switch-when=true ng-mouseover="listview=true" ng-mouseleave="listview=false">
-							<div class="col-lg-4" id="cardgrid">
-							<div ng-show="listview" ><div >
-							<img alt="" src="images/icons8-Delete-20.png">
-							<img alt="" src="images/icons8-Pin.png" class="pindiv"></div>
 							</div>
-								<font size="5px" color="black"><div id="contentcardgrid" ng-bind-html="x.title"></div></font>
-								<div id="contentcardgrid" ng-bind-html="x.description"></div>
+						</div>
+						
+						<!------------------------- List view --------------------->
+						
+						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true" ng-mouseleave="showimg=false">
+						
+							<div id="card" ng-show="listview">
+								<!-- <div  ng-show="showimg">
+									<div>
+										<img alt="" src="images/icons8-Delete-20.png"> 
+										<img alt="" src="images/icons8-Pin.png" class="pindiv">
+									</div>
+								</div> -->
+								<font size="5px" color="black">
+								<div id="contentcard"ng-bind-html="x.title" >{{x}}</div></font>
+								<div id="contentcard" ng-bind-html="x.description"></div>
 								<div id="footer">
-								<div ng-show="listview">
-									<img alt="reminder" src="images/remindericon.svg">
-									<img alt="reminder" src="images/remindericon.svg"> 
-									<img alt="color" src="images/color.png">
-									<img alt="reminder" src="images/remindericon.svg">
-								    <img alt="archive" src="images/archive.svg">
-									 <div class="dropdown btn-group">
-										<img alt="reminder" src="images/list.png" data-toggle="dropdown">
-										<ul class="dropdown-menu">
-											<li><a ng-click="deleteNote(x.id)">Delete Note</a> </li>
-											<li><a>add label</a></li>
-											<li><a>add drawing</a></li>
-										</ul>
-									</div> 
+									<div ng-show="showimg">
+										<img alt="reminder" src="images/remindericon.svg">
+										 <img alt="reminder" src="images/remindericon.svg"> 
+										 <img alt="color" src="images/color.png">
+										 <img alt="reminder" src="images/remindericon.svg">
+										 <img alt="archive" src="images/archive.svg">
+										<div class="dropdown btn-group">
+											<img alt="list" src="images/list.png"
+												data-toggle="dropdown">
+											<ul class="dropdown-menu">
+												<li><a ng-click="deleteNote(x.id)">Delete Note</a></li>
+												<li><a>add label</a></li>
+												<li><a>add drawing</a></li>
+											</ul>
+										</div>
+									</div>
 								</div>
+							</div>
+						</div>
+						
+						<!-- ----------------------- grid view ------------------- -->
+
+
+						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true"
+							ng-mouseleave="showimg=false">
+							<div class="col-lg-4" id="cardgrid" ng-show="gridview">
+								<!-- <div  ng-show="showimg">
+									<img alt="" src="images/icons8-Delete-20.png"> <img
+										alt="" src="images/icons8-Pin.png" class="pindiv">
+								</div>
+ -->
+								<font size="5px" color="black"><div id="contentcardgrid"ng-bind-html="x.title"></div></font>
+								<div id="contentcardgrid" ng-bind-html="x.description"></div>
+								<div id="footergrid">
+									<div ng-show="showimg">
+										<img alt="reminder" src="images/remindericon.svg"> <img
+											alt="reminder" src="images/remindericon.svg"> <img
+											alt="color" src="images/color.png"> <img alt="reminder"
+											src="images/remindericon.svg"> <img alt="archive"
+											src="images/archive.svg">
+										<div class="dropdown btn-group">
+											<img alt="reminder" src="images/list.png"
+												data-toggle="dropdown">
+											<ul class="dropdown-menu">
+												<li><a ng-click="deleteNote(x.id)">Delete Note</a></li>
+												<li><a>add label</a></li>
+												<li><a>add drawing</a></li>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 
 					</div>
 				</div>
-                  
+
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-var myApp = angular.module('toDoApp', ['ui.router','ngSanitize']).config(function ($stateProvider, $urlRouterProvider) {
+var myApp = angular.module('toDoApp', ['ui.router','ngSanitize','ui.bootstrap']).config(function ($stateProvider, $urlRouterProvider) {
 	
 	console.log("inside APPPJS");
 	
