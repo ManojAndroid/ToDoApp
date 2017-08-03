@@ -13,11 +13,11 @@ myApp.service('homeService', function($http) {
 	
 	/***************Note Update******************/
 	
-	this.noteUpdate = function(taskid) {
+	this.noteUpdate = function(updatenote) {
 		return $http({
 			url : "rest/todoupdate",
 			method : "put",
-			data : notedata,
+			data : updatenote,
 			headers: {'accToken': localStorage.getItem("accesstoken")}
 			
 		})

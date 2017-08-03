@@ -63,10 +63,11 @@ public class ToDoAppController {
 	 * @return {@link ResponseEntity}
 	 */
 	@PutMapping(value = "/rest/todoupdate")
-	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo, @RequestParam("taskid") int taskid,HttpServletRequest request) {
+	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo,HttpServletRequest request) {
 		
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
+		System.out.println("inside todoupdate");
 		try {
 			toDoTaskServices.ToDoUpdateTask(toDo);
 			return new ResponseEntity<Response>(HttpStatus.OK);

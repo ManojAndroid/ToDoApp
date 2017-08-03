@@ -25,7 +25,6 @@
 				 <li>
 				<!-- ------------ PROFILE POPUP -------------------->
 				 <div class="dropdown btn-group">
-						<!-- <img alt="list" src="images/usericon.png" id="profile"data-toggle="dropdown"> -->
 						<div id="rounddivsmall" data-toggle="dropdown">
 									<font size="5">{{firstletter}}</font>
 								</div>
@@ -109,17 +108,29 @@
 						
 						<!------------------------- List view --------------------->
 						
-						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true" ng-mouseleave="showimg=false">
+						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true" ng-mouseleave="showimg=false" >
 						
-							<div id="card" ng-show="listview">
+							<div id="card" ng-show="listview" ng-style="myStyle"  >
 								<font size="5px" color="black">
 								<div id="contentcard"ng-bind-html="x.title"  ng-click="openModal(x)"></div></font>
 								<div id="contentcard" ng-bind-html="x.description" ng-click="openModal(x)"></div>
 								<div id="footer">
 									<div ng-show="showimg">
 										<img alt="reminder" src="images/remindericon.svg">
-										 <img alt="reminder" src="images/remindericon.svg"> 
-										 <img alt="color" src="images/color.png">
+										 <div class="dropdown btn-group">
+											<img alt="list"  src="images/color.png" 
+												data-toggle="dropdown">
+											<div class="dropdown-menu">
+												<div>
+												<input id ="colorbtn" ng-click="myStyle={background:'red'}" style="background-color:red ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd">
+												<input id ="colorbtn" ng-click="myStyle={background:'#31e2d4'}" style="background-color:#31e2d4 ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#e4ed49 ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#98e878'}"  style="background-color:#98e878 ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd "></div>
+											</div>
+										</div>
+										 
 										 <img alt="reminder" src="images/remindericon.svg">
 										 <img alt="archive" src="images/archive.svg">
 										<div class="dropdown btn-group">
@@ -136,19 +147,31 @@
 							</div>
 						</div>
 						
+	
 						<!-- ----------------------- grid view ------------------- -->
 
 
 						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true"
 							ng-mouseleave="showimg=false">
-							<div class="col-lg-4" id="cardgrid" ng-show="gridview">
+							<div class="col-lg-4" id="cardgrid" ng-show="gridview" ng-style="myStyle">
 								<font size="5px" color="black"><div id="contentcardgrid"ng-bind-html="x.title" ng-click="openModal(x)"></div></font>
 								<div id="contentcardgrid" ng-bind-html="x.description" ng-click="openModal(x)"></div>
 								<div id="footergrid">
 									<div ng-show="showimg">
 										<img alt="reminder" src="images/remindericon.svg">
-									    <img alt="reminder" src="images/remindericon.svg">
-									    <img alt="color" src="images/color.png"> 
+									     <div class="dropdown btn-group">
+											<img alt="list"  src="images/color.png" 
+												data-toggle="dropdown">
+											<div class="dropdown-menu">
+												<div>
+												<input id ="colorbtn" ng-click="myStyle={background:'red'}" style="background-color:red ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd">
+												<input id ="colorbtn" ng-click="myStyle={background:'#31e2d4'}" style="background-color:#31e2d4 ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#e4ed49 ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#98e878'}"  style="background-color:#98e878 ">
+												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd "></div>
+											</div>
+										</div>
 									    <img alt="reminder" src="images/remindericon.svg">
 									    <img alt="archive"src="images/archive.svg">
 										<div class="dropdown btn-group">

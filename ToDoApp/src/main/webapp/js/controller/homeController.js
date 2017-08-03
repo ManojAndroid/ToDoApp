@@ -3,10 +3,11 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	console.log("insidehomecontroller");
 
 	/** ********List And GridView Toggeling****** */
-	$scope.listview = true;
-	$scope.gridview = false;
+	   $scope.listview = true;
+	   $scope.gridview = false;
 
-	$scope.showlist = function() {
+	$scope.showlist = function()
+	{
 		$scope.listview = true;
 		$scope.gridview = false;
 		$scope.gridview1 = false;
@@ -92,10 +93,34 @@ myApp.controller('homeController', function($scope, $state, homeService,
 				this.description = x.description;
 				this.user = x.user;
 				console.log("idddddd: "+    this.title);
-				this.update = function() {
+				/** **************Note Update************** */
+				this.update = function() 
+				{
 					var $ctrl = this;
+					var editNotedata={};
+					editNotedata.id=$ctrl.id;
+					editNotedata.title=$ctrl.title;
+					editNotedata.description=$ctrl.description;
+					editNotedata.user=$ctrl.user;
+					var httpObj = homeService.noteUpdate(editNotedata);
+					
+					httpObj.then(function(response) 
+					{
+						if (response.status == 200) 
+						{
+							console.log(response.data);
+							console.log("Note Sucessfullly Updated!!");
+							$state.reload();
+						} else {
+							console.log(" user loggedout faield");
+							console.log(response.data.status);
+
+						}
+					});
+					
 					
 					$uibModalInstance.close();
+					
 				}
 
 			},
@@ -103,27 +128,6 @@ myApp.controller('homeController', function($scope, $state, homeService,
 			size : 'md',
 		});
 	}
-
-	/** **************Note Update************** */
-	$scope.updateNote = function(taskid) {
-
-		console.log("inside update  method")
-		console.log("note id" + taskid);
-
-		var httpObj = homeService.noteUpdate(taskid);
-		httpObj.then(function(response) {
-			if (response.status == 200) {
-				console.log(response.data);
-				console.log(" note Sucessfullly Deleted!!");
-				$scope.getNote();
-			} else {
-				console.log(" note Deletion Faild!!");
-				console.log(response.data.status);
-
-			}
-		});
-	}
-
 	$scope.hideTitle = function() {
 
 		$scope.myVarheader = !$scope.myVarheader;

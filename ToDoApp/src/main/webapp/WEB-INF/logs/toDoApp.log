@@ -7802,3 +7802,33 @@ ERROR	2017-08-02 18:37:36,006	1213559	com.bridgelabz.toDoApp.controller.LoginCon
 ERROR	2017-08-02 18:39:11,617	1309170	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
 ERROR	2017-08-02 18:41:12,331	1429884	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
 ERROR	2017-08-02 18:46:23,459	1741012	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-08-03 10:07:26,729	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-08-03 10:54:00,420	2793691	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-03 10:57:55,490	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-12]	Logging successful!
+ERROR	2017-08-03 11:02:02,553	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-03 11:08:30,058	387505	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-03 11:08:42,281	399728	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	Column 'userid' cannot be null
+ERROR	2017-08-03 11:08:42,282	399729	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-9]	HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+ERROR	2017-08-03 11:10:23,847	501294	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-03 11:17:16,878	914325	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-7]	Logging successful!
+ERROR	2017-08-03 11:19:45,326	1062773	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-08-03 11:54:32,178	3149625	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-03 12:02:17,530	3614977	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-03 12:14:39,928	4357375	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-03 12:21:59,922	4797369	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-03 12:39:50,617	5868064	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-08-03 12:40:20,420	5897867	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-03 12:40:55,863	5933310	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-10]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 12:40:55,863	5933310	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-5]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 12:40:55,864	5933311	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-3]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 12:40:55,865	5933312	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 12:40:55,866	5933313	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 12:40:55,866	5933313	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 12:41:54,015	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-03 12:47:49,009	354994	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-03 13:11:18,887	1764872	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-03 13:25:43,458	2629443	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-7]	Logging successful!
+ERROR	2017-08-03 15:22:14,406	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-6]	Logging successful!
+ERROR	2017-08-03 15:39:39,322	1044916	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-08-03 16:11:19,637	2945231	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging successful!
+ERROR	2017-08-03 16:49:51,895	5257489	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-2]	Logging successful!

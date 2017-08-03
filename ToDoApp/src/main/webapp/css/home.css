@@ -16,7 +16,7 @@ img {
 	vertical-align: middle;
 	margin-left: 5%;
 }
-/* div placeholder */
+/****************** div placeholder ****************/
 [contenteditable=true]:empty:before {
 	content: attr(placeholder);
 	color: gray;
@@ -277,4 +277,21 @@ img {
 	text-transform: uppercase;
 	padding-top: 5%;
 	padding-left:17%;
+}
+
+#modal-body{
+	outline: none;
+
+	text-transform: capitalize;
+}
+
+#colorbtn
+{
+	background-color: red;
+    border-radius: 17px;
+    height: 10%;
+    width: 10%;
+    border: none;
+    margin-left: 16%;
+	
 }

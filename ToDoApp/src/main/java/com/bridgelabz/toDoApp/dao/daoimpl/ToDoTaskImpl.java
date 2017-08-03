@@ -41,9 +41,10 @@ public class ToDoTaskImpl implements ToDoTaskDao
 	
 	public void ToDoUpdateTask(ToDo todo)
 	{
+		
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		session.saveOrUpdate(todo);
+		session.update(todo);
 		transaction.commit();
 		
 	}
