@@ -110,7 +110,7 @@
 						
 						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true" ng-mouseleave="showimg=false" >
 						
-							<div id="card" ng-show="listview" ng-style="myStyle"  >
+							<div id="card" ng-show="listview" ng-style="myStyle" class="col-lg-12" >
 								<font size="5px" color="black">
 								<div id="contentcard"ng-bind-html="x.title"  ng-click="openModal(x)"></div></font>
 								<div id="contentcard" ng-bind-html="x.description" ng-click="openModal(x)"></div>
@@ -122,12 +122,15 @@
 												data-toggle="dropdown">
 											<div class="dropdown-menu">
 												<div>
-												<input id ="colorbtn" ng-click="myStyle={background:'red'}" style="background-color:red ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd">
-												<input id ="colorbtn" ng-click="myStyle={background:'#31e2d4'}" style="background-color:#31e2d4 ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#e4ed49 ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#98e878'}"  style="background-color:#98e878 ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd "></div>
+												<img alt="" src="images/gray.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/blue.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
+												<img alt="" src="images/green.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
+												<img alt="" src="images/orange.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag"><br>
+												<img alt="" src="images/red.png"     ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/white.png"   ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												</div>
 											</div>
 										</div>
 										 
@@ -160,17 +163,22 @@
 									<div ng-show="showimg">
 										<img alt="reminder" src="images/remindericon.svg">
 									     <div class="dropdown btn-group">
+												 <div class="dropdown btn-group">
 											<img alt="list"  src="images/color.png" 
 												data-toggle="dropdown">
 											<div class="dropdown-menu">
 												<div>
-												<input id ="colorbtn" ng-click="myStyle={background:'red'}" style="background-color:red ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd">
-												<input id ="colorbtn" ng-click="myStyle={background:'#31e2d4'}" style="background-color:#31e2d4 ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#e4ed49 ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#98e878'}"  style="background-color:#98e878 ">
-												<input id ="colorbtn" ng-click="myStyle={background:'#c9d1dd'}" style="background-color:#c9d1dd "></div>
+												<img alt="" src="images/gray.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/blue.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
+												<img alt="" src="images/green.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
+												<img alt="" src="images/orange.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag"><br>
+												<img alt="" src="images/red.png"     ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/white.png"   ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+												</div>
 											</div>
+										</div>
 										</div>
 									    <img alt="reminder" src="images/remindericon.svg">
 									    <img alt="archive"src="images/archive.svg">

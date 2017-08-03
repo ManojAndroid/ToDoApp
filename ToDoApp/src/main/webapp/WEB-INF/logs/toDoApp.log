@@ -7832,3 +7832,13 @@ ERROR	2017-08-03 15:22:14,406	0	com.bridgelabz.toDoApp.controller.LoginControlle
 ERROR	2017-08-03 15:39:39,322	1044916	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
 ERROR	2017-08-03 16:11:19,637	2945231	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging successful!
 ERROR	2017-08-03 16:49:51,895	5257489	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-2]	Logging successful!
+ERROR	2017-08-03 17:35:23,660	7989254	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-3]	Logging successful!
+ERROR	2017-08-03 18:08:15,580	9961174	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-2]	Logging successful!
+ERROR	2017-08-03 18:20:30,214	10695808	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-4]	Logging successful!
+ERROR	2017-08-03 18:21:40,980	10766574	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-5]	Logging successful!
+ERROR	2017-08-03 18:22:09,560	10795154	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8011-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 18:22:09,560	10795154	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8011-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 18:22:09,560	10795154	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8011-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-03 18:26:29,034	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-8]	Logging successful!
+ERROR	2017-08-03 18:31:58,001	328967	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-4]	Logging successful!
+ERROR	2017-08-03 19:13:05,211	2796177	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8011-exec-1]	Logging successful!
