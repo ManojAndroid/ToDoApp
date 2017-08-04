@@ -3,23 +3,41 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	console.log("insidehomecontroller");
 
 	/** ********List And GridView Toggeling****** */
-	   $scope.listview = true;
-	   $scope.gridview = false;
+	  $scope.changeColor=function(x,colordata)
+	  {
+		  x.color=colordata;
+			var httpObj = homeService.noteUpdate(x);
+			
+			httpObj.then(function(response) 
+			{
+				if (response.status == 200) 
+				{
+					console.log(response.data);
+					console.log("Note Sucessfullly Updated!!");
+					$state.reload();
+				} else {
+					console.log(" user loggedout faield");
+					console.log(response.data.status);
+
+				}
+			});
+	  }
 
 	$scope.showlist = function()
 	{
-		$scope.listview = true;
-		$scope.gridview = false;
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
+		/*$scope.myStyle={"width":"70%"};*/
+		$scope.listgridtoggle="col-lg-12 col-md-10 col-sm-12 col-xs-12 list "
 		localStorage.setItem("view", "list");
 	}
 
 	$scope.showgrid = function() {
-		$scope.listview = false;
-		$scope.gridview = true;
+	
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
+	/*	$scope.myStyle={"width":"100%"};*/
+		$scope.listgridtoggle="col-lg-3 col-md-6 col-sm-12 col-xs-12 grid"
 		localStorage.setItem("view", "grid");
 	}
 

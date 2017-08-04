@@ -57,9 +57,7 @@ img {
 }
 
 #page-content-wrapper {
-	padding: 15px;
-	padding-left: 14%;
-	width: 100%;
+	width:100%;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -143,23 +141,30 @@ img {
 #contentcard {
 	max-height: inherit;
 	outline: none;
-	padding-left: 4%;
-	padding-bottom: 4%;
-	padding-top: 3%;
+	padding-left: 3%;
+	padding-top: 1%;
 	word-break: break-all;
 }
 
 #card {
-	margin-top: 7%;
+	/* opacity: 0.95;
+	alpha: 0.65; */
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
+	rgba(0, 0, 0, 0.25);
+	background-color: transparent;
+	 margin:auto; 
+	margin-top: 87px;
+    width: 67%;
+}
+/* #notecard {
 	opacity: 0.95;
 	alpha: 0.65;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
-		rgba(0, 0, 0, 0.25);
-	width: 50%;
+	rgba(0, 0, 0, 0.25);
 	background-color: transparent;
-	margin-left: 120px;
-}
-
+	margin:auto;
+	margin-top: 30px;
+} */
 .buttonsave {
 	float: right;
 	background: none;
@@ -178,15 +183,15 @@ img {
 	padding-top: 3%;
 }
 
-#contentcardgrid {
+/* #contentcardgrid {
 	max-height: inherit;
 	outline: none;
 	padding-left: 4%;
 	padding-bottom: 4%;
 	word-break: break-all;
-}
+} */
 
-#cardgrid {
+/* #cardgrid {
 	margin-top: 4%;
 	margin-right: 4%;
 	opacity: 0.95;
@@ -196,7 +201,7 @@ img {
 	width: 22%;
 	background-color: transparent;
 }
-
+ */
 .pindiv {
 	float: right;
 }
@@ -288,5 +293,19 @@ img {
 #colorimag
 {
 	    width: 15%;
+	
+}
+.grid{
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
+	rgba(0, 0, 0, 0.25);
+	background-color: transparent;
+	margin:20px;
+	
+}
+.list{
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
+	rgba(0, 0, 0, 0.25);
+	background-color: transparent;
+	margin: 20px 0px 5px 0px;
 	
 }

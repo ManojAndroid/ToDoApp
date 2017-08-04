@@ -5,29 +5,32 @@
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 				aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
 			</button>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
-				<li><a href=""><span aria-hidden="true"><font size="5px;" color="black"><u>Manoj S</u></font></span></a></li>
+				<a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span
+					class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+				<li><a href=""><span aria-hidden="true"><font
+							size="5px;" color="black"><u>Manoj S</u></font></span></a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href=""> <img src="images/refresh.svg"alt="Refresh"></a></li>
-				<li><a ng-click="showlist()" ng-hide="listview1"> <img src="images/list.svg" alt="list view"  ></a></li>
-				<li><a ng-click="showgrid()" ng-hide="gridview1"> <img src="images/grid.svg"  ></a></li>
-				 <li>
-				<!-- ------------ PROFILE POPUP -------------------->
-				 <div class="dropdown btn-group">
+				<li><a href=""> <img src="images/refresh.svg" alt="Refresh"></a></li>
+				<li><a ng-click="showlist()" ng-hide="listview1"> <img
+						src="images/list.svg" alt="list view"></a></li>
+				<li><a ng-click="showgrid()" ng-hide="gridview1"> <img
+						src="images/grid.svg"></a></li>
+				<li>
+					<!-- ------------ PROFILE POPUP -------------------->
+					<div class="dropdown btn-group">
 						<div id="rounddivsmall" data-toggle="dropdown">
-									<font size="5">{{firstletter}}</font>
-								</div>
+							<font size="5">{{firstletter}}</font>
+						</div>
 						<div class="dropdown-menu" id="profilepp">
 							<div>
 								<div id="rounddiv">
@@ -50,16 +53,18 @@
 							</div>
 						</div>
 					</div>
-				 </li>
+				</li>
 			</ul>
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..."id="searchicon" ng-model="searchNote"   >
+					<input type="text" class="form-control" placeholder="Search..."
+						id="searchicon" ng-model="searchNote">
 					<div class="input-group-btn">
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span>
+						<button type="submit" class="btn btn-success">
+							<span class="glyphicon glyphicon-search"></span>
 						</button>
-					</div> 
+					</div>
 				</div>
 			</form>
 		</div>
@@ -67,147 +72,120 @@
 </nav>
 
 <div id="wrapper" class="toggled">
+
 	<div class="container-fluid">
-		<!-- Sidebar -->
+		Sidebar
 		<div id="sidebar-wrapper">
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand"><br></li>
 				<li class="sidebar-brand"></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/noteicon.png"></span> Notes</a></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/remindericon.svg"></span> Reminders</a></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/archive.svg"></span> Archive</a></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/icons8-Trash Can-20.png"></span> Trash</a></li>
+				<li><a href=""><span aria-hidden="true"><img
+							src="images/noteicon.png"></span> Notes</a></li>
+				<li><a href=""><span aria-hidden="true"><img
+							src="images/remindericon.svg"></span> Reminders</a></li>
+				<li><a href=""><span aria-hidden="true"><img
+							src="images/archive.svg"></span> Archive</a></li>
+				<li><a href=""><span aria-hidden="true"><img
+							src="images/icons8-Trash Can-20.png"></span> Trash</a></li>
 			</ul>
 		</div>
 		
-		<!-- /#sidebar-wrapper -->
-		<!-- Page Content -->
+		
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
+					<div style="width:784px;margin-left:100px"class="col-lg-12">
+						<div class="col-lg-2"></div>
 						<div id="card">
 							<div id="headercard" ng-show="myVarheader">
-								<input type="text" placeholder="Title" ng-model="title" style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
+								<input type="text" placeholder="Title" ng-model="title"
+									style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
 							</div>
 							<div id="contentcard" contenteditable1 contenteditable="true"
 								placeholder="Take a note......" ng-model="description"
 								ng-click="noteInput()"></div>
 							<div id="footer" ng-show="myVarfooter">
-							<div>
-								<img alt="reminder" src="images/remindericon.svg">
-								 <img alt="reminder" src="images/remindericon.svg"> 
-								 <img alt="color" src="images/color.png">
-								 <img alt="reminder"src="images/remindericon.svg">
-								 <img alt="archive"src="images/archive.svg">
-								 <img alt="reminder"src="images/list.png"> 
-								 <input type="button"ng-click="hideTitle()" class="buttonsave" value="Done">
-							</div>
+								<div>
+									<img alt="reminder" src="images/remindericon.svg"> <img
+										alt="reminder" src="images/remindericon.svg"> <img
+										alt="color" src="images/color.png"> <img alt="reminder"
+										src="images/remindericon.svg"> <img alt="archive"
+										src="images/archive.svg"> <img alt="reminder"
+										src="images/list.png"> <input type="button"
+										ng-click="hideTitle()" class="buttonsave" value="Done">
+								</div>
 							</div>
 						</div>
-						
-						<!------------------------- List view --------------------->
-						
-						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true" ng-mouseleave="showimg=false" >
-						
-							<div id="card" ng-show="listview" ng-style="myStyle" class="col-lg-12" >
-								<font size="5px" color="black">
-								<div id="contentcard"ng-bind-html="x.title"  ng-click="openModal(x)"></div></font>
-								<div id="contentcard" ng-bind-html="x.description" ng-click="openModal(x)"></div>
-								<div id="footer">
-									<div ng-show="showimg">
-										<img alt="reminder" src="images/remindericon.svg">
-										 <div class="dropdown btn-group">
-											<img alt="list"  src="images/color.png" 
-												data-toggle="dropdown">
-											<div class="dropdown-menu">
-												<div>
-												<img alt="" src="images/gray.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/blue.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
-												<img alt="" src="images/green.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
-												<img alt="" src="images/orange.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag"><br>
-												<img alt="" src="images/red.png"     ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/white.png"   ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
+
+						<!-- ---------------------- Listgrid view ------------------- -->
+
+
+						<div ng-repeat="x in records | filter:searchNote"
+							ng-mouseover="showimg=true" ng-mouseleave="showimg=false" >
+							<div data-ng-class="listgridtoggle" ng-style="colorcha" >
+								<div ng-style="myStyle" >
+
+									<font size="5px" color="black">
+										<div data-ng-bind-html="x.title"
+											data-ng-click="openModal(x)"></div>
+									</font>
+									<div  ng-bind-html="x.description"
+										data-ng-click="openModal(x)"></div>
+									<div id="footer">
+										<div ng-show="showimg">
+											<img alt="reminder" src="images/remindericon.svg">
+											<div class="dropup btn-group">
+												<img alt="list" src="images/color.png"
+													data-toggle="dropdown">
+												<div class="dropdown-menu">
+													<div>
+														<img alt="" src="images/gray.png"
+															ng-click="changeColor(x,'#c9d1dd')"id="colorimag">
+														<img alt="" src="images/blue.png"
+															ng-click="colorcha={background:'#e4ed49'}" id="colorimag">
+														<img alt="" src="images/green.png"
+															ng-click="colorcha={background:'#e4ed49'}" id="colorimag">
+														<img alt="" src="images/orange.png"
+															ng-click="colorcha={background:'#c9d1dd'}" id="colorimag"><br>
+														<img alt="" src="images/red.png"
+															ng-click="colorcha={background:'#c9d1dd'}" id="colorimag">
+														<img alt="" src="images/white.png"
+															ng-click="colorcha={background:'#c9d1dd'}" id="colorimag">
+														<img alt="" src="images/yellow.png"
+															ng-click="colorcha={background:'#c9d1dd'}" id="colorimag">
+														<img alt="" src="images/yellow.png"
+															ng-click="mcolorcha={background:'#c9d1dd'}" id="colorimag">
+													</div>
 												</div>
 											</div>
-										</div>
-										 
-										 <img alt="reminder" src="images/remindericon.svg">
-										 <img alt="archive" src="images/archive.svg">
-										<div class="dropdown btn-group">
-											<img alt="list" src="images/list.png"
-												data-toggle="dropdown">
-											<ul class="dropdown-menu">
-												<li><a ng-click="deleteNote(x.id)">Delete Note</a></li>
-												<li><a>add label</a></li>
-												<li><a>add drawing</a></li>
-											</ul>
+
+											<img alt="reminder" src="images/remindericon.svg"> <img
+												alt="archive" src="images/archive.svg">
+											<div class="dropdown btn-group">
+												<img alt="list" src="images/list.png" data-toggle="dropdown">
+												<ul class="dropdown-menu">
+													<li><a ng-click="deleteNote(x.id)">Delete Note</a></li>
+													<li><a>add label</a></li>
+													<li><a>add drawing</a></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						
-	
-						<!-- ----------------------- grid view ------------------- -->
-
-
-						<div ng-repeat="x in records | filter:searchNote" ng-mouseover="showimg=true"
-							ng-mouseleave="showimg=false">
-							<div class="col-lg-4" id="cardgrid" ng-show="gridview" ng-style="myStyle">
-								<font size="5px" color="black"><div id="contentcardgrid"ng-bind-html="x.title" ng-click="openModal(x)"></div></font>
-								<div id="contentcardgrid" ng-bind-html="x.description" ng-click="openModal(x)"></div>
-								<div id="footergrid">
-									<div ng-show="showimg">
-										<img alt="reminder" src="images/remindericon.svg">
-									     <div class="dropdown btn-group">
-												 <div class="dropdown btn-group">
-											<img alt="list"  src="images/color.png" 
-												data-toggle="dropdown">
-											<div class="dropdown-menu">
-												<div>
-												<img alt="" src="images/gray.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/blue.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
-												<img alt="" src="images/green.png"  ng-click="myStyle={background:'#e4ed49'}" id="colorimag">
-												<img alt="" src="images/orange.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag"><br>
-												<img alt="" src="images/red.png"     ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/white.png"   ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												<img alt="" src="images/yellow.png"  ng-click="myStyle={background:'#c9d1dd'}" id="colorimag">
-												</div>
-											</div>
-										</div>
-										</div>
-									    <img alt="reminder" src="images/remindericon.svg">
-									    <img alt="archive"src="images/archive.svg">
-										<div class="dropdown btn-group">
-											<img alt="reminder" src="images/list.png"
-												data-toggle="dropdown">
-											<ul class="dropdown-menu">
-												<li><a ng-click="deleteNote(x.id)">Delete Note</a></li>
-												<li><a>add label</a></li>
-												<li><a>add drawing</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
+					   <div class="col-lg-2"></div>
 					</div>
 				</div>
-
 			</div>
 		</div>
-	</div>
 
 	<script type="text/javascript">
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled");
-		});
-	
-	</script>
-</div>
-<!-- /#wrapper -->
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		</script>
+	</div>
+	<!-- /#wrapper -->
