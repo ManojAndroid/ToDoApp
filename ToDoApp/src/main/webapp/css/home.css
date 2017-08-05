@@ -35,6 +35,7 @@ img {
 	width: 320%;
 	margin-left: -220%;
 	height: 20%;
+	position: inherit;
 }
 
 #sidebar-wrapper {
@@ -127,7 +128,7 @@ img {
 }
 
 #footer {
-	height: 50px;
+	height: 60px;
 	outline: none;
 	padding-top: 3%;
 }
@@ -139,32 +140,27 @@ img {
 }
 
 #contentcard {
-	max-height: inherit;
-	outline: none;
-	padding-left: 3%;
-	padding-top: 1%;
-	word-break: break-all;
+    max-height: inherit;
+    outline: none;
+    padding-left: 3%;
+    padding-top: 1%;
+    word-break: break-all;
+    padding-bottom: 11px;
+    margin-bottom: 20px;
+}
+#title{
+	    height: 50px;
 }
 
 #card {
-	/* opacity: 0.95;
-	alpha: 0.65; */
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 	rgba(0, 0, 0, 0.25);
 	background-color: transparent;
-	 margin:auto; 
+	margin-left:85px;
 	margin-top: 87px;
-    width: 67%;
+    width: 60%;
 }
-/* #notecard {
-	opacity: 0.95;
-	alpha: 0.65;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
-	rgba(0, 0, 0, 0.25);
-	background-color: transparent;
-	margin:auto;
-	margin-top: 30px;
-} */
+
 .buttonsave {
 	float: right;
 	background: none;
@@ -183,25 +179,6 @@ img {
 	padding-top: 3%;
 }
 
-/* #contentcardgrid {
-	max-height: inherit;
-	outline: none;
-	padding-left: 4%;
-	padding-bottom: 4%;
-	word-break: break-all;
-} */
-
-/* #cardgrid {
-	margin-top: 4%;
-	margin-right: 4%;
-	opacity: 0.95;
-	alpha: 0.65;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
-		rgba(0, 0, 0, 0.25);
-	width: 22%;
-	background-color: transparent;
-}
- */
 .pindiv {
 	float: right;
 }
@@ -299,13 +276,32 @@ img {
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 	rgba(0, 0, 0, 0.25);
 	background-color: transparent;
-	margin:20px;
+	margin:10px;
 	
 }
 .list{
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 	rgba(0, 0, 0, 0.25);
 	background-color: transparent;
-	margin: 20px 0px 5px 0px;
+	margin: 20px 0px 10px 0px;
+	width: 70%;
 	
+	
+}
+/* ***********update popup css ***************/
+.modal-header {
+    border-bottom:none !important;
+    
+}
+.row {
+    margin-left: 80px !important;
+}
+
+.modal{
+	margin-top: 40px;
+	margin-left: 75px;
+	
+}
+.modal-footer {
+    border-top:none !important;
 }

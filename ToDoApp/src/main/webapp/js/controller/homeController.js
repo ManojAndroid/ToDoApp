@@ -3,9 +3,11 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	console.log("insidehomecontroller");
 
 	/** ********List And GridView Toggeling****** */
-	  $scope.changeColor=function(x,colordata)
+	
+	 $scope.changeColor=function(x,colordata)
 	  {
-		  x.color=colordata;
+		  x.notecolor=colordata;
+		  console.log(colordata);
 			var httpObj = homeService.noteUpdate(x);
 			
 			httpObj.then(function(response) 
@@ -14,9 +16,9 @@ myApp.controller('homeController', function($scope, $state, homeService,
 				{
 					console.log(response.data);
 					console.log("Note Sucessfullly Updated!!");
-					$state.reload();
+					$scope.getNote();
 				} else {
-					console.log(" user loggedout faield");
+					console.log("updation faield");
 					console.log(response.data.status);
 
 				}
@@ -27,8 +29,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	{
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
-		/*$scope.myStyle={"width":"70%"};*/
-		$scope.listgridtoggle="col-lg-12 col-md-10 col-sm-12 col-xs-12 list "
+		$scope.listgridtoggle="col-lg-9 col-md-10 col-sm-12 col-xs-12 list "
 		localStorage.setItem("view", "list");
 	}
 
@@ -36,7 +37,6 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-	/*	$scope.myStyle={"width":"100%"};*/
 		$scope.listgridtoggle="col-lg-3 col-md-6 col-sm-12 col-xs-12 grid"
 		localStorage.setItem("view", "grid");
 	}
@@ -78,7 +78,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 				console.log(" note Sucessfullly Deleted!!");
 				$scope.getNote();
 			} else {
-				console.log(" note Deletion Faild!!");
+				console.log(" note Deletion Fld!!");
 				console.log(response.data.status);
 
 			}
@@ -109,6 +109,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 				
 				this.title = x.title;
 				this.description = x.description;
+				this.notecolor=x.notecolor;
 				this.user = x.user;
 				console.log("idddddd: "+    this.title);
 				/** **************Note Update************** */
@@ -119,6 +120,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 					editNotedata.id=$ctrl.id;
 					editNotedata.title=$ctrl.title;
 					editNotedata.description=$ctrl.description;
+					editNotedata.notecolor=$ctrl.notecolor;
 					editNotedata.user=$ctrl.user;
 					var httpObj = homeService.noteUpdate(editNotedata);
 					

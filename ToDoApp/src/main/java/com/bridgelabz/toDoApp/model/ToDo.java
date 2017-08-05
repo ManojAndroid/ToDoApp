@@ -21,6 +21,7 @@ public class ToDo implements Serializable {
 	private int id;
 	private String title;
 	private String description;
+	private String notecolor;
 
 	public int getId() {
 		return id;
@@ -60,11 +61,20 @@ public class ToDo implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public String getNotecolor() {
+		return notecolor;
+	}
+
+	public void setNotecolor(String notecolor) {
+		this.notecolor = notecolor;
+	}
 
 	@Override
 	public String toString() {
-		return "ToDo [id=" + id + ", title=" + title + ", description=" + description + ", user=" + user.getId() + "]";
+		return "ToDo [id=" + id + ", title=" + title + ", description=" + description + ", notecolor=" + notecolor
+				+ ", user=" + user + "]";
 	}
 
+	
 	
 }
