@@ -22,6 +22,7 @@ public class ToDo implements Serializable {
 	private String title;
 	private String description;
 	private String notecolor;
+	private String reminder;
 
 	public int getId() {
 		return id;
@@ -68,12 +69,22 @@ public class ToDo implements Serializable {
 	public void setNotecolor(String notecolor) {
 		this.notecolor = notecolor;
 	}
+	
+
+	public String getReminder() {
+		return reminder;
+	}
+
+	public void setReminder(String reminder) {
+		this.reminder = reminder;
+	}
 
 	@Override
 	public String toString() {
 		return "ToDo [id=" + id + ", title=" + title + ", description=" + description + ", notecolor=" + notecolor
-				+ ", user=" + user + "]";
+				+ ", reminder=" + reminder + ", user=" + user + "]";
 	}
+
 
 	
 	

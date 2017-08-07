@@ -1,8 +1,36 @@
 myApp.controller('homeController', function($scope, $state, homeService,
 		$uibModal) {
 	console.log("insidehomecontroller");
+	
+	/** ********Set Reminder*******/
+	 $scope.setReminder=function(x,days)
+	  {
+		 if(days=='today')
+			 {
+			 x.notereminder=days;
+			 }
+		 else if(days=='tomorrow')
+			 {
+			 
+			 }
+			var httpObj = homeService.noteUpdate(x);
+			
+			httpObj.then(function(response) 
+			{
+				if (response.status == 200) 
+				{
+					console.log(response.data);
+					console.log("Reminder set");
+					$scope.getNote();
+				} else {
+					console.log("Reminder updation faield");
+					console.log(response.data.status);
 
-	/** ********List And GridView Toggeling****** */
+				}
+			});
+	  }
+
+	/** ********List And GridView Toggeling*******/
 	
 	 $scope.changeColor=function(x,colordata)
 	  {
@@ -51,15 +79,16 @@ myApp.controller('homeController', function($scope, $state, homeService,
 		$scope.myVarheader = true;
 		$scope.myVarfooter = true;
 	}
-	/** ************get All Notes*********************** */
+	/** ************get All Notes************************/
 	$scope.getNote = function() {
 		var records = homeService.noteGetAll();
 		records.then(function(resp) {
 			$scope.email = resp.data[0].user.email;
 			$scope.name = resp.data[0].user.firstname;
 			var name1 = resp.data[0].user.firstname;
-			$scope.firstletter = name1.charAt(0);
-
+			$scope.firstChar = name1.charAt(0);
+			$scope.formattedDate =(new Date());
+			$scope.weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date().getDay()];
 			console.log(resp.data[0].user.email);
 			$scope.records = resp.data.reverse();
 

@@ -106,6 +106,18 @@ img {
 	color: black;
 }
 
+
+:hov
+
+.cls
+
+element.style {
+}
+.footerimg {
+    vertical-align: middle;
+    padding-left:20px;
+}
+
 .sidebar-nav>.sidebar-brand {
 	height: 65px;
 	font-size: 18px;
@@ -130,7 +142,7 @@ img {
 #footer {
 	height: 60px;
 	outline: none;
-	padding-top: 3%;
+	padding-top: 5%;
 }
 
 #footergrid {
@@ -305,3 +317,27 @@ img {
 .modal-footer {
     border-top:none !important;
 }
+/* ************ ***** Reminder Css*****************************/
+#reminderdiv
+{
+	width:350px;
+	height:200px;
+	padding-left:20px;
+}
+#remindersmalldiv{
+    padding-top: 10px;
+    font-size: inherit;
+}
+#reminderspan{
+	float: right;
+	padding-right: 10px;
+}
+
+
+
+
+
+
+
+
+
