@@ -1,6 +1,7 @@
 package com.bridgelabz.toDoApp.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -22,7 +23,7 @@ public class ToDo implements Serializable {
 	private String title;
 	private String description;
 	private String notecolor;
-	private String reminder;
+	private Date reminder;
 
 	public int getId() {
 		return id;
@@ -71,11 +72,11 @@ public class ToDo implements Serializable {
 	}
 	
 
-	public String getReminder() {
+	public Date getReminder() {
 		return reminder;
 	}
 
-	public void setReminder(String reminder) {
+	public void setReminder(Date reminder) {
 		this.reminder = reminder;
 	}
 

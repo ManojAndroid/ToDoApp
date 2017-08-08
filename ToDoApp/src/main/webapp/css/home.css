@@ -106,16 +106,10 @@ img {
 	color: black;
 }
 
-
-:hov
-
-.cls
-
-element.style {
-}
 .footerimg {
     vertical-align: middle;
     padding-left:20px;
+    cursor: pointer;
 }
 
 .sidebar-nav>.sidebar-brand {
@@ -252,13 +246,13 @@ element.style {
 	border-radius: 75px;
 	background: #90948a;
 	padding: 37px;
-	width: 100px;
-	height: 100px;
+	width: 120px;
+	height: 120px;
 	margin-left: 5%;
 	margin-top: 4%;
 	text-transform: uppercase;
 	padding-top: 5%;
-	padding-left: 9%;
+	padding-left:10%;
 }
 
 #rounddivsmall {
@@ -332,9 +326,24 @@ element.style {
 	float: right;
 	padding-right: 10px;
 }
+#profilechangediv{
+    height: 15px;
+    width: 56px;
+    margin-right: 10px;
+    text-transform:capitalize;
+}
 
-
-
+#remindershow{
+	border-top: 1px dotted black;
+    height: 38px;
+    padding-top: 7px;
+}
+#reminderdelbtn
+{
+	float: right;
+	padding-right:22px;
+	cursor:pointer;
+}
 
 
 

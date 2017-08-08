@@ -35,6 +35,9 @@
 							<div>
 								<div id="rounddiv">
 									<font size="100px">{{firstChar}}</font>
+									<div id="profilechangediv">
+									<input type="image" value="Change">
+									</div>
 								</div>
 							</div>
 							<div id="profileppright">
@@ -95,7 +98,7 @@
 								<input type="text" placeholder="Title" data-ng-model="title"
 									style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
 							</div>
-							<div id="contentcard" contenteditable1 contenteditable="true"placeholder="Take a note......" ng-model="description"
+							<div id="contentcard" contenteditable1 contenteditable="true" placeholder="Take a note......" ng-model="description"
 								data-ng-click="noteInput()"></div>
 							<div id="footer" data-ng-show="myVarfooter">
 								<div>
@@ -122,18 +125,24 @@
 									<div  ng-bind-html="x.description" data-ng-click="openModal(x)"></div>
 									<div id="footer">
 										<div data-ng-show="showimg">
+										
+										<!-- reminder --set----->
+										
 											<div class="dropdown btn-group">
 												<img alt="reminder" src="images/remindericon.svg" data-toggle="dropdown" class="footerimg">
 												<ul class="dropdown-menu" id="reminderdiv" >
-												<li><a data-ng-click="setReminder()">Reminder:</a></li>
+												<li><a>Reminder:</a></li>
 													<li><a data-ng-click="setReminder(x,'today')" >Later Today <span id="reminderspan">8:00 PM</span></a></li>
-													<li><a data-ng-click="setReminder()" >Tomorrow <span id="reminderspan">8:00 AM</span></a></li>
-													<li><a data-ng-click="setReminder()" >Next Week <span id="reminderspan"> {{weekday}},8:00 AM</span></a></li>
-													<li><a   data-ng-click="setReminder()" >Pick Date And Time</a></li>
-													<li><a  data-ng-click="setReminder()" >Pick Place</a></li>
+													<li><a data-ng-click="setReminder(x,'tomorrow')" >Tomorrow <span id="reminderspan">8:00 AM</span></a></li>
+													<li><a data-ng-click="setReminder(x,'weekday')" >Next Week <span id="reminderspan"> {{weekday}},8:00 AM</span></a></li>
+													<li><a>Pick Date And Time</a></li>
+													<li><a>Pick Place</a></li>
 												</ul>
 											</div>
 											<img alt="collaborator" src="images/person_add_18px.svg">
+											
+											
+										<!-- ----------------	color set ----------->
 											<div class="dropup btn-group">
 												<img alt="list" src="images/color.png" data-toggle="dropdown" class="footerimg">
 												<div class="dropdown-menu">
@@ -167,6 +176,11 @@
 												</ul>
 											</div>
 										</div>
+									</div>
+									<!-- reminder -- div----->
+									<div  data-ng-if="x.reminder!=undefined"  id="remindershow">
+									<img alt="Reminder" src="images/clock.png"> {{x.reminder | date:"MMM d,h:mm:ss a"}} 
+									<span data-ng-click="deleteReminder(x)" data-ng-show="showimg" id="reminderdelbtn">  &#10062;</span>
 									</div>
 								</div>
 							</div>

@@ -1,6 +1,7 @@
 package com.bridgelabz.toDoApp.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -22,8 +23,9 @@ public class User implements Serializable {
 	private String email;
 	private String mobile;
 	private String password;
+	private byte[] profile;
 	
- 
+
 	public int getId() {
 		return id;
 	}
@@ -71,12 +73,20 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	 
+	public byte[] getProfile() {
+		return profile;
+	}
+
+	public void setProfile(byte[] profile) {
+		this.profile = profile;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", mobile=" + mobile + ", password=" + password + "]";
+				+ ", mobile=" + mobile + ", password=" + password + ", profile=" + Arrays.toString(profile) + "]";
 	}
-
-	
 
 }
