@@ -20,10 +20,18 @@ public class ToDo implements Serializable {
 	@GeneratedValue(generator = "gen")
 	@Column(name="taskid")
 	private int id;
+	@Column(name="Title")
 	private String title;
+	@Column(name="Descriptioin")
 	private String description;
+	@Column(name="NoteColor")
 	private String notecolor;
+	@Column(name="Reminder")
 	private Date reminder;
+	@Column(name="Archive")
+	private boolean archive;
+	@Column(name="Trash")
+	private boolean trash;
 
 	public int getId() {
 		return id;
@@ -79,14 +87,29 @@ public class ToDo implements Serializable {
 	public void setReminder(Date reminder) {
 		this.reminder = reminder;
 	}
+	
+
+	public boolean isArchive() {
+		return archive;
+	}
+
+	public void setArchive(boolean archive) {
+		this.archive = archive;
+	}
+
+	public boolean isTrash() {
+		return trash;
+	}
+
+	public void setTrash(boolean trash) {
+		this.trash = trash;
+	}
 
 	@Override
 	public String toString() {
 		return "ToDo [id=" + id + ", title=" + title + ", description=" + description + ", notecolor=" + notecolor
-				+ ", reminder=" + reminder + ", user=" + user + "]";
+				+ ", reminder=" + reminder + ", archive=" + archive + ", trash=" + trash + ", user=" + user + "]";
 	}
 
-
-	
 	
 }

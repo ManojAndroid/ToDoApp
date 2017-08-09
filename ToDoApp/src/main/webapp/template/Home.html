@@ -20,10 +20,10 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href=""> <img src="images/refresh.svg" alt="Refresh"></a></li>
+				<li><a href=""> <img src="images/refresh.svg"  title="Refresh" title-direction="bottom"></a></li>
 				<li><a data-ng-click="showlist()" data-ng-hide="listview1">
-				 <img src="images/list.svg" alt="list view"></a></li>
-				<li><a data-ng-click="showgrid()" data-ng-hide="gridview1"> <img
+				 <img src="images/list.svg" alt="list view"  title="List View" title-direction="bottom"></a></li>
+				<li><a data-ng-click="showgrid()" data-ng-hide="gridview1"  title="Grid View" title-direction="bottom"> <img
 						src="images/grid.svg"></a></li>
 				<li>
 					<!-- ------------ PROFILE POPUP -------------------->
@@ -61,9 +61,9 @@
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..."id="searchicon" data-ng-model="searchNote">
+					<input type="text" class="form-control" placeholder="Search..."id="searchicon" data-ng-model="searchNote" >
 					<div class="input-group-btn">
-						<button type="submit" class="btn btn-success">
+						<button type="submit" class="btn btn-success" title="Search" title-direction="bottom">
 							<span class="glyphicon glyphicon-search"></span>
 						</button>
 					</div>
@@ -74,15 +74,14 @@
 </nav>
 
 <div id="wrapper" class="toggled">
-
 	<div class="container-fluid">
 		<div id="sidebar-wrapper">
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand"><br></li>
 				<li class="sidebar-brand"></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/noteicon.png" class="footerimg"></span> Notes</a></li>
+				<li><a ><span aria-hidden="true"><img src="images/noteicon.png" class="footerimg"></span> Notes</a></li>
 				<li><a href=""><span aria-hidden="true"><img src="images/remindericon.svg" class="footerimg"></span> Reminders</a></li>
-				<li><a href=""><span aria-hidden="true"><img src="images/archive.svg" class="footerimg"></span> Archive</a></li>
+				<li><a ui-sref="archive"><span aria-hidden="true"><img src="images/archive.svg" class="footerimg"></span> Archive</a></li>
 				<li><a href=""><span aria-hidden="true"><img src="images/icons8-Trash Can-20.png" class="footerimg"></span> Trash</a></li>
 			</ul>
 		</div>
@@ -115,9 +114,8 @@
 
 						<!-- ---------------------- Listgrid view ------------------- -->
 
-
-						<div data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" >
-							<div data-ng-class="listgridtoggle" data-ng-style="{'background-color':x.notecolor}" >
+						<div  testpackery data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" >
+							<div data-ng-class="listgridtoggle" data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.archive==false" >
 								<div  >
 									<font size="5px" color="black">
 										<div id="title" data-ng-bind-html="x.title"data-ng-click="openModal(x)"></div>
@@ -129,22 +127,22 @@
 										<!-- reminder --set----->
 										
 											<div class="dropdown btn-group">
-												<img alt="reminder" src="images/remindericon.svg" data-toggle="dropdown" class="footerimg">
+												<img alt="reminder" src="images/remindericon.svg" data-toggle="dropdown" class="footerimg" title="Remind me" title-direction="bottom">
 												<ul class="dropdown-menu" id="reminderdiv" >
 												<li><a>Reminder:</a></li>
 													<li><a data-ng-click="setReminder(x,'today')" >Later Today <span id="reminderspan">8:00 PM</span></a></li>
 													<li><a data-ng-click="setReminder(x,'tomorrow')" >Tomorrow <span id="reminderspan">8:00 AM</span></a></li>
 													<li><a data-ng-click="setReminder(x,'weekday')" >Next Week <span id="reminderspan"> {{weekday}},8:00 AM</span></a></li>
-													<li><a>Pick Date And Time</a></li>
+													<li><img alt="Reminder" src="images/clock.png">Pick Date And Time</li>
 													<li><a>Pick Place</a></li>
 												</ul>
 											</div>
-											<img alt="collaborator" src="images/person_add_18px.svg">
+											<img alt="collaborator" src="images/person_add_18px.svg" title="Collaborator" title-direction="bottom">
 											
 											
 										<!-- ----------------	color set ----------->
 											<div class="dropup btn-group">
-												<img alt="list" src="images/color.png" data-toggle="dropdown" class="footerimg">
+												<img alt="list" src="images/color.png" data-toggle="dropdown" class="footerimg" title="Change Color" title-direction="bottom">
 												<div class="dropdown-menu">
 													<div>
 														<img alt="" src="images/white.png"
@@ -166,9 +164,11 @@
 													</div>
 												</div>
 											</div>
-											<img alt="archive" src="images/archive.svg">
+											<!------------ archive -------------->
+											<img alt="archive" src="images/archive.svg"   data-ng-click="archiveNotes(x)" title="Archive"  title-direction="bottom">
+											
 											<div class="dropdown btn-group">
-												<img alt="list" src="images/list.png" data-toggle="dropdown" class="footerimg">
+												<img alt="list" src="images/list.png" data-toggle="dropdown" class="footerimg" title="More" title-direction="bottom">
 												<ul class="dropdown-menu">
 													<li><a data-ng-click="deleteNote(x.id)">Delete Note</a></li>
 													<li><a>add label</a></li>
@@ -180,7 +180,7 @@
 									<!-- reminder -- div----->
 									<div  data-ng-if="x.reminder!=undefined"  id="remindershow">
 									<img alt="Reminder" src="images/clock.png"> {{x.reminder | date:"MMM d,h:mm:ss a"}} 
-									<span data-ng-click="deleteReminder(x)" data-ng-show="showimg" id="reminderdelbtn">  &#10062;</span>
+									<span data-ng-click="deleteReminder(x)" data-ng-show="showimg" id="reminderdelbtn"  title="Delete Reminder" title-direction="bottom">  &#10062;</span>
 									</div>
 								</div>
 							</div>

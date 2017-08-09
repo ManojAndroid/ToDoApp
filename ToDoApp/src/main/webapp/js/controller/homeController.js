@@ -1,7 +1,64 @@
 myApp.controller('homeController', function($scope, $state, homeService,
 		$uibModal) {
 	console.log("insidehomecontroller");
+	
+	/** ********Set Archive****** */
+	
+	$scope.archiveNotes=function(x)
+	{
+		if (x.archive==false)
+		{
+			x.archive=true;
+			var httpObj = homeService.noteUpdate(x);
 
+			httpObj.then(function(response)
+		{
+				if (response.status == 200) 
+			{
+					console.log(response.data);
+					console.log("Archive sucess");
+					$state.reload();
+			}
+				else
+			{
+					console.log("archive fld");
+					console.log(response.data.status);
+
+				}
+			});
+			
+		}
+	}
+	
+
+	/** ********Set UnArchiveNotes****** */
+	
+	$scope.unarchiveNotes=function(x)
+	{
+		if (x.archive==true)
+			{
+			x.archive=false;
+			var httpObj = homeService.noteUpdate(x);
+
+			httpObj.then(function(response)
+			{
+				if (response.status == 200) 
+				{
+					console.log(response.data);
+					console.log("UnArchive sucess");
+					$state.reload();
+				}
+				else
+				{
+					console.log("UnArchive fld");
+					console.log(response.data.status);
+
+				}
+			});
+			
+			}
+	}
+	
 	/** ********Set Reminder****** */
 	$scope.setReminder = function(x, days) {
 		var reminderdate = new Date();
@@ -51,7 +108,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 		httpObj.then(function(response) {
 			if (response.status == 200) {
 				console.log("Reminder Deleted!!!!");
-				$scope.getNote();
+				$state.reload();
 			} else {
 				console.log("Reminder Deletion faield");
 				console.log(response.data.status);
@@ -71,7 +128,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 			if (response.status == 200) {
 				console.log(response.data);
 				console.log("Note Sucessfullly Updated!!");
-				$scope.getNote();
+				$state.reload();
 			} else {
 				console.log("updation faield");
 				console.log(response.data.status);
@@ -91,7 +148,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-		$scope.listgridtoggle = "col-lg-3 col-md-6 col-sm-12 col-xs-12 grid"
+		$scope.listgridtoggle = "col-lg-3 col-md-6 col-sm-12 col-xs-12 grid "
 		localStorage.setItem("view", "grid");
 	}
 
@@ -119,6 +176,8 @@ myApp.controller('homeController', function($scope, $state, homeService,
 					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat' ][new Date().getDay()];
 					console.log(resp.data[0].user.email);
 					$scope.records = resp.data.reverse();
+					$scope.archive=resp.data[0].archive;
+					
 
 				});
 	}
@@ -169,6 +228,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 				this.notecolor = x.notecolor;
 				this.user = x.user;
 				console.log("idddddd: " + this.title);
+				console.log( "archive status"+x.archive);
 				
 				/** **************Note Update************** */
 				this.update = function() {
