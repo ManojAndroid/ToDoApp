@@ -140,19 +140,19 @@ public class ToDoAppController {
 	 * @return {@link ResponseEntity}
 	 */
 	@RequestMapping(value = "/rest/getsingletask/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Response> getSingleTask(@PathVariable("id") int id) {
+	public ResponseEntity<List<ToDo>> getSingleTask(@PathVariable("id") int id) {
 
 		try {
 			List<ToDo> toDosingleTask = toDoTaskServices.getSingleTask(id);
 			if (toDosingleTask != null) {
 				System.out.println(toDosingleTask.toString());
-				return new ResponseEntity<Response>(HttpStatus.OK);
+				return new ResponseEntity<List<ToDo>>(HttpStatus.OK);
 			}
 
-			return new ResponseEntity<Response>(HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<List<ToDo>>(HttpStatus.UNAUTHORIZED);
 		} catch (Exception exception) {
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<List<ToDo>>(HttpStatus.INTERNAL_SERVER_ERROR);
 
 		}
 	}

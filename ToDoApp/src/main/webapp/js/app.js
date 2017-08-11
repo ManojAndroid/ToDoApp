@@ -21,8 +21,13 @@ $stateProvider
 	 })
 	 .state('archive',{
 	   url:'/archive',
-	   templateUrl:"template/archiveNotes.html",
-	   controller:"homeController"
+	   templateUrl:"template/Home.html",
+	   controller:"archiveCtrl"
+	 })
+	 .state('trash',{
+	   url:'/trash',
+	   templateUrl:"template/Home.html",
+	   controller:"trashCtrl"
 	 })
 	 
 	console.log("inside APPPJSwwww");

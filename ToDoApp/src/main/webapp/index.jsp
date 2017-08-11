@@ -2,6 +2,7 @@
 <head>
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="icon" href="images/Keep_Icon.jpg">
 <link rel="stylesheet" type="text/css"href="bower_components/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/signIn.css" />
 <link rel="stylesheet" type="text/css" href="css/signUp.css" />
@@ -10,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="bower_components/angularjs-datepicker/dist/angular-datepicker.css">
 </head>
-<body>
+<body bgcolor="#e0ddd7">
 	<ui-view> </ui-view>
 </body>
 <script type="text/javascript"src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -32,4 +33,6 @@
 <script type="text/javascript" src="js/service/signupService.js"></script>
 <script type="text/javascript" src="js/controller/homeController.js"></script>
 <script type="text/javascript" src="js/service/homeService.js"></script>
+<script type="text/javascript" src="js/controller/archiveController.js"></script>
+<script type="text/javascript" src="js/controller/trashController.js"></script>
 </html>

@@ -1,8 +1,80 @@
-myApp.controller('homeController', function($scope, $state, homeService,
-		$uibModal) {
+myApp.controller('homeController', function($scope, $state, homeService,$uibModal) 
+		{
 	console.log("insidehomecontroller");
 	
+		$scope.homepage=true;
+		$scope.archivepage=false;
+		$scope.trashpage=false;
+		$scope.archivepage=false;
+
+		console.log("inside homeshow");
+		
+		/****************Restore notes method***************/
+		$scope.refresh=function($window){
+			$state.reload();
+		}
+		
+		
+/****************Restore notes method***************/
+		
+		$scope.restoreNotes=function(x)
+		{
+			console.log("inside restore")
+			if (x.trash==true)
+			{
+				x.trash=false;
+				var httpObj = homeService.noteUpdate(x);
+
+				httpObj.then(function(response)
+			{
+					if (response.status == 200) 
+				{
+						console.log(response.data);
+						console.log("Restore sucess");
+						$state.reload();
+				}
+					else
+				{
+						console.log("Restore fld");
+						console.log(response.data.status);
+
+					}
+				});
+				
+			}
+		}
+		
+		
+/****************trash notes method***************/
+		
+		$scope.trashNotes=function(x)
+		{
+			if (x.trash==false)
+			{
+				x.trash=true;
+				var httpObj = homeService.noteUpdate(x);
+
+				httpObj.then(function(response)
+			{
+					if (response.status == 200) 
+				{
+						console.log(response.data);
+						console.log("trash sucess");
+						$state.reload();
+				}
+					else
+				{
+						console.log("trashin fld");
+						console.log(response.data.status);
+
+					}
+				});
+				
+			}
+		}
+	
 	/** ********Set Archive****** */
+		
 	
 	$scope.archiveNotes=function(x)
 	{
@@ -33,11 +105,12 @@ myApp.controller('homeController', function($scope, $state, homeService,
 
 	/** ********Set UnArchiveNotes****** */
 	
-	$scope.unarchiveNotes=function(x)
+	$scope.unArchiveNotes=function(x)
 	{
 		if (x.archive==true)
 			{
 			x.archive=false;
+			
 			var httpObj = homeService.noteUpdate(x);
 
 			httpObj.then(function(response)

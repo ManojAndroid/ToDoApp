@@ -8247,3 +8247,340 @@ ERROR	2017-08-09 19:25:49,101	0	com.bridgelabz.toDoApp.controller.LoginControlle
 ERROR	2017-08-09 19:29:13,209	204108	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
 ERROR	2017-08-09 19:31:33,628	344527	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
 ERROR	2017-08-09 19:35:34,570	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-10 09:29:02,584	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 10:06:00,862	2218278	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-10 10:40:44,932	4302348	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-10 10:58:10,083	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-10 11:03:21,099	311016	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 11:23:08,486	1498403	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-10 11:24:30,867	1580784	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-10 12:09:32,577	4282494	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-2]	Logging successful!
+ERROR	2017-08-10 12:13:08,011	4497928	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-8]	Logging successful!
+ERROR	2017-08-10 12:14:14,710	4564627	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-13]	Logging successful!
+ERROR	2017-08-10 12:15:12,829	4622746	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-25]	Logging successful!
+ERROR	2017-08-10 12:15:38,733	4648650	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-24]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,733	4648650	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-10]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,733	4648650	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-5]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,733	4648650	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,733	4648650	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-18]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-21]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-19]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-22]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-4]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-1]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-20]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-11]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,734	4648651	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-17]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:15:38,737	4648654	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-12]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:16:10,468	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 12:27:38,016	687548	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-10 12:41:13,140	1502672	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-10 12:42:32,096	1581628	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-10 12:43:41,239	1650771	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-11]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,245	1650777	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-18]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,249	1650781	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-24]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,249	1650781	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-21]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,249	1650781	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-4]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,250	1650782	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-3]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,250	1650782	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-13]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,250	1650782	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-1]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,252	1650784	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-19]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,252	1650784	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-5]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,252	1650784	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-22]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,252	1650784	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,253	1650785	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-20]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,253	1650785	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-16]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,254	1650786	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-12]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,254	1650786	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,254	1650786	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-23]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:43:41,254	1650786	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-17]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:44:05,320	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 12:57:01,492	776172	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-10 12:58:05,804	840484	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-5]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:58:05,805	840485	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:58:05,805	840485	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:58:05,805	840485	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-3]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:58:05,805	840485	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:58:05,805	840485	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-1]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:58:05,804	840484	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-10]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 12:59:06,596	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 13:24:52,546	1545950	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-10 13:25:09,275	1562679	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-4]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 13:25:09,276	1562680	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 13:31:17,280	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 14:46:44,176	4526896	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-10 15:18:28,231	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-7]	Logging successful!
+ERROR	2017-08-10 16:00:36,040	2527809	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-8]	Logging successful!
+ERROR	2017-08-10 16:13:52,907	3324676	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-12]	Logging successful!
+ERROR	2017-08-10 16:14:12,200	3343969	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-4]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:14:12,201	3343970	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:14:12,211	3343980	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:14:12,212	3343981	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:14:12,211	3343980	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:14:12,211	3343980	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-5]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:14:29,266	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-10 16:26:50,260	740994	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 16:28:37,169	847903	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-2]	Logging successful!
+ERROR	2017-08-10 16:29:30,889	901623	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:29:30,890	901624	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:29:30,890	901624	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:29:30,890	901624	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-1]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:29:30,890	901624	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 16:29:42,491	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-10 16:50:56,153	1273662	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-08-10 16:53:07,118	1404627	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-08-10 16:59:08,407	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-10 17:01:30,396	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-10 17:33:20,091	1909695	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-10 17:34:00,532	1950136	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-7]	Logging successful!
+ERROR	2017-08-10 17:34:23,701	1973305	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 17:34:23,702	1973306	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-3]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 17:34:23,702	1973306	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-4]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 17:34:23,702	1973306	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 17:34:23,702	1973306	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 17:34:23,702	1973306	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-11]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 17:34:42,422	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-10 18:15:14,043	2431621	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-08-10 18:17:07,272	2544850	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-11]	Logging successful!
+ERROR	2017-08-10 18:17:28,372	2565950	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 18:17:28,372	2565950	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-3]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 18:17:28,372	2565950	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-11]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 18:17:28,372	2565950	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-10]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-10 18:20:22,964	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-10 18:43:58,902	1415938	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-14]	Logging successful!
+ERROR	2017-08-10 19:31:59,013	4296049	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-11]	Logging successful!
+ERROR	2017-08-10 19:34:16,253	4433289	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-11 09:22:42,970	1	org.springframework.web.context.ContextLoader	[localhost-startStop-1]	Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem] for bean with name 'userService' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem
+Related cause: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp] for bean with name 'userDaoImp' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:403)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:389)
+	at org.springframework.context.support.AbstractApplicationContext.getBeanNamesForType(AbstractApplicationContext.java:1177)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:199)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 33 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.validator.UserValidation] for bean with name 'userValidation' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:515)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1197)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:310)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:272)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:247)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.validator.UserValidation
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 38 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem] for bean with name 'userService' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:515)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1197)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:310)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:272)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:247)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 38 more
+Related cause:
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp] for bean with name 'userDaoImp' defined in ServletContext resource [/WEB-INF/toDoApp-servlet.xml]; nested exception is java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1385)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:425)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:395)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:515)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1197)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:310)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.detectMappedInterceptors(AbstractHandlerMapping.java:272)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.initApplicationContext(AbstractHandlerMapping.java:247)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1858)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1701)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:401)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1432)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1377)
+	... 38 more
+ERROR	2017-08-11 09:23:57,097	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-11 10:02:26,967	2309870	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-11 10:11:15,047	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-11 10:33:17,903	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-11 11:05:53,527	1955624	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-11 11:23:12,969	2995066	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-5]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-11 11:23:12,970	2995067	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-08-11 11:24:19,209	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-11 12:05:46,187	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-7]	Logging successful!
+ERROR	2017-08-11 12:10:26,808	280621	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-11 12:12:32,283	406096	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-08-11 12:12:40,198	414011	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 12:12:56,901	430714	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-8]	Logging successful!
+ERROR	2017-08-11 12:14:30,328	524141	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-11 12:18:10,250	744063	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-11 12:19:55,479	849292	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-2]	Logging successful!
+ERROR	2017-08-11 12:25:16,682	1170495	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-6]	HHH000346: Error during managed flush [Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1]
+ERROR	2017-08-11 12:26:32,394	1246207	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-7]	HHH000346: Error during managed flush [Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1]
+ERROR	2017-08-11 12:27:24,216	1298029	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-1]	HHH000346: Error during managed flush [Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1]
+ERROR	2017-08-11 12:28:04,176	1337989	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-9]	HHH000346: Error during managed flush [Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1]
+ERROR	2017-08-11 12:28:11,847	1345660	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-2]	HHH000346: Error during managed flush [Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1]
+ERROR	2017-08-11 12:28:48,395	1382208	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-3]	Column 'userid' cannot be null
+ERROR	2017-08-11 12:28:48,405	1382218	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-3]	HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+ERROR	2017-08-11 12:53:47,570	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-17]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 12:54:12,090	24520	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-13]	Logging successful!
+ERROR	2017-08-11 13:04:29,513	641943	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-12]	Logging successful!
+ERROR	2017-08-11 13:12:00,869	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 13:12:24,030	23161	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 13:12:26,422	25553	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 13:12:26,628	25759	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 13:13:01,568	60699	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-11 13:13:59,100	118231	com.bridgelabz.toDoApp.controller.UserController	[http-bio-8008-exec-7]	Registration Failed.... try Again
+ERROR	2017-08-11 13:14:35,003	154134	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
