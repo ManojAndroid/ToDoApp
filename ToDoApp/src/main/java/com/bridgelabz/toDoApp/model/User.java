@@ -23,7 +23,7 @@ public class User implements Serializable {
 	private String email;
 	private String mobile;
 	private String password;
-	private byte[] profile;
+	private String profile;
 	
 
 	public int getId() {
@@ -75,18 +75,20 @@ public class User implements Serializable {
 	}
 
 	 
-	public byte[] getProfile() {
+	public String  getProfile() {
 		return profile;
 	}
 
-	public void setProfile(byte[] profile) {
-		this.profile = profile;
+	public void setProfile(String string) {
+		this.profile = string;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", mobile=" + mobile + ", password=" + password + ", profile=" + Arrays.toString(profile) + "]";
+				+ ", mobile=" + mobile + ", password=" + password + ", profile=" + profile + "]";
 	}
+
+	
 
 }

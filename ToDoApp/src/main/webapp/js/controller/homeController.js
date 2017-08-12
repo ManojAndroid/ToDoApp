@@ -11,7 +11,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		
 		/****************Restore notes method***************/
 		$scope.refresh=function($window){
-			$state.reload();
+			window.location.reload();
 		}
 		
 		
@@ -31,7 +31,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 				{
 						console.log(response.data);
 						console.log("Restore sucess");
-						$state.reload();
+						$scope.getNote();
 				}
 					else
 				{
@@ -60,7 +60,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 				{
 						console.log(response.data);
 						console.log("trash sucess");
-						$state.reload();
+						$scope.getNote();
 				}
 					else
 				{
@@ -89,7 +89,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			{
 					console.log(response.data);
 					console.log("Archive sucess");
-					$state.reload();
+					$scope.getNote();
 			}
 				else
 			{
@@ -119,7 +119,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 				{
 					console.log(response.data);
 					console.log("UnArchive sucess");
-					$state.reload();
+					$scope.getNote();
 				}
 				else
 				{
@@ -181,7 +181,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		httpObj.then(function(response) {
 			if (response.status == 200) {
 				console.log("Reminder Deleted!!!!");
-				$state.reload();
+				$scope.getNote();
 			} else {
 				console.log("Reminder Deletion faield");
 				console.log(response.data.status);
@@ -201,7 +201,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			if (response.status == 200) {
 				console.log(response.data);
 				console.log("Note Sucessfullly Updated!!");
-				$state.reload();
+				$scope.getNote();
 			} else {
 				console.log("updation faield");
 				console.log(response.data.status);
@@ -213,7 +213,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	$scope.showlist = function() {
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
-		$scope.listgridtoggle = "col-lg-9 col-md-10 col-sm-12 col-xs-12 list "
+		$scope.listgridtoggle = "col-lg-9 col-md-10 col-sm-12 col-xs-12 list"
 		localStorage.setItem("view", "list");
 	}
 
@@ -221,7 +221,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-		$scope.listgridtoggle = "col-lg-3 col-md-6 col-sm-12 col-xs-12 grid "
+		$scope.listgridtoggle = "col-lg-3 col-md-6 col-sm-12 col-xs-12 grid"
 		localStorage.setItem("view", "grid");
 	}
 

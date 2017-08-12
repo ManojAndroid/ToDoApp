@@ -36,6 +36,7 @@ public class LogOutController {
 		User userobject = (User) httpSession.getAttribute("UserSession");
 		if (userobject != null) {
 			httpSession.invalidate();
+			
 			HttpSession session = request.getSession(true);
 			return new ResponseEntity<Response>(HttpStatus.OK);
 		}

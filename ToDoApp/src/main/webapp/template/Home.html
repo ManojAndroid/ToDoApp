@@ -89,10 +89,13 @@
 		
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
+			
 				<div class="row">
 					<div style="width:1000px;margin-left:100px"class="col-lg-12">
+					
 						<div class="col-lg-2"></div>
 						<div id="card" >
+						
 							<div id="headercard" data-ng-show="myVarheader">
 								<input type="text" placeholder="Title" data-ng-model="title"
 									style="width: 100%; padding: 20px; height: 40px; outline: none; border: none;">
@@ -117,14 +120,10 @@
 						<!----------------------------- including archivehtml --------------------->
 						<div ng-include="'template/archiveNotes.html'" data-ng-show="archivepage" ></div>
 						 <div ng-include="'template/trash.html'" data-ng-show="trashpage"></div> 
-					
-						
-
-					<!-- ---------------------- Listgrid view ------------------- -->
-	
-						<div  testpackery data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" >
-							<div data-ng-class="listgridtoggle" data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.archive==false && x.trash==false" data-ng-show="homepage">
-								<div  >
+					<!-- -------------- -------- Listgrid view ------------------- -->
+	                   
+						<div   data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" >
+							<div data-ng-class="listgridtoggle"  data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.archive==false && x.trash==false" data-ng-show="homepage">
 									<font size="5px" color="black">
 										<div id="title" data-ng-bind-html="x.title"data-ng-click="openModal(x)"></div>
 									</font>
@@ -190,9 +189,10 @@
 									<img alt="Reminder" src="images/clock.png"> {{x.reminder | date:"MMM d,h:mm:ss a"}} 
 									<span data-ng-click="deleteReminder(x)" data-ng-show="showimg" id="reminderdelbtn"  title="Delete Reminder" title-direction="bottom">  &#10062;</span>
 									</div>
-								</div>
 							</div>
 							</div> 
+							
+						</div>
 						</div>
 					   <div class="col-lg-2"></div>
 					</div>

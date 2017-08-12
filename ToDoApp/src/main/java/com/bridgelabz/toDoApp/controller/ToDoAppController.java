@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.bridgelabz.toDoApp.JSONResponse.ErrorResponse;
 import com.bridgelabz.toDoApp.JSONResponse.Response;
+import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.ToDo;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
@@ -23,6 +26,10 @@ import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
 public class ToDoAppController {
 	@Autowired
 	ToDoTaskServices toDoTaskServices;
+	@Autowired
+	private UserResponse userResponse;
+	@Autowired
+	 private ErrorResponse errorResponse;
 
 	/**
 	 * toDoSave, method is used to save the user task in database
@@ -43,12 +50,17 @@ public class ToDoAppController {
 		try 
 		{
 			toDoTaskServices.toDoSaveTask(toDo);
-			return new ResponseEntity<Response>(HttpStatus.OK);
+			userResponse.setStatus(1);
+			userResponse.setMessage("ToDo Created Sucessfully");
+			userResponse.setUser(null);
+			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
 		} 
 		catch (Exception exception)
 		{
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+			errorResponse.setStatus(-1);
+			errorResponse.setMessage("  Internal server error....");
+			return new ResponseEntity<Response>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
@@ -70,12 +82,17 @@ public class ToDoAppController {
 		System.out.println("inside todoupdate");
 		try {
 			toDoTaskServices.ToDoUpdateTask(toDo);
-			return new ResponseEntity<Response>(HttpStatus.OK);
+			userResponse.setStatus(1);
+			userResponse.setMessage("ToDo Updated Sucessfully");
+			userResponse.setUser(null);
+			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
 		} 
 		catch (Exception exception) 
 		{
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+			errorResponse.setStatus(-1);
+			errorResponse.setMessage("  Internal server error....");
+			return new ResponseEntity<Response>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
@@ -93,10 +110,14 @@ public class ToDoAppController {
 	{
 		try {
 			toDoTaskServices.ToDodeleteTask(id);
-			return new ResponseEntity<Response>(HttpStatus.OK);
+			userResponse.setStatus(1);
+			userResponse.setMessage("ToDo Deleted Sucessfully");
+			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
 		} catch (Exception exception) {
 			exception.printStackTrace();
-			return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+			errorResponse.setStatus(-1);
+			errorResponse.setMessage("  Internal server error....");
+			return new ResponseEntity<Response>( errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 

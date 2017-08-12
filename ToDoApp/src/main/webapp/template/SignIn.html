@@ -18,8 +18,24 @@
 				<li><button name="txtbtn" ng-click="userLogin()" ng-disabled="signin.$invalid"class="txtbtn">SignIn</button></li>
 		
 		</form>
+		 <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Google Sign in</div>
 		<p class="pc">if not Registered?<a ui-sref="signup">Signup</a> Here</p>
 		</ul>
 		
 	</div>
 </div>
+	/***********Google SignIn*********/
+<<script type="text/javascript">
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log("ID: " + profile.getId()); 
+  console.log('Full Name: ' + profile.getName());
+  console.log('Given Name: ' + profile.getGivenName());
+  console.log("Image URL: " + profile.getImageUrl());
+  console.log("Email: " + profile.getEmail());
+  var id_token = googleUser.getAuthResponse().id_token;
+  console.log("ID Token: " + id_token);
+};
+
+	</script>
+	
