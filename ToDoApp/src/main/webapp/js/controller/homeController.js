@@ -240,16 +240,17 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		var records = homeService.noteGetAll();
 		records.then(function(resp)
 				{
-		        	console.log("notes response"+resp.data[0].reminder);
 		        	$scope.reminder=resp.data[0].reminder;
 					$scope.email = resp.data[0].user.email;
 					$scope.name = resp.data[0].user.firstname;
 					var name1 = resp.data[0].user.firstname;
-					$scope.firstChar = name1.charAt(0);
+					$scope.profileimag = resp.data[0].user.profile;
 					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat' ][new Date().getDay()];
 					console.log(resp.data[0].user.email);
 					$scope.records = resp.data.reverse();
 					$scope.archive=resp.data[0].archive;
+					
+					console.log(resp.data[0].user.profile)
 					
 
 				});

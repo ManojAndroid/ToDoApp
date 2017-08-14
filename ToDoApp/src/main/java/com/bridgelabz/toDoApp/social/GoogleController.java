@@ -13,7 +13,8 @@ package com.bridgelabz.toDoApp.social;
 	import org.springframework.web.bind.annotation.RestController;
 
 	import com.bridgelabz.toDoApp.model.GmailProfile;
-    import com.bridgelabz.toDoApp.model.User;
+import com.bridgelabz.toDoApp.model.Token;
+import com.bridgelabz.toDoApp.model.User;
     import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 
 	@RestController
@@ -22,7 +23,7 @@ package com.bridgelabz.toDoApp.social;
 
 		@Autowired
 		private UserService userService;
-		
+		Token token=new Token();
 		
 		@Autowired
 		private GoogleConnection googleConnection;
@@ -63,7 +64,8 @@ package com.bridgelabz.toDoApp.social;
 			
 			String authCode = request.getParameter("code");
 			String accessToken = googleConnection.getAccessToken(authCode);
-			System.out.println("google accecc token"+accessToken);
+			token.setAccesstoken(accessToken);
+			
 			
 			//get user profile 
 			GmailProfile profile= googleConnection.getUserProfile(accessToken);
@@ -78,6 +80,7 @@ package com.bridgelabz.toDoApp.social;
 				user.setEmail(profile.getEmails().get(0).getValue());
 				user.setPassword("");
 				user.setProfile(profile.getImage().getUrl());
+				System.out.println("user profile"+profile.getImage().getUrl());
 				
 				userService.signUp(user);
 			}

@@ -75,6 +75,7 @@ public class ToDoTaskImpl implements ToDoTaskDao
 			Session session = sessionFactory.openSession();
 			Query query = session.createQuery("from ToDo where userid = "+userid);
 			List<ToDo> toDo= query.list();
+			System.out.println("get all"+toDo);
 			return toDo;
 	}
 	public List<ToDo> gateSingleTask(int noteid) {
