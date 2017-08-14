@@ -64,7 +64,12 @@ public class UserDaoImp implements UserDao {
 
 	public User getUserByEmail(String email) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.eq("email", email));
+		User userresult = (User) criteria.uniqueResult();
+	    return userresult;
+	
 	}
 }

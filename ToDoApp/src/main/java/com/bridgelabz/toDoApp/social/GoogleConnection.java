@@ -83,7 +83,7 @@ import com.bridgelabz.toDoApp.model.GoogleAccessToken;
 			
 			GmailProfile profile = response.readEntity(GmailProfile.class);
 			restCall.close();
-			
+			System.out.println("profile details"+profile);
 			return profile;
 		}
 	}

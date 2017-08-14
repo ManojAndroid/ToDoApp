@@ -18,7 +18,11 @@
 				<li><button name="txtbtn" ng-click="userLogin()" ng-disabled="signin.$invalid"class="txtbtn">SignIn</button></li>
 		
 		</form>
-		 <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Google Sign in</div>
+		 
+				<div>
+				<div style="color: red;font-weight: bold;margin-left: 28%;">{{errorMessage}}</div>
+					<button class="btn btn-danger" id="googlesignin" ><a href="loginWithGoogle" style="text-decoration:none;">Login with google+</a></button>
+				</div>
 		<p class="pc">if not Registered?<a ui-sref="signup">Signup</a> Here</p>
 		</ul>
 		

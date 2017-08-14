@@ -17,7 +17,8 @@ package com.bridgelabz.toDoApp.social;
     import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 
 	@RestController
-	public class GoogleController {
+	public class GoogleController 
+	{
 
 		@Autowired
 		private UserService userService;
@@ -26,7 +27,7 @@ package com.bridgelabz.toDoApp.social;
 		@Autowired
 		private GoogleConnection googleConnection;
 		
-		@RequestMapping(value="/loginWithGoogle")
+		@RequestMapping(value="loginWithGoogle")
 		public void googleConnection(HttpServletRequest request, HttpServletResponse response) throws IOException {
 			
 			String unid = UUID.randomUUID().toString();
@@ -35,22 +36,21 @@ package com.bridgelabz.toDoApp.social;
 			
 			String googleLoginURL = googleConnection.getGoogleAuthURL(unid);
 			
-			response.sendRedirect("http://localhost:8008/toDoApp/#!/home");
+			response.sendRedirect(googleLoginURL);
 			System.out.println("enside gmail controller55 "+googleLoginURL);
 			return;
 		}
 		
 		
-		@RequestMapping(value="/googleConnection")
+		@RequestMapping(value="googleConnection")
 		public void redirectFromGoogle(HttpServletRequest request, HttpServletResponse response) throws IOException{
-			
-			System.out.println("inside google connection");
-			
 			String sessionState = (String) request.getSession().getAttribute("STATE");
 			String googlestate = request.getParameter("state");
 			
-			if( sessionState == null || !sessionState.equals(googlestate) ){
-				response.sendRedirect("/loginWithGoogle");
+			if( sessionState == null || !sessionState.equals(googlestate) )
+			{
+				System.out.println(sessionState+""+googlestate);
+				response.sendRedirect("loginWithGoogle");
 				return;
 			}
 			
@@ -62,17 +62,19 @@ package com.bridgelabz.toDoApp.social;
 			}
 			
 			String authCode = request.getParameter("code");
-			
 			String accessToken = googleConnection.getAccessToken(authCode);
+			System.out.println("google accecc token"+accessToken);
 			
 			//get user profile 
 			GmailProfile profile= googleConnection.getUserProfile(accessToken);
-			
 			User user = userService.getUserByEmail(profile.getEmails().get(0).getValue());
-			
+			System.out.println(user);
 			if(user==null){
 				user = new User();
-				user.setFirstname(profile.getDisplayName());
+			    String name = profile.getDisplayName();
+			    String namesplit[]=name.split(" ");
+				user.setFirstname(namesplit[0]);
+				user.setLastname(namesplit[1]);
 				user.setEmail(profile.getEmails().get(0).getValue());
 				user.setPassword("");
 				user.setProfile(profile.getImage().getUrl());
@@ -80,8 +82,8 @@ package com.bridgelabz.toDoApp.social;
 				userService.signUp(user);
 			}
 			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
-			
+			session.setAttribute("UserSession", user);
+			response.sendRedirect("http://localhost:8008/ToDoApp/#!/home");
 			
 			
 		}

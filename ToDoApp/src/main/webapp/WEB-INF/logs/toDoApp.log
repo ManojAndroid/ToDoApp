@@ -8737,3 +8737,21 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	... 24 more
 ERROR	2017-08-12 18:28:19,076	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-40]	Logging successful!
 ERROR	2017-08-12 18:44:48,946	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-52]	Logging successful!
+ERROR	2017-08-14 09:56:39,348	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 09:56:41,153	1805	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 09:58:22,210	102862	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:00:19,003	219655	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:00:48,221	248873	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:00:52,660	253312	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:01:04,002	264654	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:01:10,200	270852	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-08-14 10:31:05,170	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-38]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:31:13,661	8491	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-38]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 10:31:25,478	20308	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-38]	Logging successful!
+ERROR	2017-08-14 10:53:10,180	0	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-84]	Column 'userid' cannot be null
+ERROR	2017-08-14 10:53:10,182	2	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-84]	HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+ERROR	2017-08-14 11:25:44,649	0	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-97]	Column 'userid' cannot be null
+ERROR	2017-08-14 11:25:44,651	2	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-97]	HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+ERROR	2017-08-14 11:40:15,425	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-08-14 13:28:17,187	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 13:33:19,323	302136	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
