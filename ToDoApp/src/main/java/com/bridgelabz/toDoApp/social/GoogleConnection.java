@@ -1,6 +1,5 @@
 package com.bridgelabz.toDoApp.social;
 
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
@@ -18,8 +17,7 @@ import com.bridgelabz.toDoApp.model.GmailProfile;
 import com.bridgelabz.toDoApp.model.GoogleAccessToken;
 
 @Component
-	public class GoogleConnection 
-	{
+public class GoogleConnection {
 
 		public static final String App_Id = "401386757933-6nrofikhrbiqm3etbptd5cqcqji8o40e.apps.googleusercontent.com";
 		public static final String Secret_Id = "QxhltOL-qVwGOAErF1OSWulL";
@@ -73,8 +71,7 @@ import com.bridgelabz.toDoApp.model.GoogleAccessToken;
 		public GmailProfile getUserProfile(String accessToken) {
 			String gmail_user_url= "https://www.googleapis.com/plus/v1/people/me";
 			
-		System.out.println("gmail details"+gmail_user_url);
-			
+		    System.out.println("gmail details"+gmail_user_url);
 			ResteasyClient restCall = new ResteasyClientBuilder().build();
 			ResteasyWebTarget target = restCall.target(gmail_user_url);
 			

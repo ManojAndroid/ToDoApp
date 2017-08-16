@@ -8960,3 +8960,73 @@ ERROR	2017-08-14 16:51:52,150	298157	com.bridgelabz.toDoApp.controller.LoginCont
 ERROR	2017-08-14 16:52:34,347	340354	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-44]	Logging successful!
 ERROR	2017-08-14 17:07:58,377	1264384	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-46]	Logging Unsuccessful!.... try Again
 ERROR	2017-08-14 17:08:05,629	1271636	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-46]	Logging successful!
+ERROR	2017-08-14 18:29:22,848	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging Unsuccessful!.... try Again
+ERROR	2017-08-14 18:29:32,604	9756	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-5]	Logging successful!
+ERROR	2017-08-16 11:01:30,333	0	org.springframework.web.context.ContextLoader	[localhost-startStop-1]	Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'facebookController' defined in file [/home/bridgeit/toDoApp/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ToDoApp/WEB-INF/classes/com/bridgelabz/toDoApp/social/FacebookController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bridgelabz.toDoApp.social.FacebookController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert "}" to complete MethodBody
+	Syntax error, insert "}" to complete ClassBody
+	The method getFbAccessToken(String) is undefined for the type FacebookConnection
+	GmailProfile cannot be resolved to a type
+	The method getFbUserProfile(String) is undefined for the type FacebookConnection
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bridgelabz.toDoApp.social.FacebookController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert "}" to complete MethodBody
+	Syntax error, insert "}" to complete ClassBody
+	The method getFbAccessToken(String) is undefined for the type FacebookConnection
+	GmailProfile cannot be resolved to a type
+	The method getFbUserProfile(String) is undefined for the type FacebookConnection
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:154)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1147)
+	... 22 more
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error, insert "}" to complete MethodBody
+	Syntax error, insert "}" to complete ClassBody
+	The method getFbAccessToken(String) is undefined for the type FacebookConnection
+	GmailProfile cannot be resolved to a type
+	The method getFbUserProfile(String) is undefined for the type FacebookConnection
+
+	at com.bridgelabz.toDoApp.social.FacebookController.<init>(FacebookController.java:43)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:142)
+	... 24 more
+ERROR	2017-08-16 11:34:38,027	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-08-16 16:45:02,987	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-14]	Logging successful!
+ERROR	2017-08-16 17:01:05,456	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-16 17:17:55,045	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-13]	Logging successful!
+ERROR	2017-08-16 17:18:21,364	26319	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-11]	Logging successful!
+ERROR	2017-08-16 17:18:21,364	26319	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-08-16 17:18:21,368	26323	org.hibernate.internal.ExceptionMapperStandardImpl	[http-bio-8008-exec-11]	HHH000346: Error during managed flush [org.hibernate.HibernateException: identifier of an instance of com.bridgelabz.toDoApp.model.Token was altered from 16 to 17]
+ERROR	2017-08-16 17:18:21,369	26324	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-16 17:18:21,376	26331	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-11]	Registration Failed
+ERROR	2017-08-16 17:18:24,279	29234	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-12]	Logging successful!
+ERROR	2017-08-16 17:25:32,851	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-08-16 17:40:38,377	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!

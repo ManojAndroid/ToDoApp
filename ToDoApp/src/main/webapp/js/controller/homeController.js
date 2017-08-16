@@ -250,8 +250,6 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 					$scope.records = resp.data.reverse();
 					$scope.archive=resp.data[0].archive;
 					
-					console.log(resp.data[0].user.profile)
-					
 
 				});
 	}
