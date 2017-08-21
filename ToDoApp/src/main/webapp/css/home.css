@@ -32,7 +32,7 @@ img {
 }
 
 #searchicon {
-	width: 350%;
+	width: 250%;
 	margin-left: -280%;
 	position: inherit;
 	height: 50px;
@@ -134,7 +134,7 @@ img {
 
 .footerimg {
     vertical-align: middle;
-    padding-left:20px;
+    padding-left:12px;
     cursor: pointer;
 }
 
@@ -391,6 +391,33 @@ img {
     border-radius: 59px;
     margin-left: -36px;
     margin-top: -17px;
+}
+Sunil Kumar (sunilkumar192114@gmail.com)
+@media only screen and (max-width: 736px) {
+#query {
+width: 200px;
+margin-right: 167px;
+height: 45px;
+margin-top: -7px;
+}
+}
+
+@media only screen and (min-width: 736px) and (max-width: 1200px) {
+#query {
+width: 300px;
+margin-right: 167px;
+height: 45px;
+margin-top: -7px;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+#query {
+width: 549px;
+margin-right: 167px;
+height: 45px;
+margin-top: -7px;
+}
 }
 
 

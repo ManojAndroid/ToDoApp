@@ -1,6 +1,5 @@
 package com.bridgelabz.toDoApp.model;
 
-import java.util.Date;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
@@ -10,8 +9,6 @@ public class GmailProfile {
 
 	private String id;
 	private String displayName;
-	private Date birthday;
-	private String gender;
 	private UserImage image;
 	private List<GoogleEmails> emails;
 
@@ -27,18 +24,6 @@ public class GmailProfile {
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
-	public Date getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 	public UserImage getImage() {
 		return image;
 	}
@@ -53,9 +38,8 @@ public class GmailProfile {
 	}
 	@Override
 	public String toString() {
-		return "GmailProfile [id=" + id + ", displayName=" + displayName + ", birthday=" + birthday + ", gender="
-				+ gender + ", image=" + image + ", emails=" + emails + "]";
+		return "GmailProfile [id=" + id + ", displayName=" + displayName + ", image=" + image + ", emails=" + emails
+				+ "]";
 	}
-	
 
 }

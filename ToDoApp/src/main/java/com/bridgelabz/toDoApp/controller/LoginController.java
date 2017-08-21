@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bridgelabz.toDoApp.JSONResponse.ErrorResponse;
 import com.bridgelabz.toDoApp.JSONResponse.Response;
+import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
@@ -37,7 +37,9 @@ public class LoginController {
 	UserToken userToken;
 	/*Token token = new Token();*/
 	@Autowired
-	private ErrorResponse errorResponse;
+	private Response errorResponse;
+	@Autowired
+	private UserResponse userResponse;
 
 	/**
 	 * @param user
@@ -47,7 +49,7 @@ public class LoginController {
 	 * @throws Exception
 	 */
 	@PostMapping(value = "/signin")
-	public ResponseEntity<Token> signIn(@RequestBody User user, HttpServletRequest request,
+	public ResponseEntity<Response> signIn(@RequestBody User user, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
 			user.setPassword(CryptoUtil.getDigest(user.getPassword()));
@@ -58,14 +60,17 @@ public class LoginController {
 				Token token = userToken.generateToken();
 				token.setUser(signinresult);
 				tokenService.tokenSave(token);
-
-				response.setHeader("accesstoken", token.getAccesstoken());
 				token.setUser(null);
-				return new ResponseEntity<Token>(token, HttpStatus.OK);
+				userResponse.setStatus(1);
+				userResponse.setMessage("logging sucessfully");
+				userResponse.setToken(token);
+				return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
 			}
 
 			logger.error("Logging Unsuccessful!.... try Again");
-			return new ResponseEntity<Token>(HttpStatus.NOT_FOUND);
+			errorResponse.setStatus(-1);
+			errorResponse.setMessage(" Email/Password Invalid.....try Again!!");
+			return new ResponseEntity<Response>(errorResponse,HttpStatus.UNAUTHORIZED);
 		} 
 		
 		catch (Exception exception) 
@@ -74,7 +79,7 @@ public class LoginController {
 			logger.error("Registration Failed");
 			errorResponse.setStatus(-1);
 			errorResponse.setMessage("  Internal server error....");
-			return new ResponseEntity<Token>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Response>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}

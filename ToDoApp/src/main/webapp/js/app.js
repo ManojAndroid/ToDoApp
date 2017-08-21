@@ -29,9 +29,6 @@ $stateProvider
 	   templateUrl:"template/Home.html",
 	   controller:"trashCtrl"
 	 })
-	 
-	console.log("inside APPPJSwwww");
-
  $urlRouterProvider.otherwise('/signin');
 
 });

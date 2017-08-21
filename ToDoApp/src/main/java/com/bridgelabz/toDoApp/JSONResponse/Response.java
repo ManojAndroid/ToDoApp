@@ -1,5 +1,8 @@
 package com.bridgelabz.toDoApp.JSONResponse;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Response {
 	
 	private int status;

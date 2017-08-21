@@ -56,6 +56,7 @@ package com.bridgelabz.toDoApp.social;
 			}
 			
 			String authCode = request.getParameter("code");
+			System.out.println("authcode "+authCode);
 			String accessToken = googleConnection.getAccessToken(authCode);
 			
 			GmailProfile profile= googleConnection.getUserProfile(accessToken);
@@ -66,8 +67,6 @@ package com.bridgelabz.toDoApp.social;
 			tokenService.tokenSave(token);
 			response.setHeader("accesstoken", token.getAccesstoken());
 			//get user profile 
-			
-		
 			if(user==null)
 			{
 				user = new User();

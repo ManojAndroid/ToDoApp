@@ -12,12 +12,11 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.springframework.stereotype.Component;
-
 import com.bridgelabz.toDoApp.model.GmailProfile;
 import com.bridgelabz.toDoApp.model.GoogleAccessToken;
-
 @Component
-public class GoogleConnection {
+public class GoogleConnection
+{
 
 		public static final String App_Id = "401386757933-6nrofikhrbiqm3etbptd5cqcqji8o40e.apps.googleusercontent.com";
 		public static final String Secret_Id = "QxhltOL-qVwGOAErF1OSWulL";
@@ -52,26 +51,25 @@ public class GoogleConnection {
 			
 			ResteasyWebTarget target = restCall.target(accessTokenURL);
 			
-			Form f = new Form();
-			f.param("client_id", App_Id);
-			f.param("client_secret", Secret_Id);
-			f.param("redirect_uri",Redirect_URI );
-			f.param("code", authCode);
-			f.param("grant_type","authorization_code");
+			Form form = new Form();
+			form.param("client_id", App_Id);
+			form.param("client_secret", Secret_Id);
+			form.param("redirect_uri",Redirect_URI );
+			form.param("code", authCode);
+			form.param("grant_type","authorization_code");
 			
-			Response response = target.request().accept(MediaType.APPLICATION_JSON).post(Entity.form(f) );
+			Response response = target.request().accept(MediaType.APPLICATION_JSON).post(Entity.form(form) );
 			
 			GoogleAccessToken accessToken = response.readEntity(GoogleAccessToken.class);
 			
 			restCall.close();
-			
 			return accessToken.getAccess_token();
 		}
+		
 
-		public GmailProfile getUserProfile(String accessToken) {
+		public GmailProfile getUserProfile(String accessToken) 
+		{
 			String gmail_user_url= "https://www.googleapis.com/plus/v1/people/me";
-			
-		    System.out.println("gmail details"+gmail_user_url);
 			ResteasyClient restCall = new ResteasyClientBuilder().build();
 			ResteasyWebTarget target = restCall.target(gmail_user_url);
 			
@@ -80,7 +78,6 @@ public class GoogleConnection {
 			
 			GmailProfile profile = response.readEntity(GmailProfile.class);
 			restCall.close();
-			System.out.println("profile details"+profile);
 			return profile;
 		}
 	}

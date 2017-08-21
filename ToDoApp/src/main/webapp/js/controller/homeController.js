@@ -13,7 +13,27 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		$scope.refresh=function($window){
 			window.location.reload();
 		}
-		
+		/****************Share on facebook method***************/
+		$scope.facebookshare = function(x) {
+		       console.log("facebook share")
+		       FB.init({
+		           appId: '689518927923824',
+		           status: true,
+		           xfbml: true,
+		           version     : 'v2.7', 
+		       }); 
+		    
+		       FB.ui({
+		               method: 'share_open_graph',
+		               action_type: 'og.shares',
+		               action_properties: JSON.stringify({
+		                   object: {
+		                       'og:title': x.title,
+		                       'og:description': x.description,
+		                   }
+		               })
+		           });
+		};
 		
 /****************Restore notes method***************/
 		
@@ -243,8 +263,11 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		        	$scope.reminder=resp.data[0].reminder;
 					$scope.email = resp.data[0].user.email;
 					$scope.name = resp.data[0].user.firstname;
-					var name1 = resp.data[0].user.firstname;
+					
+					console.log("firstLetter",$scope.name[0]);
+					
 					$scope.profileimag = resp.data[0].user.profile;
+					console.log("image"+resp.data[0].user.profile);
 					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat' ][new Date().getDay()];
 					console.log(resp.data[0].user.email);
 					$scope.records = resp.data.reverse();

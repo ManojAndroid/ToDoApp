@@ -8,7 +8,7 @@ public class FaceBookProfile {
 	private String id;
 	private String name;
 	private String email;
-	private String cover;
+	private UserImage image;
 
 	public String getId() {
 		return id;
@@ -34,17 +34,19 @@ public class FaceBookProfile {
 		this.email = email;
 	}
 
-	public String getCover() {
-		return cover;
+	public UserImage getImage() {
+		return image;
 	}
 
-	public void setCover(String cover) {
-		this.cover = cover;
+	public void setImage(UserImage image) {
+		this.image = image;
 	}
 
 	@Override
 	public String toString() {
-		return "FaceBookProfile [id=" + id + ", name=" + name + ", email=" + email + ", cover=" + cover + "]";
+		return "FaceBookProfile [id=" + id + ", name=" + name + ", email=" + email + ", image=" + image + "]";
 	}
+
+	
 
 }

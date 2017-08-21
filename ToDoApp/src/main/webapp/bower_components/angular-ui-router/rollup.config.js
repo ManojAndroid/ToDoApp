@@ -1,8 +1,3 @@
-import nodeResolve from 'rollup-plugin-node-resolve';
-import uglify from 'rollup-plugin-uglify';
-import progress from 'rollup-plugin-progress';
-import sourcemaps from 'rollup-plugin-sourcemaps';
-import visualizer from 'rollup-plugin-visualizer';
 
 var MINIFY = process.env.MINIFY;
 var MONOLITHIC = process.env.MONOLITHIC;
@@ -93,4 +88,4 @@ const CONFIG =
     MONOLITHIC ? MONOLITHIC_ROUTER_CONFIG :
     ROUTER ? ROUTER_CONFIG : ROUTER_CONFIG;
 
-export default CONFIG;
+

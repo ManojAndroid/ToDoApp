@@ -79,8 +79,8 @@ public class FacebookController {
 			user.setFirstname(namesplit[0]);
 			user.setLastname(namesplit[1]);
 			user.setEmail(profile.getEmail());
+			user.setProfile(profile.getImage().getUrl());
 			user.setPassword("");
-			user.setProfile(profile.getCover());
 			userService.signUp(user);
 		}
 		HttpSession session = request.getSession();

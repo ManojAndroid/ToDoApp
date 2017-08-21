@@ -35,7 +35,7 @@ public class FacebookConnection {
 			
 			e.printStackTrace();
 		}
-		System.out.println("inside google authentication"+fbLoginURL);
+		System.out.println("inside fb authentication"+fbLoginURL);
 		return fbLoginURL;
 	}
 	
@@ -59,7 +59,7 @@ public class FacebookConnection {
 	}
 
 	public FaceBookProfile getFbUserProfile(String accessToken) {
-       String getUserURL = "https://graph.facebook.com/v2.9/me?access_token="+accessToken+"&fields=id,name,email";
+       String getUserURL = "https://graph.facebook.com/v2.9/me?access_token="+accessToken+"&fields=id,name,email,picture";
 		System.out.println("facebook user"+getUserURL);
 		ResteasyClient restCall = new ResteasyClientBuilder().build();
 		
