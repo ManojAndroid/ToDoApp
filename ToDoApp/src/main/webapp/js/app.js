@@ -29,6 +29,11 @@ $stateProvider
 	   templateUrl:"template/Home.html",
 	   controller:"trashCtrl"
 	 })
+	  .state('reminder',{
+	   url:'/reminder',
+	   templateUrl:"template/Home.html",
+	   controller:"reminderCtrl"
+	 })
  $urlRouterProvider.otherwise('/signin');
 
 });

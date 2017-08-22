@@ -28,10 +28,23 @@ img {
 
 #header {
 	background-color: #fb0;
-	border-color: 1 px solid #fb0;
 }
-
-#searchicon {
+.archive{
+	
+	background-color: rgb(96, 125, 139);
+	border-color:1px solid rgb(96, 125, 139) !important; 
+}
+.reminder{
+	
+	background-color:#1d708c;
+	border-color: 1px solid #1d708c !important; 
+	
+}
+.trash{
+	background-color: rgb(99, 99, 99);
+	border-color: 1px solidrgb(99, 99, 99) !important; 
+}
+/* #searchicon {
 	width: 250%;
 	margin-left: -280%;
 	position: inherit;
@@ -44,13 +57,13 @@ img {
 }
 #search{
     z-index: 2;
-    margin-left: -795px;
+    margin-left: -788px;
     height: 51px;
     margin-top: -9px;
     background-color: #edb953;
     border: none;
     width: 71px;
-}
+} */
 #sidebar-wrapper {
 	position: fixed;
 	left: 250px;
@@ -182,6 +195,7 @@ img {
 }
 #title{
 	    height: 50px;
+	    border: none;
 }
 
 #card {
@@ -205,15 +219,6 @@ img {
 	outline: none;
 	border-bottom: 1px solid #c3c6cc;
 }
-
-/* body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #e0ddd7 !important;
-}
- */
 #footergrid {
 	outline: none;
 	padding-top: 6%;
@@ -395,8 +400,7 @@ img {
 Sunil Kumar (sunilkumar192114@gmail.com)
 @media only screen and (max-width: 736px) {
 #query {
-width: 200px;
-margin-right: 167px;
+width: 100px;
 height: 45px;
 margin-top: -7px;
 }
@@ -405,7 +409,6 @@ margin-top: -7px;
 @media only screen and (min-width: 736px) and (max-width: 1200px) {
 #query {
 width: 300px;
-margin-right: 167px;
 height: 45px;
 margin-top: -7px;
 }
@@ -414,7 +417,6 @@ margin-top: -7px;
 @media only screen and (min-width: 1200px) {
 #query {
 width: 549px;
-margin-right: 167px;
 height: 45px;
 margin-top: -7px;
 }

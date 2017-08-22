@@ -6,6 +6,10 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		$scope.archivepage=false;
 		$scope.trashpage=false;
 		$scope.archivepage=false;
+		$scope.reminderpage=false;
+		$scope.todoname="Google Keep";
+		$scope.checkreminder=new Date();
+		
 
 		console.log("inside homeshow");
 		
@@ -155,6 +159,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	/** ********Set Reminder****** */
 	$scope.setReminder = function(x, days) {
 		var reminderdate = new Date();
+		
 		console.log(reminderdate);
 		if (days == 'today') 
 		{
@@ -241,7 +246,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-		$scope.listgridtoggle = "col-lg-3 col-md-6 col-sm-12 col-xs-12 grid"
+		$scope.listgridtoggle = "col-lg-3 col-md-4 col-sm-12 col-xs-12 grid"
 		localStorage.setItem("view", "grid");
 	}
 

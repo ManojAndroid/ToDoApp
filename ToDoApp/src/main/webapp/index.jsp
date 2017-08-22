@@ -37,5 +37,6 @@
 <script type="text/javascript" src="js/service/homeService.js"></script>
 <script type="text/javascript" src="js/controller/archiveController.js"></script>
 <script type="text/javascript" src="js/controller/trashController.js"></script>
+<script type="text/javascript" src="js/controller/reminderController.js"></script>
 <script type="text/javascript" src="http://connect.facebook.net/en_US/sdk.js"></script>
 </html>

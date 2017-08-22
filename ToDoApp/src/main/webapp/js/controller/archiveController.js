@@ -7,5 +7,8 @@ myApp.controller('archiveCtrl', function($scope,$controller)
 		$scope.trashpage=false;
 		$scope.pin=false;
 		$scope.archivepage=true;
+		$scope.reminderpage=false;
+		$scope.todoname="Archive";
+		$scope.notecolor = "archive";
 	}
 });
