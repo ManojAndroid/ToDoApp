@@ -20,6 +20,13 @@ public class UserAccessTokenService
     	tokenImplement.tokenSave(token);
     	
     }
+   
+    public  void tokenUpdate( Token token)
+    {
+    	
+    	tokenImplement.tokenUpdate( token);
+    	
+    }
     
     public Token getToken(String accesstoken)
     {
@@ -33,6 +40,10 @@ public class UserAccessTokenService
     
     
     
+     public void tokenDelete(String accesstoken)
+     {
+     	 	tokenImplement.tokenDelete( accesstoken);
+     }
     
     
     

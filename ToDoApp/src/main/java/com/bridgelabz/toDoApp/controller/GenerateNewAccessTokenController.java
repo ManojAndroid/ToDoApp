@@ -21,21 +21,26 @@ public class GenerateNewAccessTokenController
 	UserAccessTokenService tokenService;
 	UserToken userToken;
 
-	@RequestMapping(value = "newaccesstoken")
+	@RequestMapping(value = "/newaccesstoken")
 	public ResponseEntity<Response> generateNewToken(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		String accesstken = request.getHeader("accToken");
+		System.out.println("heder token"+accesstken);
 		Token token = tokenService.getRefreshToken(accesstken);
+		System.out.println(token);
 		String refreshToken = token.getRefreshtoken();
 		try {
 			
 			boolean refreshtokenresult = userToken.refreshTokenValidation(refreshToken);
+			System.out.println("refreshtokenresult"+refreshtokenresult);
 			if (refreshtokenresult == true)
 			{
-				token = userToken.generateNewAccessToken();
-				
+				Token accesstoken = userToken.generateNewAccessToken();
+				tokenService.tokenUpdate(accesstoken);
+				return new ResponseEntity<Response>(HttpStatus.OK);
 			}
-			return new ResponseEntity<Response>(HttpStatus.UNAUTHORIZED);
+			
+			return new ResponseEntity<Response>(HttpStatus.NOT_ACCEPTABLE);
 		} 
 		catch (Exception exception)
 		{

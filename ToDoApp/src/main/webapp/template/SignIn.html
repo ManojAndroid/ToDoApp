@@ -6,6 +6,7 @@
 			</div>
 			
 			<ul>
+			
 				 <li><input type="email" name="email" class="txtuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>
 			
 			    <span style="color:Red padding-left: 25px;" ng-show="signin.email.$error.required"> Enter Email! </span>
@@ -13,21 +14,17 @@
 				
 				<li><input type="password" name="password" class="txtpass" placeholder="User password"ng-model="password"></li>
 			
-			    <span style="color:Red" ng-show="signin.password.$error.required"> Enter  Password! </span>
-				
+			   <!--  <span style="color:Red" ng-show="signin.password.$error.required"> Enter  Password! </span> -->
+				<span style="color: red;font-weight: bold;margin-left:10%;">{{errmsg}}</span>
 				<li><button name="txtbtn" ng-click="userLogin()" ng-disabled="signin.$invalid"class="txtbtn">SignIn</button></li>
-		
+		         
 		</form>
-		 
 				<div>
-				<div style="color: red;font-weight: bold;margin-left: 28%;">{{errorMessage}}</div>
 					<button class="btn btn-success" id="googlesignin" ><a href="loginWithGoogle" style="text-decoration:none;">Login with google+</a></button>
 					
 					<div>
-				<div style="color: red;font-weight: bold;margin-left: 28%;">{{errorMessage}}</div>
 					<button class="btn btn-info" id="googlesignin" ><a href="loginWithFacebook" style="text-decoration:none;">Login with FB</a></button>
 				</div>
-					
 					
 				</div>
 		<p class="pc">if not Registered?<a ui-sref="signup">Signup</a> Here</p>

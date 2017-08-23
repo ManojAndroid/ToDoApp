@@ -1,6 +1,13 @@
 myApp.service('homeService', function($http) {
 
 	console.log("in homeService")
+	this.generatNewAccestoken = function() {
+		return $http({
+			url : "newaccesstoken",
+			method : "post",
+			headers: {'accToken': localStorage.getItem("accesstoken")}
+		})
+	};
 	this.noteCreate = function(notedata) {
 		return $http({
 			url : "rest/todocreate",

@@ -25,7 +25,9 @@ public class UserToken
 	{
 	
 		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
+		token.setCreatedtime(new Date());
 		return token;
+		
 	}
 	
 	public Token generateToken()
@@ -52,7 +54,7 @@ public class UserToken
     		System.out.println("difference time"+diff);
     		long differencetimeinminute=TimeUnit.MILLISECONDS.toMinutes(diff);
     		System.out.println("difference"+differencetimeinminute);
-    		if(differencetimeinminute>120)
+    		if(differencetimeinminute>1)
     		{
     			return null;
     		}	
@@ -78,8 +80,11 @@ public class UserToken
     		System.out.println("difference"+differencetimeinminute);
     		if(differencetimeinminute>120)
     		{
+    			System.out.println("returning false");
     			return false;
+    			
     		}	
+    		System.out.println("returning true");
     			return true; 
     	
     	}

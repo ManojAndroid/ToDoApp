@@ -66,18 +66,19 @@ public class LoginController {
 				userResponse.setToken(token);
 				return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
 			}
-
+			else{
 			logger.error("Logging Unsuccessful!.... try Again");
-			errorResponse.setStatus(-1);
-			errorResponse.setMessage(" Email/Password Invalid.....try Again!!");
-			return new ResponseEntity<Response>(errorResponse,HttpStatus.UNAUTHORIZED);
+			userResponse.setStatus(-1);
+			userResponse.setMessage(" Email/Password Invalid.....try Again!!");
+			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
+			}
 		} 
 		
 		catch (Exception exception) 
 		{
 			exception.printStackTrace();
 			logger.error("Registration Failed");
-			errorResponse.setStatus(-1);
+			errorResponse.setStatus(-2);
 			errorResponse.setMessage("  Internal server error....");
 			return new ResponseEntity<Response>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
 		}

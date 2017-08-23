@@ -1,179 +1,149 @@
-myApp.controller('homeController', function($scope, $state, homeService,$uibModal) 
-		{
+myApp.controller('homeController', function($scope, $state, homeService,
+		$uibModal) {
 	console.log("insidehomecontroller");
 	
-		$scope.homepage=true;
-		$scope.archivepage=false;
-		$scope.trashpage=false;
-		$scope.archivepage=false;
-		$scope.reminderpage=false;
-		$scope.todoname="Google Keep";
-		$scope.checkreminder=new Date();
-		
+	$scope.notecard = true;
+	$scope.homepage = true;
+	$scope.archivepage = false;
+	$scope.trashpage = false;
+	$scope.archivepage = false;
+	$scope.reminderpage = false;
+	$scope.todoname = "Google Keep";
 
-		console.log("inside homeshow");
-		
-		/****************Restore notes method***************/
-		$scope.refresh=function($window){
-			window.location.reload();
-		}
-		/****************Share on facebook method***************/
-		$scope.facebookshare = function(x) {
-		       console.log("facebook share")
-		       FB.init({
-		           appId: '689518927923824',
-		           status: true,
-		           xfbml: true,
-		           version     : 'v2.7', 
-		       }); 
-		    
-		       FB.ui({
-		               method: 'share_open_graph',
-		               action_type: 'og.shares',
-		               action_properties: JSON.stringify({
-		                   object: {
-		                       'og:title': x.title,
-		                       'og:description': x.description,
-		                   }
-		               })
-		           });
-		};
-		
-/****************Restore notes method***************/
-		
-		$scope.restoreNotes=function(x)
-		{
-			console.log("inside restore")
-			if (x.trash==true)
-			{
-				x.trash=false;
-				var httpObj = homeService.noteUpdate(x);
+	$scope.checkreminder = new Date();
 
-				httpObj.then(function(response)
-			{
-					if (response.status == 200) 
-				{
-						console.log(response.data);
-						console.log("Restore sucess");
-						$scope.getNote();
+	console.log("inside homeshow");
+
+	/** **************Restore notes method************** */
+	$scope.refresh = function($window) {
+		window.location.reload();
+	}
+	/** **************Share on face book method************** */
+	$scope.facebookshare = function(x) {
+		FB.init({
+			appId : '689518927923824',
+			status : true,
+			xfbml : true,
+			version : 'v2.7',
+		});
+
+		FB.ui({
+			method : 'share_open_graph',
+			action_type : 'og.shares',
+			action_properties : JSON.stringify({
+				object : {
+					'og:title' : x.title.replace(/<[^>]+>/gm, ' ').replace(
+							/&nbsp;/g, ''),
+					'og:description' : x.description.replace(/<[^>]+>/gm, ' ')
+							.replace(/&nbsp;/g, ''),
 				}
-					else
-				{
-						console.log("Restore fld");
-						console.log(response.data.status);
+			})
+		});
+	};
 
-					}
-				});
-				
-			}
-		}
-		
-		
-/****************trash notes method***************/
-		
-		$scope.trashNotes=function(x)
-		{
-			if (x.trash==false)
-			{
-				x.trash=true;
-				var httpObj = homeService.noteUpdate(x);
+	/** **************Restore notes method************** */
 
-				httpObj.then(function(response)
-			{
-					if (response.status == 200) 
-				{
-						console.log(response.data);
-						console.log("trash sucess");
-						$scope.getNote();
-				}
-					else
-				{
-						console.log("trashin fld");
-						console.log(response.data.status);
-
-					}
-				});
-				
-			}
-		}
-	
-	/** ********Set Archive****** */
-		
-	
-	$scope.archiveNotes=function(x)
-	{
-		if (x.archive==false)
-		{
-			x.archive=true;
+	$scope.restoreNotes = function(x) {
+		console.log("inside restore")
+		if (x.trash == true) {
+			x.trash = false;
 			var httpObj = homeService.noteUpdate(x);
 
-			httpObj.then(function(response)
-		{
-				if (response.status == 200) 
-			{
+			httpObj.then(function(response) {
+				if (response.status == 200) {
+					console.log(response.data);
+					console.log("Restore sucess");
+					$scope.getNote();
+				} else {
+					console.log("Restore fld");
+					console.log(response.data.status);
+
+				}
+			});
+
+		}
+	}
+
+	/** **************trash notes method************** */
+
+	$scope.trashNotes = function(x) {
+		if (x.trash == false) {
+			x.trash = true;
+			var httpObj = homeService.noteUpdate(x);
+
+			httpObj.then(function(response) {
+				if (response.status == 200) {
+					console.log(response.data);
+					console.log("trash sucess");
+					$scope.getNote();
+				} else {
+					console.log("trashin fld");
+					console.log(response.data.status);
+
+				}
+			});
+
+		}
+	}
+
+	/** ********Set Archive****** */
+
+	$scope.archiveNotes = function(x) {
+		if (x.archive == false) {
+			x.archive = true;
+			var httpObj = homeService.noteUpdate(x);
+
+			httpObj.then(function(response) {
+				if (response.status == 200) {
 					console.log(response.data);
 					console.log("Archive sucess");
 					$scope.getNote();
-			}
-				else
-			{
+				} else {
 					console.log("archive fld");
 					console.log(response.data.status);
 
 				}
 			});
-			
+
 		}
 	}
-	
 
 	/** ********Set UnArchiveNotes****** */
-	
-	$scope.unArchiveNotes=function(x)
-	{
-		if (x.archive==true)
-			{
-			x.archive=false;
-			
+
+	$scope.unArchiveNotes = function(x) {
+		if (x.archive == true) {
+			x.archive = false;
+
 			var httpObj = homeService.noteUpdate(x);
 
-			httpObj.then(function(response)
-			{
-				if (response.status == 200) 
-				{
+			httpObj.then(function(response) {
+				if (response.status == 200) {
 					console.log(response.data);
 					console.log("UnArchive sucess");
 					$scope.getNote();
-				}
-				else
-				{
+				} else {
 					console.log("UnArchive fld");
 					console.log(response.data.status);
 
 				}
 			});
-			
-			}
+
+		}
 	}
-	
+
 	/** ********Set Reminder****** */
 	$scope.setReminder = function(x, days) {
 		var reminderdate = new Date();
-		
+
 		console.log(reminderdate);
-		if (days == 'today') 
-		{
+		if (days == 'today') {
 			x.reminder = (reminderdate.setHours(20, 00, 00));
-		}
-		else if (days == 'tomorrow')
-		{
+		} else if (days == 'tomorrow') {
 			var tomorrow = new Date();
 			tomorrow.setDate(tomorrow.getDate() + 1);
 			tomorrow.setHours(8, 00, 00);
 			x.reminder = tomorrow;
-		} 
-		else if (days == 'weekday')
-		{
+		} else if (days == 'weekday') {
 			var weekday = new Date();
 			weekday.setDate(weekday.getDate() + 7);
 			weekday.setHours(8, 00, 00);
@@ -181,16 +151,12 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		}
 		var httpObj = homeService.noteUpdate(x);
 
-		httpObj.then(function(response)
-		{
-			if (response.status == 200) 
-			{
+		httpObj.then(function(response) {
+			if (response.status == 200) {
 				console.log(response.data);
 				console.log("Reminder set");
 				$scope.getNote();
-			}
-			else
-			{
+			} else {
 				console.log("Reminder updation faield");
 				console.log(response.data.status);
 
@@ -200,7 +166,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 	/** ********DElete Reminder****** */
 	$scope.deleteReminder = function(x) {
-		x.reminder =null ;
+		x.reminder = null;
 		var httpObj = homeService.noteUpdate(x);
 
 		httpObj.then(function(response) {
@@ -238,7 +204,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	$scope.showlist = function() {
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
-		$scope.listgridtoggle = "col-lg-9 col-md-10 col-sm-12 col-xs-12 list"
+		$scope.listgridtoggle = "col-lg-8 col-md-10 col-sm-12 col-xs-12 list"
 		localStorage.setItem("view", "list");
 	}
 
@@ -263,21 +229,21 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	/** ************get All Notes*********************** */
 	$scope.getNote = function() {
 		var records = homeService.noteGetAll();
-		records.then(function(resp)
-				{
-		        	$scope.reminder=resp.data[0].reminder;
+		records
+				.then(function(resp) {
+					$scope.reminder = resp.data[0].reminder;
 					$scope.email = resp.data[0].user.email;
 					$scope.name = resp.data[0].user.firstname;
-					
-					console.log("firstLetter",$scope.name[0]);
-					
+
+					console.log("firstLetter", $scope.name[0]);
+
 					$scope.profileimag = resp.data[0].user.profile;
-					console.log("image"+resp.data[0].user.profile);
-					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu','Fri', 'Sat' ][new Date().getDay()];
+					console.log("image" + resp.data[0].user.profile);
+					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu',
+							'Fri', 'Sat' ][new Date().getDay()];
 					console.log(resp.data[0].user.email);
 					$scope.records = resp.data.reverse();
-					$scope.archive=resp.data[0].archive;
-					
+					$scope.archive = resp.data[0].archive;
 
 				});
 	}
@@ -328,8 +294,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 				this.notecolor = x.notecolor;
 				this.user = x.user;
 				console.log("idddddd: " + this.title);
-				console.log( "archive status"+x.archive);
-				
+				console.log("archive status" + x.archive);
+
 				/** **************Note Update************** */
 				this.update = function() {
 					var $ctrl = this;
@@ -375,17 +341,23 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		$('#contentcard').text("");
 
 		var httpObj = homeService.noteCreate(note);
+		
 		httpObj.then(function(response) {
-			if (response.status == 200) {
-				console.log(response.data);
-				console.log("note  Sucessfully Created!!! ");
+            console.log(response.data.status);
+			
+			 if (response.data.status ==-4)
+			{
+			
+				console.log("inside generate new token");
+				var httpObj = homeService.generatNewAccestoken();
+			}
+			if (response.data.status == 1) {
+				console.log("created");
+				console.log("createdsdafadsf",response.data.status);
 				$scope.getNote();
 
-			} else {
-				console.log(" note Creation Faild!!");
-				console.log(response.data.status);
-
 			}
+			
 
 		});
 

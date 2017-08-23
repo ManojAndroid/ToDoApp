@@ -10,5 +10,7 @@ myApp.controller('trashCtrl', function($scope,$controller)
 		$scope.reminderpage=false;
 		$scope.todoname="Trash";
 		$scope.notecolor = "trash";
+		$scope.notecard=false;
+		$scope.notecardmgtop="top";
 	}
 });

@@ -33,16 +33,22 @@ img {
 	
 	background-color: rgb(96, 125, 139);
 	border-color:1px solid rgb(96, 125, 139) !important; 
+	color: white;
 }
 .reminder{
 	
 	background-color:#1d708c;
 	border-color: 1px solid #1d708c !important; 
+	color: white;
 	
 }
 .trash{
 	background-color: rgb(99, 99, 99);
 	border-color: 1px solidrgb(99, 99, 99) !important; 
+	color: white;
+}
+.top{
+	margin-top: 80px;
 }
 /* #searchicon {
 	width: 250%;
@@ -340,8 +346,8 @@ img {
     
 }
 .row {
-    margin-left: 80px !important;
-}
+    margin-left:10px !important;
+}  
 
 .modal{
 	margin-top: 40px;

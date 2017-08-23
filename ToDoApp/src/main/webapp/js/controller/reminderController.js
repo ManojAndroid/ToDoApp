@@ -10,5 +10,7 @@ myApp.controller('reminderCtrl', function($scope,$controller)
 		$scope.reminderpage=true;
 		$scope.todoname="Reminders";
 		$scope.notecolor = "reminder";
+		$scope.notecard=true;
+		
 	}
 });

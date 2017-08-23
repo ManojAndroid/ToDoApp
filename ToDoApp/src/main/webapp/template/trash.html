@@ -1,7 +1,7 @@
 
 	<!-- ---------------------- Listgrid view ------------------- -->
 
-						<div  testpackery data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" >
+						<div  testpackery data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" data-ng-class="notecardmgtop">
 							<div data-ng-class="listgridtoggle" data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.trash==true" >
 								<div  >
 									<font size="5px" color="black">

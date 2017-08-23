@@ -21,12 +21,12 @@ public class TokenImplement implements TokenInterface
 		session.save(token);
 		transaction.commit();
 	}
-	public void tokenDelete(int tokenid) 
+	public void tokenDelete(String accesstoken)
 	{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Query query = session.createQuery("delete from Token where id = :id");
-		query.setParameter("id", tokenid);
+		Query query = session.createQuery("delete from Token where accesstoken = :accesstoken");
+		query.setParameter("accesstoken", accesstoken);
 		int result = query.executeUpdate();
 		transaction.commit();
 	}
@@ -34,7 +34,10 @@ public class TokenImplement implements TokenInterface
 	{
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		session.saveOrUpdate(token);
+		String accessToken=token.getAccesstoken();
+        Query qry = session.createQuery("update from Token where accesstoken=:accesstoken");
+        qry.setParameter("accesstoken",accessToken);
+        int result = qry.executeUpdate();
 		transaction.commit();
 		
 	}

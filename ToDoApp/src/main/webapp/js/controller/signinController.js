@@ -9,22 +9,22 @@ myApp.controller('signinController', function($scope, $state,signinService)
 		user.password = $scope.password;
 
 		var httpObj = signinService.signin(user);
-		console.log("service response",httpObj);
 
 		httpObj.then(function(response)
 	{
-			console.log(response.status);
-			if (response.status == 200)
+			
+			if (response.data.status ==-1)
 			{
+				$scope.errmsg=response.data.message;
+				$state.go('login');
+				
+			} 
+			if(response.data.status ==1)
+			{
+				
 				localStorage.setItem("accesstoken",response.data.token.accesstoken);
 				$state.go('home');
-				console.log(response);
-			} 
-			else
-			{
-				console.log("login unsuccessfull");
-				console.log(response);
-				$state.go('login');
+				console.log(response.data.status);
 			}
 		})
 	}
