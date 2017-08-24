@@ -204,7 +204,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	$scope.showlist = function() {
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
-		$scope.listgridtoggle = "col-lg-8 col-md-10 col-sm-12 col-xs-12 list"
+		$scope.listgridtoggle = "col-lg-12 col-md-10 col-sm-12 col-xs-12 list"
 		localStorage.setItem("view", "list");
 	}
 
@@ -212,7 +212,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-		$scope.listgridtoggle = "col-lg-3 col-md-4 col-sm-12 col-xs-12 grid"
+		$scope.listgridtoggle = "col-lg-4 col-md-6 col-sm-12 col-xs-12 grid "
 		localStorage.setItem("view", "grid");
 	}
 

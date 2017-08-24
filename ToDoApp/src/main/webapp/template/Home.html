@@ -1,33 +1,44 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" 
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
 	id="header">
 	<div class="container-fluid " id="container" data-ng-class="notecolor">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 				aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				 <span class="icon-bar"></span> <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
 			</button>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
-		<div>
-			<ul class="nav navbar-nav navbar-left">
-				<li><a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
-				<li><a ><font size="5px;" color="black" data-ng-class="notecolor">{{todoname}}</font></a></li>
-			</ul>
-         </div>
+			<div>
+				<ul class="nav navbar-nav navbar-left">
+					<li><a class="navbar-brand" href="#menu-toggle"
+						id="menu-toggle"> <span class="glyphicon glyphicon-list"
+							aria-hidden="true"></span></a>
+					<li><a><font size="5px;" color="black"
+							data-ng-class="notecolor">{{todoname}}</font></a></li>
+				</ul>
+			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a data-ng-click="refresh()"> <img src="images/refresh.svg"  title="Refresh" title-direction="bottom"></a></li>
+				<li><a data-ng-click="refresh()"> <img
+						src="images/refresh.svg" title="Refresh" title-direction="bottom"></a></li>
 				<li><a data-ng-click="showlist()" data-ng-hide="listview1">
-				 <img src="images/list.svg"  title="List View" title-direction="bottom" ></a></li>
-				<li><a data-ng-click="showgrid()" data-ng-hide="gridview1"  title="Grid View" title-direction="bottom">
-				 <img src="images/grid.svg"></a></li>
+						<img src="images/list.svg" title="List View"
+						title-direction="bottom">
+				</a></li>
+				<li><a data-ng-click="showgrid()" data-ng-hide="gridview1"
+					title="Grid View" title-direction="bottom"> <img
+						src="images/grid.svg"></a></li>
 				<li>
 					<!-- ------------ PROFILE POPUP -------------------->
-					<div class="dropdown btn-group"  title="Google Account {{name }} {{email}}" title-direction="bottom">
-						<div id="rounddivsmall" data-toggle="dropdown"><font size="5"><img alt="" ng-src="{{profileimag}}" id="smallprofile"></font>
+					<div class="dropdown btn-group"
+						title="Google Account {{name }} {{email}}"
+						title-direction="bottom">
+						<div id="rounddivsmall" data-toggle="dropdown">
+							<font size="5"><img alt="" ng-src="{{profileimag}}"
+								id="smallprofile"></font>
 						</div>
 						<div class="dropdown-menu" id="profilepp">
 							<div>
@@ -35,7 +46,7 @@
 									<img alt="" ng-src="{{profileimag}}" id="popupprofile">
 									<!-- {{firstChar}} -->
 									<div id="profilechangediv">
-									<!-- <input type="image" value="Change"> -->
+										<!-- <input type="image" value="Change"> -->
 									</div>
 								</div>
 							</div>
@@ -44,8 +55,8 @@
 									<font color="#0e0e0f">{{name}}</font>
 								</h4>
 								<h6>{{email}}</h6>
-								 <a href="#">Google+ Profile–Privacy</a> <br>
-								
+								<a href="#">Google+ Profile–Privacy</a> <br>
+
 							</div>
 							<div id="profilefooter">
 								<div id="profilrbtn">
@@ -59,9 +70,10 @@
 			</ul>
 
 			<form class="navbar-form navbar-right" action="#" method="GET">
-				
-					<input type="text" class="form-control" placeholder="Search..."id="query" autocomplete="off" data-ng-model="searchNote" >
-					<!-- <div class="input-group-btn">
+
+				<input type="text" class="form-control" placeholder="Search..."
+					id="query" autocomplete="off" data-ng-model="searchNote">
+				<!-- <div class="input-group-btn">
 						<button type="submit" class="btn btn-success" id="search" title="Search" title-direction="bottom">
 							<span class="glyphicon glyphicon-search"></span>
 						</button>
@@ -77,128 +89,161 @@
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand"><br></li>
 				<li class="sidebar-brand"></li>
-				<li><a ui-sref="home" ng-click=""><span aria-hidden="true"><img src="images/noteicon.png" class="footerimg"></span> Notes</a></li>
-				<li><a ui-sref="reminder"><span aria-hidden="true"><img src="images/remindericon.svg" class="footerimg"></span> Reminders</a></li>
-				<li><a ui-sref="archive" ><span aria-hidden="true"><img src="images/archive.svg" class="footerimg"></span> Archive</a></li>
-				<li><a ui-sref="trash"><span aria-hidden="true"><img src="images/icons8-Trash Can-20.png" class="footerimg"></span> Trash</a></li>
+				<li><a ui-sref="home" ng-click=""><span aria-hidden="true"><img
+							src="images/noteicon.png" class="footerimg"></span> Notes</a></li>
+				<li><a ui-sref="reminder"><span aria-hidden="true"><img
+							src="images/remindericon.svg" class="footerimg"></span> Reminders</a></li>
+				<li><a ui-sref="archive"><span aria-hidden="true"><img
+							src="images/archive.svg" class="footerimg"></span> Archive</a></li>
+				<li><a ui-sref="trash"><span aria-hidden="true"><img
+							src="images/icons8-Trash Can-20.png" class="footerimg"></span>
+						Trash</a></li>
 			</ul>
 		</div>
-		</div>
-		
-		<div id="page-content-wrapper">
-			<div class="container-fluid">
-			
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="col-lg-2"></div>
-						<div id="card" data-ng-show="notecard" >
-						
-							<div id="headercard" data-ng-show="myVarheader">
-								<input type="text" placeholder="Title" data-ng-model="title" style="outline: none; border: none;padding-left: 20px;">
-							</div>
-							<div id="contentcard" contenteditable1 contenteditable="true" placeholder="Take a note......" ng-model="description"
-								data-ng-click="noteInput()"></div>
-							<div id="footer" data-ng-show="myVarfooter">
-								<div>
-									<img alt="reminder" src="images/remindericon.svg"> 
-									<img alt="reminder" src="images/remindericon.svg"> 
-									<img alt="color" src="images/color.png"> 
-									<img alt="reminder" src="images/remindericon.svg">
-								    <img alt="archive" src="images/archive.svg"> 
-									<img alt="reminder"src="images/list.png"> 
-									<input type="button" data-ng-click="hideTitle()" class="buttonsave" value="Done">
-								</div>
-							</div>
+	</div>
+
+	<div id="page-content-wrapper">
+		<div class="container-fluid">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div id="card" data-ng-show="notecard">
+
+					<div id="headercard" data-ng-show="myVarheader">
+						<input type="text" placeholder="Title" data-ng-model="title"
+							style="outline: none; border: none; padding-left: 20px;">
+					</div>
+					<div id="contentcard" contenteditable1 contenteditable="true"
+						placeholder="Take a note......" ng-model="description"
+						data-ng-click="noteInput()"></div>
+					<div id="footer" data-ng-show="myVarfooter">
+						<div>
+							<img alt="reminder" src="images/remindericon.svg"> <img
+								alt="reminder" src="images/remindericon.svg"> <img
+								alt="color" src="images/color.png"> <img alt="reminder"
+								src="images/remindericon.svg"> <img alt="archive"
+								src="images/archive.svg"> <img alt="reminder"
+								src="images/list.png"> <input type="button"
+								data-ng-click="hideTitle()" class="buttonsave" value="Done">
 						</div>
+					</div>
+				</div>
+
+
+
+				<!----------------------------- including archivehtml --------------------->
+				<div ng-include="'template/reminder.html'"
+					data-ng-show="reminderpage"></div>
+				<div ng-include="'template/archiveNotes.html'"
+					data-ng-show="archivepage"></div>
+				<div ng-include="'template/trash.html'" data-ng-show="trashpage"></div>
+				<!-- -------------- -------- Listgrid view ------------------- -->
+
+				<div data-ng-repeat="x in records | filter:searchNote"data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false">
+						<div data-ng-class="listgridtoggle" data-ng-show="homepage"
+							data-ng-style="{'background-color':x.notecolor}"
+							data-ng-if="x.archive==false && x.trash==false">
 						
-						
-						
-						<!----------------------------- including archivehtml --------------------->
-						<div ng-include="'template/reminder.html'" data-ng-show="reminderpage" ></div>
-						<div ng-include="'template/archiveNotes.html'" data-ng-show="archivepage" ></div>
-						 <div ng-include="'template/trash.html'" data-ng-show="trashpage"></div> 
-					<!-- -------------- -------- Listgrid view ------------------- -->
-	                   
-						<div   data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" >
-							<div data-ng-class="listgridtoggle"  data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.archive==false && x.trash==false" data-ng-show="homepage">
-									<font size="5px" color="black">
-										<div id="title" data-ng-bind-html="x.title"data-ng-click="openModal(x)" style="word-break:break-word;"></div>
-									</font>
-									<div  ng-bind-html="x.description" data-ng-click="openModal(x)" style="word-break:break-word;"></div>
-									<div id="footer">
-										<div data-ng-show="showimg">
-										
+								<div id="title" data-ng-bind-html="x.title"
+									data-ng-click="openModal(x)" style="word-break: break-word;"></div>
+							
+							<div ng-bind-html="x.description" data-ng-click="openModal(x)"
+								style="word-break: break-word;"></div>
+							<div id="footer">
+								<div data-ng-show="showimg">
+
 									<!-- 	reminder --set--- -->
-										
-											<div class="dropdown btn-group">
-												<img alt="reminder" src="images/remindericon.svg" data-toggle="dropdown" class="footerimg" title="Remind me" title-direction="bottom">
-												<ul class="dropdown-menu" id="reminderdiv" >
-												<li><a>Reminder:</a></li>
-													<li><a data-ng-click="setReminder(x,'today')" >Later Today <span id="reminderspan">8:00 PM</span></a></li>
-													<li><a data-ng-click="setReminder(x,'tomorrow')" >Tomorrow <span id="reminderspan">8:00 AM</span></a></li>
-													<li><a data-ng-click="setReminder(x,'weekday')" >Next Week <span id="reminderspan"> {{weekday}},8:00 AM</span></a></li>
-													<!-- <li><img alt="Reminder" src="images/clock.png">Pick Date And Time</li>
+
+									<div class="dropdown btn-group">
+										<img alt="reminder" src="images/remindericon.svg"
+											data-toggle="dropdown" class="footerimg" title="Remind me"
+											title-direction="bottom">
+										<ul class="dropdown-menu" id="reminderdiv">
+											<li><a>Reminder:</a></li>
+											<li><a data-ng-click="setReminder(x,'today')">Later
+													Today <span id="reminderspan">8:00 PM</span>
+											</a></li>
+											<li><a data-ng-click="setReminder(x,'tomorrow')">Tomorrow
+													<span id="reminderspan">8:00 AM</span>
+											</a></li>
+											<li><a data-ng-click="setReminder(x,'weekday')">Next
+													Week <span id="reminderspan"> {{weekday}},8:00 AM</span>
+											</a></li>
+											<!-- <li><img alt="Reminder" src="images/clock.png">Pick Date And Time</li>
 													<li><a>Pick Place</a></li> -->
-												</ul>
-											</div>
-											<img alt="collaborator" src="images/person_add_18px.svg" title="Collaborator" title-direction="bottom">
-											
-											
-										<!-- ----------------	color set --------- -->
-											<div class="dropup btn-group">
-												<img alt="list" src="images/color.png" data-toggle="dropdown" class="footerimg" title="Change Color" title-direction="bottom">
-												<div class="dropdown-menu">
-													<div>
-														<img alt="" src="images/white.png"
-															data-ng-click="changeColor(x,'rgb(250, 250, 250)')" id="colorimag">
-														<img alt="" src="images/red.png"
-															data-ng-click="changeColor(x,'rgb(255, 138, 128)')" id="colorimag">
-														<img alt="" src="images/yellow.png"
-															data-ng-click="changeColor(x,'rgb(255, 209, 128)')" id="colorimag">
-														<img alt="" src="images/orange.png"
-															data-ng-click="changeColor(x,'rgb(255, 255, 141)')" id="colorimag"><br>
-														<img alt="" src="images/gray.png"
-															data-ng-click="changeColor(x,' rgb(207, 216, 220)')" id="colorimag">
-														<img alt="" src="images/blue.png "
-															data-ng-click="changeColor(x,'rgb(128, 216, 255)')" id="colorimag">
-														<img alt="" src="images/yellow.png"
-															data-ng-click="changeColor(x,'rgb(167, 255, 235)')" id="colorimag">
-														<img alt="" src="images/green.png "
-															data-ng-click="changeColor(x,'rgb(204, 255, 144)')" id="colorimag">
-													</div>
-												</div>
-											</div>
-										<!-- 	---------- archive ------------ -->
-											<img alt="archive" src="images/archive.svg"   data-ng-click="archiveNotes(x)" title="Archive"  title-direction="bottom">
-											<img  src="images/icons8-Share-20 (1).png" data-ng-click="facebookshare(x)" title="ShareOnFB"  title-direction="bottom">
-											<div class="dropdown btn-group">
-												<img alt="list" src="images/list.png" data-toggle="dropdown" class="footerimg" title="More" title-direction="bottom">
-												<ul class="dropdown-menu">
-													<li><a data-ng-click="trashNotes(x)">Delete Note</a></li>
-													<li><a>add label</a></li>
-													<li><a>add drawing</a></li>
-												</ul>
+										</ul>
+									</div>
+									<img alt="collaborator" src="images/person_add_18px.svg"
+										title="Collaborator" title-direction="bottom">
+
+
+									<!-- ----------------	color set --------- -->
+									<div class="dropup btn-group">
+										<img alt="list" src="images/color.png" data-toggle="dropdown"
+											class="footerimg" title="Change Color"
+											title-direction="bottom">
+										<div class="dropdown-menu">
+											<div>
+												<img alt="" src="images/white.png"
+													data-ng-click="changeColor(x,'rgb(250, 250, 250)')"
+													id="colorimag"> <img alt="" src="images/red.png"
+													data-ng-click="changeColor(x,'rgb(255, 138, 128)')"
+													id="colorimag"> <img alt="" src="images/yellow.png"
+													data-ng-click="changeColor(x,'rgb(255, 209, 128)')"
+													id="colorimag"> <img alt="" src="images/orange.png"
+													data-ng-click="changeColor(x,'rgb(255, 255, 141)')"
+													id="colorimag"><br> <img alt=""
+													src="images/gray.png"
+													data-ng-click="changeColor(x,' rgb(207, 216, 220)')"
+													id="colorimag"> <img alt="" src="images/blue.png "
+													data-ng-click="changeColor(x,'rgb(128, 216, 255)')"
+													id="colorimag"> <img alt="" src="images/yellow.png"
+													data-ng-click="changeColor(x,'rgb(167, 255, 235)')"
+													id="colorimag"> <img alt="" src="images/green.png "
+													data-ng-click="changeColor(x,'rgb(204, 255, 144)')"
+													id="colorimag">
 											</div>
 										</div>
 									</div>
-								<!-- 	reminder -- div--- -->
-									<div  data-ng-if="x.reminder!=undefined"  id="remindershow">
-									<img alt="Reminder" src="images/clock.png"> {{x.reminder | date:"MMM d,h:mm:ss a"}} 
-									<span data-ng-click="deleteReminder(x)" data-ng-show="showimg" id="reminderdelbtn"  title="Delete Reminder" title-direction="bottom">  &#10062;</span>
+									<!-- 	---------- archive ------------ -->
+									<img alt="archive" src="images/archive.svg"
+										data-ng-click="archiveNotes(x)" title="Archive"
+										title-direction="bottom"> <img
+										src="images/icons8-Share-20 (1).png"
+										data-ng-click="facebookshare(x)" title="ShareOnFB"
+										title-direction="bottom">
+									<div class="dropdown btn-group">
+										<img alt="list" src="images/list.png" data-toggle="dropdown"
+											class="footerimg" title="More" title-direction="bottom">
+										<ul class="dropdown-menu">
+											<li><a data-ng-click="trashNotes(x)">Delete Note</a></li>
+											<li><a>add label</a></li>
+											<li><a>add drawing</a></li>
+										</ul>
 									</div>
+								</div>
 							</div>
-							</div> 
-					</div>
-					 <div class="col-lg-2"></div>
+							<!-- 	reminder -- div--- -->
+							<div data-ng-if="x.reminder!=undefined" id="remindershow">
+								<img alt="Reminder" src="images/clock.png"> {{x.reminder |
+								date:"MMM d,h:mm:ss a"}} <span data-ng-click="deleteReminder(x)"
+									data-ng-show="showimg" id="reminderdelbtn"
+									title="Delete Reminder" title-direction="bottom">
+									&#10062;</span>
+							</div>
+						</div>
 				</div>
 			</div>
-	
+			<div class="col-lg-2"></div>
+		</div>
+	</div>
+</div>
 
-	<script type="text/javascript">
-			$("#menu-toggle").click(function(e) {
-				e.preventDefault();
-				$("#wrapper").toggleClass("toggled");
-			});
-		</script>
 
-	<!-- /#wrapper -->
+<script type="text/javascript">
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+</script>
+
+<!-- /#wrapper -->

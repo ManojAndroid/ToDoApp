@@ -54,7 +54,7 @@ public class UserToken
     		System.out.println("difference time"+diff);
     		long differencetimeinminute=TimeUnit.MILLISECONDS.toMinutes(diff);
     		System.out.println("difference"+differencetimeinminute);
-    		if(differencetimeinminute>1)
+    		if(differencetimeinminute>180)
     		{
     			return null;
     		}	
@@ -78,7 +78,7 @@ public class UserToken
     		System.out.println("difference time"+diff);
     		long differencetimeinminute=TimeUnit.MILLISECONDS.toMinutes(diff);
     		System.out.println("difference"+differencetimeinminute);
-    		if(differencetimeinminute>120)
+    		if(differencetimeinminute>240)
     		{
     			System.out.println("returning false");
     			return false;
