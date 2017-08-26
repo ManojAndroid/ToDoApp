@@ -32,6 +32,8 @@ public class ToDo implements Serializable {
 	private boolean archive;
 	@Column(name="Trash")
 	private boolean trash;
+	@Column(name="WebScrapingTitle")
+	private String webscripingtitle;
 
 	public int getId() {
 		return id;
@@ -105,11 +107,21 @@ public class ToDo implements Serializable {
 		this.trash = trash;
 	}
 
+	public String getWebscripingtitle() {
+		return webscripingtitle;
+	}
+
+	public void setWebscripingtitle(String webscripingtitle) {
+		this.webscripingtitle = webscripingtitle;
+	}
+
 	@Override
 	public String toString() {
 		return "ToDo [id=" + id + ", title=" + title + ", description=" + description + ", notecolor=" + notecolor
-				+ ", reminder=" + reminder + ", archive=" + archive + ", trash=" + trash + ", user=" + user + "]";
+				+ ", reminder=" + reminder + ", archive=" + archive + ", trash=" + trash + ", webscripingtitle="
+				+ webscripingtitle + ", user=" + user + "]";
 	}
+
 
 	
 }

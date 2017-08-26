@@ -5,9 +5,9 @@
 							<div data-ng-class="listgridtoggle" data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.trash==true" >
 								<div  >
 									<font size="5px" color="black">
-										<div id="title" data-ng-bind-html="x.title"data-ng-click="openModal(x)"></div>
+										<div id="title" data-ng-bind-html="x.title"data-ng-click="openModal(x)" style="word-break: break-word;"></div>
 									</font>
-									<div  ng-bind-html="x.description" data-ng-click="openModal(x)"></div>
+									<div  ng-bind-html="x.description" data-ng-click="openModal(x)" style="word-break: break-word;"></div>
 									
 									<div id="footer" >
 										<div data-ng-show="showimg">

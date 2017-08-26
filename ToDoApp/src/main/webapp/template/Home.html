@@ -141,7 +141,7 @@
 				<div data-ng-repeat="x in records | filter:searchNote"data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false">
 						<div data-ng-class="listgridtoggle" data-ng-show="homepage"
 							data-ng-style="{'background-color':x.notecolor}"
-							data-ng-if="x.archive==false && x.trash==false">
+							data-ng-if="x.archive==false && x.trash==false" >
 						
 								<div id="title" data-ng-bind-html="x.title"
 									data-ng-click="openModal(x)" style="word-break: break-word;"></div>
@@ -229,6 +229,10 @@
 									data-ng-show="showimg" id="reminderdelbtn"
 									title="Delete Reminder" title-direction="bottom">
 									&#10062;</span>
+							</div>
+							<!---------------- scraping dav --------------->
+							<div data-ng-if="x.webscripingtitle!=undefined"  id="scrapdiv">
+								<div>{{scraptitle}}</div>
 							</div>
 						</div>
 				</div>

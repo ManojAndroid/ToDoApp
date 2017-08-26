@@ -231,18 +231,17 @@ myApp.controller('homeController', function($scope, $state, homeService,
 		var records = homeService.noteGetAll();
 		records
 				.then(function(resp) {
+					$scope.records = resp.data.reverse();
 					$scope.reminder = resp.data[0].reminder;
 					$scope.email = resp.data[0].user.email;
 					$scope.name = resp.data[0].user.firstname;
-
-					console.log("firstLetter", $scope.name[0]);
-
+					$scope.scraptitle=resp.data.webscripingtitle;
+					console.log("ddddddd",resp.data[2].webscripingtitle)
 					$scope.profileimag = resp.data[0].user.profile;
 					console.log("image" + resp.data[0].user.profile);
 					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu',
 							'Fri', 'Sat' ][new Date().getDay()];
 					console.log(resp.data[0].user.email);
-					$scope.records = resp.data.reverse();
 					$scope.archive = resp.data[0].archive;
 
 				});
@@ -311,7 +310,7 @@ myApp.controller('homeController', function($scope, $state, homeService,
 						if (response.status == 200) {
 							console.log(response.data);
 							console.log("Note Sucessfullly Updated!!");
-							$state.reload();
+							$scope.getNote();
 						} else {
 							console.log(" user loggedout faield");
 							console.log(response.data.status);

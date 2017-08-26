@@ -117,7 +117,7 @@ img {
 	top: 0;
 	margin: 0;
 	padding: 0;
-	width: 250px;
+	width: 220px;
 	list-style: none;
 	margin-top: -45px;
 }
@@ -333,11 +333,10 @@ img {
 	
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 	rgba(0, 0, 0, 0.25);
-	margin: 20px 0px 10px 0px;
+	width: 205px ! important;
+	margin: 10px 0px 10px 10px;
 }
-.grid1{
-	width: 260px;
-}
+
 .list{
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 	rgba(0, 0, 0, 0.25);
@@ -393,7 +392,7 @@ img {
 #reminderdelbtn
 {
 	float: right;
-	padding-right:22px;
+	padding-right:9px;
 	cursor:pointer;
 }
 
@@ -431,6 +430,14 @@ width: 549px;
 height: 45px;
 margin-top: -7px;
 }
+#scrapdiv{
+	font-size:10px;
+    height:50px;
+    padding-top: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Roboto Condensed',arial,sans-serif;
 }
 
 

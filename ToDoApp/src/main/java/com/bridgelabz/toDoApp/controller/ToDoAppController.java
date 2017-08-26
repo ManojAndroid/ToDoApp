@@ -15,7 +15,9 @@ import com.bridgelabz.toDoApp.JSONResponse.Response;
 import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.ToDo;
 import com.bridgelabz.toDoApp.model.User;
+import com.bridgelabz.toDoApp.model.WebScrap;
 import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
+import com.bridgelabz.toDoApp.util.WebScraping;
 
 /**
  * 
@@ -30,7 +32,10 @@ public class ToDoAppController {
 	private UserResponse userResponse;
 	@Autowired
 	 private ErrorResponse errorResponse;
-
+	@Autowired
+	WebScrap scrap;
+	@Autowired
+	WebScraping scraping;
 	/**
 	 * toDoSave, method is used to save the user task in database
 	 * 
@@ -45,7 +50,11 @@ public class ToDoAppController {
 
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
-		System.out.println(user);
+		
+		scraping.webScraping(toDo.getDescription());
+		
+        System.out.println("webscraping in controller  "+scrap.getTitle());
+		toDo.setWebscripingtitle(scrap.getTitle());
 		toDo.setUser(user);
 		try 
 		{
