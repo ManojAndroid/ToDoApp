@@ -9,4 +9,5 @@ public interface UserDao
 	public User signIn(String email, String password,HttpServletRequest request);
 
 	public User getUserByEmail(String email);
+	public boolean	uploadeProfile(User user);
 }

@@ -1,5 +1,4 @@
-myApp.controller('homeController', function($scope, $state, homeService,
-		$uibModal) {
+myApp.controller('homeController', function($scope, $state, homeService,$uibModal,fileReader) {
 	console.log("insidehomecontroller");
 	
 	$scope.notecard = true;
@@ -13,10 +12,44 @@ myApp.controller('homeController', function($scope, $state, homeService,
 	$scope.checkreminder = new Date();
 
 	console.log("inside homeshow");
+	$scope.uploadProfile = function()
+	{	
+		var userprofile= {};
+		/*userprofile.profile = $scope.profile;*/
+		userprofile.id=$scope.userId
+		console.log("useridfdgdfgdfgfdgfsd"+userprofile.profile);
+
+	var httpObj = homeService.uploadProfile(userprofile);
+
+	httpObj.then(function(response)
+{
+		if (response.status ==200)
+		{
+			console.log(response.data);
+			$scope.getNote();
+		} 
+		else
+		{
+			console.log("Image uploading fld");
+			console.log(response.status);
+			
+		}
+	})
+
+	}
 
 	/** **************Restore notes method************** */
 	$scope.refresh = function($window) {
 		window.location.reload();
+	}
+	
+	/** **************addprofile************** */
+	$scope.addprofile = function() {
+		document.getElementById("addprof").click();
+	}
+	/** **************addimage  method************** */
+	$scope.addImage = function() {
+		document.getElementById("addImg").click();
 	}
 	/** **************Share on face book method************** */
 	$scope.facebookshare = function(x) {
@@ -235,13 +268,13 @@ myApp.controller('homeController', function($scope, $state, homeService,
 					$scope.reminder = resp.data[0].reminder;
 					$scope.email = resp.data[0].user.email;
 					$scope.name = resp.data[0].user.firstname;
-					$scope.scraptitle=resp.data.webscripingtitle;
-					console.log("ddddddd",resp.data[2].webscripingtitle)
 					$scope.profileimag = resp.data[0].user.profile;
-					console.log("image" + resp.data[0].user.profile);
+					$scope.userId=resp.data[0].user.id;
+					console.log("userid"+resp.data[0].user.id);
+					console.log("image" +resp.data[0].webscripingimage);
 					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu',
 							'Fri', 'Sat' ][new Date().getDay()];
-					console.log(resp.data[0].user.email);
+					console.log("image",resp.data.image);
 					$scope.archive = resp.data[0].archive;
 
 				});
@@ -335,7 +368,8 @@ myApp.controller('homeController', function($scope, $state, homeService,
 		var note = {};
 		note.title = $scope.title;
 		note.description = $scope.description;
-		console.log(note);
+		note.image=$scope.imageSrc;
+		console.log("not object"+note);
 		$scope.title = "";
 		$('#contentcard').text("");
 

@@ -50,11 +50,10 @@ public class ToDoAppController {
 
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
-		
 		scraping.webScraping(toDo.getDescription());
-		
-        System.out.println("webscraping in controller  "+scrap.getTitle());
 		toDo.setWebscripingtitle(scrap.getTitle());
+		toDo.setWebscripingimage(scrap.getImage());
+		toDo.setWebscripinghost(scrap.getHost());
 		toDo.setUser(user);
 		try 
 		{

@@ -2,9 +2,6 @@ package com.bridgelabz.toDoApp.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +17,7 @@ import com.bridgelabz.toDoApp.JSONResponse.ErrorResponse;
 import com.bridgelabz.toDoApp.JSONResponse.Response;
 import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.User;
-import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
+import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
 import com.bridgelabz.toDoApp.util.CryptoUtil;
 import com.bridgelabz.toDoApp.validator.UserValidation;
 
@@ -32,7 +29,7 @@ import com.bridgelabz.toDoApp.validator.UserValidation;
 public class UserController {
 	private static final Logger logger = Logger.getLogger(UserController.class);
 	@Autowired
-	private UserService userService;
+	private UserServiceImplem userService;
 
 	@Autowired
 	private UserValidation userValidation;
@@ -76,6 +73,27 @@ public class UserController {
 		{
 			exception.printStackTrace();
 			logger.error("Registration Failed");
+			errorResponse.setStatus(-1);
+			errorResponse.setMessage("  Internal server error....");
+			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+	@PostMapping(value = "/uploadprofile", produces = { MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<Response> userProfile(@RequestBody User user) throws Exception {
+		
+		
+		try 
+		{
+			userService.uploadeProfile(user);
+			userResponse.setStatus(1);
+			userResponse.setMessage("Image Uploadation sucess");
+			userResponse.setUser(null);
+			
+			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+		}
+		catch (Exception exception) 
+		{
+			exception.printStackTrace();
 			errorResponse.setStatus(-1);
 			errorResponse.setMessage("  Internal server error....");
 			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);

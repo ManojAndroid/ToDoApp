@@ -55,10 +55,8 @@
 			</props>
 		</property>
 	</bean>
-
 	<bean id="userValidation" class="com.bridgelabz.toDoApp.validator.UserValidation"></bean>
-	<bean id="userService"
-		class="com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem"></bean>
+	<bean id="userService" class="com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem"></bean>
 	<bean id="userDaoImp" class="com.bridgelabz.toDoApp.dao.daoimpl.UserDaoImp"></bean>
 </beans>
 

@@ -301,7 +301,6 @@ img {
 	height: 120px;
 	margin-left: 5%;
 	margin-top: 4%;
-	text-transform: uppercase;
 	padding-top: 5%;
 	padding-left:10%;
 }
@@ -333,8 +332,6 @@ img {
 	
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0
 	rgba(0, 0, 0, 0.25);
-	width: 205px ! important;
-	margin: 10px 0px 10px 10px;
 }
 
 .list{
@@ -397,16 +394,18 @@ img {
 }
 
 #smallprofile {
-    width: 38px;
+    width: 37px;
     border-radius: 23px;
-    margin-left: -10px;
-    margin-top: -3px;
+    margin-left: -9px;
+    margin-top: -1px;
+    height: 37px;
 }
 #popupprofile {
-    width: 121px;
+       width: 122px;
     border-radius: 59px;
     margin-left: -36px;
     margin-top: -17px;
+    height: 122px;
 }
 @media only screen and (max-width: 736px) {
 #query {
@@ -435,11 +434,50 @@ margin-top: -7px;
     height:50px;
     padding-top: 7px;
     overflow: hidden;
+    white-space: nowrap;
+    min-height: 48px;
+    text-overflow: ellipsis;
+}
+#scrapimag {
+    width: 56px;
+    margin-top: -2px;
+    height: 43px;
+    margin-bottom: -6px;
+    padding-left: -5px;
+    height: 43px;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-family: 'Roboto Condensed',arial,sans-serif;
 }
-
+}
+#scraptitle {
+    float: right;
+    width: 119px;
+    margin-top: -48px;
+     min-height: 48px;
+     overflow: hidden;
+     word-break: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#scraphost{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	margin-top: 15px;
+	overflow: hidden;
+	word-break: break-word;
+	font-family: 'Roboto Condensed',arial,sans-serif;
+	padding-left: 12px
+}
+#scraphh{
+	margin-top: 5px;
+	padding-left: 12px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    white-space: nowrap;
+}
 
 
 

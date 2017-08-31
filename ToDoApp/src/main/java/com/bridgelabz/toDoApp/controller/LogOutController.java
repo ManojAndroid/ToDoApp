@@ -38,11 +38,11 @@ public class LogOutController {
 		System.out.println("Inside the logout");
 		HttpSession httpSession = request.getSession(false);
 		User userobject = (User) httpSession.getAttribute("UserSession");
-		/*String accesstken = request.getHeader("accToken");*/
+		String accesstken = request.getHeader("accToken");
 		
 		if (userobject != null) {
 			httpSession.invalidate();
-			/*service.tokenDelete(accesstken);*/
+			service.tokenDelete(accesstken);
 			HttpSession session = request.getSession(true);
 			return new ResponseEntity<Response>(HttpStatus.OK);
 		}

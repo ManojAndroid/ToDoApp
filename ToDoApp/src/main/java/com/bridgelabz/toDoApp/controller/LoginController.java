@@ -15,7 +15,7 @@ import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
-import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
+import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
 import com.bridgelabz.toDoApp.util.CryptoUtil;
 import com.bridgelabz.toDoApp.util.UserToken;
 
@@ -30,7 +30,7 @@ public class LoginController {
 
 	private static final Logger logger = Logger.getLogger(LoginController.class);
 	@Autowired
-	private UserService userService;
+	private UserServiceImplem userService;
 	@Autowired
 	UserAccessTokenService tokenService;
 	@Autowired

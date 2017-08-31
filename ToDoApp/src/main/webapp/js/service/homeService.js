@@ -54,7 +54,13 @@ myApp.service('homeService', function($http) {
 		})
 	};
 	
-	
+	this.uploadProfile = function(imagedata) {
+		return $http({
+			url : "uploadprofile",
+			method : "post",
+			data:imagedata,
+		})
+	};
 	
 	
 	this.noteGetAll = function() 

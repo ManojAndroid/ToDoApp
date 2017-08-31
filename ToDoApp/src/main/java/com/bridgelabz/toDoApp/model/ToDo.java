@@ -22,6 +22,9 @@ public class ToDo implements Serializable {
 	private int id;
 	@Column(name="Title")
 	private String title;
+	@Lob
+	@Column(name="Image")
+	private String image;
 	@Column(name="Descriptioin")
 	private String description;
 	@Column(name="NoteColor")
@@ -34,6 +37,10 @@ public class ToDo implements Serializable {
 	private boolean trash;
 	@Column(name="WebScrapingTitle")
 	private String webscripingtitle;
+	@Column(name="WebScrapingImage")
+	private String webscripingimage;
+	@Column(name="WebScrapingHost")
+	private String webscripinghost;
 
 	public int getId() {
 		return id;
@@ -45,6 +52,15 @@ public class ToDo implements Serializable {
 
 	public String getTitle() {
 		return title;
+	}
+	
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public void setTitle(String title) {
@@ -114,12 +130,30 @@ public class ToDo implements Serializable {
 	public void setWebscripingtitle(String webscripingtitle) {
 		this.webscripingtitle = webscripingtitle;
 	}
+	
+	public String getWebscripingimage() {
+		return webscripingimage;
+	}
+
+	public void setWebscripingimage(String webscripingimage) {
+		this.webscripingimage = webscripingimage;
+	}
+	
+
+	public String getWebscripinghost() {
+		return webscripinghost;
+	}
+
+	public void setWebscripinghost(String webscripinghost) {
+		this.webscripinghost = webscripinghost;
+	}
 
 	@Override
 	public String toString() {
-		return "ToDo [id=" + id + ", title=" + title + ", description=" + description + ", notecolor=" + notecolor
-				+ ", reminder=" + reminder + ", archive=" + archive + ", trash=" + trash + ", webscripingtitle="
-				+ webscripingtitle + ", user=" + user + "]";
+		return "ToDo [id=" + id + ", title=" + title + ", image=" + image + ", description=" + description
+				+ ", notecolor=" + notecolor + ", reminder=" + reminder + ", archive=" + archive + ", trash=" + trash
+				+ ", webscripingtitle=" + webscripingtitle + ", webscripingimage=" + webscripingimage
+				+ ", webscripinghost=" + webscripinghost + ", user=" + user + "]";
 	}
 
 

@@ -1,17 +1,15 @@
 package com.bridgelabz.toDoApp.service.serviceImplem;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bridgelabz.toDoApp.dao.daoInterface.UserDao;
 import com.bridgelabz.toDoApp.model.User;
-import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
 
 @Service
-public class UserServiceImplem implements UserService {
+public class UserServiceImplem{
 	
 	@Autowired
 	private UserDao userDaoImp;
@@ -32,6 +30,12 @@ public class UserServiceImplem implements UserService {
 	{
 
 		return userDaoImp.getUserByEmail(email);
+	}
+
+	public boolean uploadeProfile(User user)
+	{
+		return userDaoImp.uploadeProfile(user);
+		
 	}
 
 }

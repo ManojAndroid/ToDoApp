@@ -34,7 +34,7 @@ public class UserDaoImp implements UserDao {
 		Transaction transaction = session.beginTransaction();
 
 		try {
-			session.saveOrUpdate(user);
+			session.save(user);
 			transaction.commit();
 			return true;
 
@@ -71,5 +71,20 @@ public class UserDaoImp implements UserDao {
 		User userresult = (User) criteria.uniqueResult();
 	    return userresult;
 	
+	}
+
+	public boolean uploadeProfile(User user) {
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+
+		try {
+			session.update(user);
+			transaction.commit();
+			return true;
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			return false;
+		}
 	}
 }

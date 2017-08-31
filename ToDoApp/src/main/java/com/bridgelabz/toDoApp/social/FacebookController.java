@@ -13,12 +13,12 @@ import com.bridgelabz.toDoApp.model.FaceBookProfile;
 import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
-import com.bridgelabz.toDoApp.service.serviceInterface.UserService;
+import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
 @RestController
 public class FacebookController {
 
 	@Autowired
-	private UserService userService;
+	private UserServiceImplem userService;
 	@Autowired
 	UserAccessTokenService tokenService;
 	Token token=new Token();
