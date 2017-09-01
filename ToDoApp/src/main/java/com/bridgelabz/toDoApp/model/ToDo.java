@@ -29,6 +29,10 @@ public class ToDo implements Serializable {
 	private String description;
 	@Column(name="NoteColor")
 	private String notecolor;
+	
+	@Column(name="Notepin")
+	private boolean pin;
+	
 	@Column(name="Reminder")
 	private Date reminder;
 	@Column(name="Archive")
@@ -98,6 +102,14 @@ public class ToDo implements Serializable {
 	}
 	
 
+	public boolean getPin() {
+		return pin;
+	}
+
+	public void setPin(boolean pin) {
+		this.pin = pin;
+	}
+
 	public Date getReminder() {
 		return reminder;
 	}
@@ -151,11 +163,12 @@ public class ToDo implements Serializable {
 	@Override
 	public String toString() {
 		return "ToDo [id=" + id + ", title=" + title + ", image=" + image + ", description=" + description
-				+ ", notecolor=" + notecolor + ", reminder=" + reminder + ", archive=" + archive + ", trash=" + trash
-				+ ", webscripingtitle=" + webscripingtitle + ", webscripingimage=" + webscripingimage
-				+ ", webscripinghost=" + webscripinghost + ", user=" + user + "]";
+				+ ", notecolor=" + notecolor + ", pin=" + pin + ", reminder=" + reminder + ", archive=" + archive
+				+ ", trash=" + trash + ", webscripingtitle=" + webscripingtitle + ", webscripingimage="
+				+ webscripingimage + ", webscripinghost=" + webscripinghost + ", user=" + user + "]";
 	}
 
+	
 
 	
 }

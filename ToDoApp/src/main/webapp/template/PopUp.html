@@ -1,9 +1,9 @@
 
 
-<div ng-model="$ctrl.notecolor" style="background-color: {{ $ctrl.notecolor }}">
+<div data-ng-model="$ctrl.notecolor" style="background-color: {{ $ctrl.notecolor }}">
 
-<div class="modal-header" id="modal-body" contenteditable1 contenteditable="true" ng-model="$ctrl.title"></div>
-<div class="modal-body" id="modal-body" contenteditable1 contenteditable="true" ng-model="$ctrl.description">
+<div class="modal-header" id="modal-body" contenteditable1 contenteditable="true" data-ng-model="$ctrl.title"></div>
+<div class="modal-body" id="modal-body" contenteditable1 contenteditable="true" data-ng-model="$ctrl.description">
 
 </div>
 <div class="modal-footer" >
@@ -25,6 +25,6 @@
 				</div>
 			</div>
 		</div>
-	<button class="btn btn-primary" type="button" ng-click="$ctrl.update()">DONE</button>
+	<button class="btn btn-primary" type="button" data-ng-click="$ctrl.update()">Done</button>
 </div>
 </div>

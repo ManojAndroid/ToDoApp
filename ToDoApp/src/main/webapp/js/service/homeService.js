@@ -57,7 +57,7 @@ myApp.service('homeService', function($http) {
 	this.uploadProfile = function(imagedata) {
 		return $http({
 			url : "uploadprofile",
-			method : "post",
+			method : "put",
 			data:imagedata,
 		})
 	};

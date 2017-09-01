@@ -4,10 +4,10 @@
 						<div  testpackery data-ng-repeat="x in records | filter:searchNote" data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" data-ng-class="notecardmgtop" >
 							<div data-ng-class="listgridtoggle " data-ng-style="{'background-color':x.notecolor}" data-ng-if="x.archive==true"  >
 								<div  >
-									<font size="5px" color="black">
+								<div><img data-ng-src="{{x.image}}" style="width: 100%;margin-top: 10px;"><div>
 										<div id="title" data-ng-bind-html="x.title"data-ng-click="openModal(x)" style="word-break: break-word;"></div>
-									</font>
-									<div  ng-bind-html="x.description" data-ng-click="openModal(x)" style="word-break: break-word;"></div>
+									
+									<div  data-ng-bind-html="x.description" data-ng-click="openModal(x)" style="word-break: break-word;"></div>
 									<div id="footer">
 										<div data-ng-show="showimg">
 										

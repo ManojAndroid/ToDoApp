@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -78,25 +79,41 @@ public class UserController {
 			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
-	@PostMapping(value = "/uploadprofile", produces = { MediaType.APPLICATION_JSON_VALUE })
+/*	  @PutMapping(value = "/uploadprofile")
 	public ResponseEntity<Response> userProfile(@RequestBody User user) throws Exception {
-		
-		
+		System.out.println("inside uploade profile"+user);
+		System.out.println(user.getId());
+		System.out.println(user.getProfile());
+	    boolean profileresult=	userService.uploadeProfile(user);
+	    System.out.println(profileresult);
+	
 		try 
 		{
-			userService.uploadeProfile(user);
+			if(profileresult==true)
+			{
 			userResponse.setStatus(1);
 			userResponse.setMessage("Image Uploadation sucess");
 			userResponse.setUser(null);
-			
 			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+		     }
+			else{
+				userResponse.setStatus(-1);
+				userResponse.setMessage("Image Uploadation fld");
+				userResponse.setUser(null);
+				return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+
+				
+			}
 		}
+		
+	
 		catch (Exception exception) 
 		{
 			exception.printStackTrace();
-			errorResponse.setStatus(-1);
-			errorResponse.setMessage("  Internal server error....");
-			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);
+			userResponse.setStatus(-1);
+			userResponse.setMessage("  Internal server error....");
+			return new ResponseEntity<Response>(userResponse,HttpStatus.NOT_ACCEPTABLE);
 		}
-	}
+		
+	}*/
 }

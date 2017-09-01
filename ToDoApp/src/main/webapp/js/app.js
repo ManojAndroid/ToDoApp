@@ -34,6 +34,11 @@ $stateProvider
 	   templateUrl:"template/Home.html",
 	   controller:"reminderCtrl"
 	 })
+	 .state('pin',{
+	   url:'/pin',
+	   templateUrl:"template/Home.html",
+	   controller:"pinCtrl"
+	 })
  $urlRouterProvider.otherwise('/signin');
 
 });
