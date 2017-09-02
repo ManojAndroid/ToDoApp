@@ -3,6 +3,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	
 	$scope.notecard = true;
 	$scope.homepage = true;
+	$scope.pinpage = true;
 	$scope.archivepage = false;
 	$scope.trashpage = false;
 	$scope.archivepage = false;
@@ -19,19 +20,21 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	/** **************addprofile************** */
 	$scope.addprofile = function() {
 		document.getElementById("addprof").click();
-		/*var userprofile= {};
+	}
+	$scope.uploadeprofile = function() {
+		document.getElementById("addprof").click();
+		
+		var userprofile= {};
 	    userprofile.profile = $scope.profile;
 		userprofile.id=$scope.userId
 		userprofile.profile==$scope.profileimag;
-		console.log("useridfdgdfgdfgfdgfsd"+userprofile.profile);
-
-	var httpObj = homeService.uploadProfile(userprofile);
-
-	httpObj.then(function(response)
-{
+	    var httpObj = homeService.uploadProfile(userprofile);
+	      httpObj.then(function(response)
+       {
 		if (response.status ==200)
 		{
 			console.log(response.data);
+			console.log("Image uploaded");
 			$scope.getNote();
 		} 
 		else
@@ -40,7 +43,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			console.log(response.status);
 			
 		}
-	})*/
+	})
 	}
 	/** **************addimage  method************** */
 	$scope.addImage = function() {
@@ -70,16 +73,27 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	};
 	/** **************pin method************** */
 
-	$scope.pinNote = function(x) {
-		console.log("inside pin note")
-		if (x.pin == true) {
+	$scope.pinNote = function(x)
+	{
+		if (x.pin == false) {
+			x.pin = true;
+			var httpObj = homeService.noteUpdate(x);
+			httpObj.then(function(response) {
+				if (response.status == 200) {
+					$scope.getNote();
+				} 
+			});
+		}
+	}
+	/** **************pin method************** */
+
+	$scope.unPinNote = function(x) {
+		console.log("inside unpinnote")
 			x.pin = false;
 			var httpObj = homeService.noteUpdate(x);
 
 			httpObj.then(function(response) {
 				if (response.status == 200) {
-					console.log(response.data);
-					console.log("Pinned  sucess");
 					$scope.getNote();
 				} else {
 					console.log("Pinned fld");
@@ -88,13 +102,11 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 				}
 			});
 
-		}
 	}
 
 	/** **************Restore notes method************** */
 
 	$scope.restoreNotes = function(x) {
-		console.log("inside restore")
 		if (x.trash == true) {
 			x.trash = false;
 			var httpObj = homeService.noteUpdate(x);
@@ -102,10 +114,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			httpObj.then(function(response) {
 				if (response.status == 200) {
 					console.log(response.data);
-					console.log("Restore sucess");
 					$scope.getNote();
 				} else {
-					console.log("Restore fld");
 					console.log(response.data.status);
 
 				}
@@ -124,10 +134,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			httpObj.then(function(response) {
 				if (response.status == 200) {
 					console.log(response.data);
-					console.log("trash sucess");
 					$scope.getNote();
 				} else {
-					console.log("trashin fld");
 					console.log(response.data.status);
 
 				}
@@ -146,10 +154,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			httpObj.then(function(response) {
 				if (response.status == 200) {
 					console.log(response.data);
-					console.log("Archive sucess");
 					$scope.getNote();
 				} else {
-					console.log("archive fld");
 					console.log(response.data.status);
 
 				}
@@ -168,11 +174,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 			httpObj.then(function(response) {
 				if (response.status == 200) {
-					console.log(response.data);
-					console.log("UnArchive sucess");
 					$scope.getNote();
 				} else {
-					console.log("UnArchive fld");
 					console.log(response.data.status);
 
 				}
@@ -221,10 +224,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 		httpObj.then(function(response) {
 			if (response.status == 200) {
-				console.log("Reminder Deleted!!!!");
 				$scope.getNote();
 			} else {
-				console.log("Reminder Deletion faield");
 				console.log(response.data.status);
 
 			}
@@ -254,7 +255,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	$scope.showlist = function() {
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
-		$scope.listgridtoggle = "col-lg-12 col-md-10 col-sm-12 col-xs-12 list"
+		$scope.listgridtoggle = "col-lg-12 col-md-10 col-sm-12 col-xs-12 list item"
 		localStorage.setItem("view", "list");
 	}
 
@@ -262,7 +263,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-		$scope.listgridtoggle = "col-lg-4 col-md-6 col-sm-12 col-xs-12 grid "
+		$scope.listgridtoggle = "col-lg-4 col-md-6 col-sm-12 col-xs-12 grid item "
 		localStorage.setItem("view", "grid");
 	}
 

@@ -32,9 +32,9 @@ public class UserServiceImplem{
 		return userDaoImp.getUserByEmail(email);
 	}
 
-	public boolean uploadeProfile(User user)
+	public boolean uploadeProfile(int userid,String profile)
 	{
-		return userDaoImp.uploadeProfile(user);
+		return userDaoImp.uploadeProfile(userid,profile);
 		
 	}
 

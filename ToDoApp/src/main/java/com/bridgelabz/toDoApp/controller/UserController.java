@@ -79,12 +79,12 @@ public class UserController {
 			return new ResponseEntity<Response>(errorResponse,HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
-/*	  @PutMapping(value = "/uploadprofile")
+  @PutMapping(value = "/uploadprofile")
 	public ResponseEntity<Response> userProfile(@RequestBody User user) throws Exception {
 		System.out.println("inside uploade profile"+user);
 		System.out.println(user.getId());
 		System.out.println(user.getProfile());
-	    boolean profileresult=	userService.uploadeProfile(user);
+	    boolean profileresult=	userService.uploadeProfile(user.getId(),user.getProfile());
 	    System.out.println(profileresult);
 	
 		try 
@@ -115,5 +115,5 @@ public class UserController {
 			return new ResponseEntity<Response>(userResponse,HttpStatus.NOT_ACCEPTABLE);
 		}
 		
-	}*/
+	}
 }

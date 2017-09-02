@@ -5,7 +5,7 @@ myApp.controller('reminderCtrl', function($scope,$controller)
 	
 		$scope.homepage=false;
 		$scope.trashpage=false;
-		$scope.pin=false;
+		$scope.pinpage=false;
 		$scope.archivepage=false;
 		$scope.reminderpage=true;
 		$scope.todoname="Reminders";

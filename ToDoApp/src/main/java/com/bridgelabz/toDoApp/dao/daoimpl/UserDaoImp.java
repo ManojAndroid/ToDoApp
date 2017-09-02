@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -73,13 +74,19 @@ public class UserDaoImp implements UserDao {
 	
 	}
 
-	public boolean uploadeProfile(User user) {
+	@SuppressWarnings("deprecation")
+	public boolean uploadeProfile(int userid,String profile) {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-
+		String hql=null;
 		try {
-			session.update(user);
-			transaction.commit();
+			 hql = "update User set profile = :profile " + " where id = :userid";
+		
+		Query query = session.createQuery(hql);
+		query.setParameter("profile", profile);
+		query.setParameter("userid", userid);
+		int result = query.executeUpdate();
+		transaction.commit();
 			return true;
 
 		} catch (Exception exception) {

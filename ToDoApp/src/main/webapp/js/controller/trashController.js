@@ -5,7 +5,7 @@ myApp.controller('trashCtrl', function($scope,$controller)
 	
 		$scope.homepage=false;
 		$scope.trashpage=true;
-		$scope.pin=false;
+		$scope.pinpage=false;
 		$scope.archivepage=false;
 		$scope.reminderpage=false;
 		$scope.todoname="Trash";
