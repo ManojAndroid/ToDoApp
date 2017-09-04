@@ -18,7 +18,10 @@
 
 img {
 	vertical-align: middle;
-	
+}
+#img {
+	vertical-align: middle;
+	margin-right: 9px;
 }
 /****************** div placeholder ****************/
 [contenteditable=true]:empty:before {
@@ -54,26 +57,7 @@ img {
 .top{
 	margin-top: 80px;
 }
-/* #searchicon {
-	width: 250%;
-	margin-left: -280%;
-	position: inherit;
-	height: 50px;
-	margin-top: -8px;
-	border-radius: 5px;
-	background-color: #edb953;
-	border: none;
-	position:relative;
-}
-#search{
-    z-index: 2;
-    margin-left: -788px;
-    height: 51px;
-    margin-top: -9px;
-    background-color: #edb953;
-    border: none;
-    width: 71px;
-} */
+
 #sidebar-wrapper {
 	position: fixed;
 	left: 250px;
@@ -183,7 +167,7 @@ img {
 }
 
 #footer {
-	min-height: 60px;
+	min-height:53px;
 	outline: none;
 	padding-top: 5%;
 }
@@ -329,21 +313,16 @@ img {
 	
 }
 .grid{
-	
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0
 	rgba(0, 0, 0, 0.25);
 	margin: 20px 0px 0px 0px;
-	width:30%;
 }
-
 .list{
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0
 	rgba(0, 0, 0, 0.25);
 	margin: 20px 0px 10px 5px;
-	width: 70%;
-	
-	
 }
+
 /* ***********update popup css ***************/
 .modal-header {
     border-bottom:none !important;

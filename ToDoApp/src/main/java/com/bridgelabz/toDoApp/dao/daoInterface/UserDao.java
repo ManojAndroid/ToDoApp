@@ -10,4 +10,5 @@ public interface UserDao
 
 	public User getUserByEmail(String email);
 	public boolean	uploadeProfile( int userid, String profile);
+	public boolean	resetPassword( int userid, String password);
 }

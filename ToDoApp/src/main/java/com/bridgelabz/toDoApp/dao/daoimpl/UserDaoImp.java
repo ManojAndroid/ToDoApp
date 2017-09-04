@@ -94,4 +94,35 @@ public class UserDaoImp implements UserDao {
 			return false;
 		}
 	}
+	
+	
+	public boolean resetPassword(int userid,String password) {
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		String hql=null;
+		try {
+			 hql = "update User set password = :password " + " where id = :userid";
+		
+		Query query = session.createQuery(hql);
+		query.setParameter("password", password);
+		query.setParameter("userid", userid);
+		int result = query.executeUpdate();
+		transaction.commit();
+			return true;
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

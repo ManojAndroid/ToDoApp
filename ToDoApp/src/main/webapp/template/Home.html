@@ -109,14 +109,14 @@
 						data-ng-click="noteInput()"></div>
 					<div id="footer" data-ng-show="myVarfooter">
 						<div>
-							<img src="images/remindericon.svg"> <img
-								src="images/remindericon.svg"> <img src="images/color.svg">
-							<span data-ng-click="addImage()"><img
-								src="images/imap.svg"></span> <input type="file"
+							<img id="img"src="images/remindericon.svg"data-toggle="dropdown" title="Remind me"title-direction="bottom">
+							 <img  id="img" src="images/person_add_18px.svg"title="Collaborator" title-direction="bottom">
+							<span data-ng-click="addImage()"><img id="img"
+								src="images/imap.svg" title="Add Image" title-direction="bottom"></span> <input type="file"
 								data-ng-file-select="onFileSelect($files)" data-ng-model="imageSrc"
 								id="addImg" style="display: none;"> 
-								<img
-								src="images/archive.svg"> <img src="images/list.png">
+								<img id="img"
+								src="images/archive.svg" title="Archive" title-direction="bottom"> <img id="img" src="images/list.png" title="more" title-direction="bottom">
 							<input type="button" data-ng-click="hideTitle()"
 								class="buttonsave" value="Done">
 						</div>
@@ -129,13 +129,13 @@
 				<div data-ng-include="'template/archiveNotes.html'" data-ng-show="archivepage"></div>
 				<div data-ng-include="'template/trash.html'"data-ng-show="trashpage"></div>
 				<!-- -------------- -------- Listgrid view ------------------- -->
-
+                  <div data-ng-if="x.pin=true">others
 				<div data-ng-repeat="x in records | filter:searchNote"
 					data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false">
 					<div data-ng-class="listgridtoggle" data-ng-show="homepage"
 						data-ng-style="{'background-color':x.notecolor}"
 						data-ng-if="x.archive==false && x.trash==false && x.pin==false">
-						<div>
+						
 						<div style="float: right;height:0px;" ><img src="images/pin.svg" data-ng-click="pinNote(x)"title="Pin note" title-direction="bottom" data-ng-show="showimg" ></div>
 							<img data-ng-src="{{x.image}}"
 								style="width: 100%; margin-top: 20px;">
@@ -152,8 +152,8 @@
 									<div data-ng-show="showimg">
 										<!-- 	reminder --set--- -->
 										<div class="dropdown btn-group">
-											<img alt="reminder" src="images/remindericon.svg"
-												data-toggle="dropdown" class="footerimg" title="Remind me"
+											<img id="img"src="images/remindericon.svg"
+												data-toggle="dropdown" title="Remind me"
 												title-direction="bottom">
 											<ul class="dropdown-menu" id="reminderdiv">
 												<li><a>Reminder:</a></li>
@@ -168,12 +168,12 @@
 												<!-- <li><img alt="Reminder" src="images/clock.png">Pick Date And Time</li><li><a>Pick Place</a></li> -->
 											</ul>
 										</div>
-										<img alt="collaborator" src="images/person_add_18px.svg"
+										<img  id="img" src="images/person_add_18px.svg"
 											title="Collaborator" title-direction="bottom">
 										<!-- ----------------	color set --------- -->
 										<div class="dropup btn-group">
-											<img alt="list" src="images/color.png" data-toggle="dropdown"
-												class="footerimg" title="Change Color"
+											<img  id="img" src="images/color.png" data-toggle="dropdown"
+												title="Change Color"
 												title-direction="bottom">
 											<div class="dropdown-menu">
 												<div>
@@ -198,14 +198,14 @@
 											</div>
 										</div>
 										<!-- 	---------- archive ------------ -->
-										<img src="images/archive.svg" data-ng-click="archiveNotes(x)"
-											title="Archive" title-direction="bottom"> <img
+										<img  id="img" src="images/archive.svg" data-ng-click="archiveNotes(x)"
+											title="Archive" title-direction="bottom"> <img  id="img"
 											src="images/icons8-Share-20 (1).png"
 											data-ng-click="facebookshare(x)" title="ShareOnFB"
 											title-direction="bottom">
 										<div class="dropdown btn-group">
-											<img src="images/list.png" data-toggle="dropdown"
-												class="footerimg" title="More" title-direction="bottom">
+											<img  id="img" src="images/list.png" data-toggle="dropdown"
+												title="More" title-direction="bottom">
 											<ul class="dropdown-menu">
 												<li><a data-ng-click="trashNotes(x)">Delete Note</a></li>
 												<li><a>add label</a></li>
@@ -237,9 +237,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						
 						<div class="col-lg-2"></div>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

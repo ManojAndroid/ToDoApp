@@ -28,7 +28,7 @@
 						<!-- reminder --set----->
 
 						<div class="dropdown btn-group">
-							<img alt="reminder" src="images/remindericon.svg"
+							<img id="img" src="images/remindericon.svg"
 								data-toggle="dropdown" class="footerimg" title="Remind me"
 								title-direction="bottom">
 							<ul class="dropdown-menu" id="reminderdiv">
@@ -47,14 +47,14 @@
 								<li><a>Pick Place</a></li>
 							</ul>
 						</div>
-						<img alt="collaborator" src="images/person_add_18px.svg"
+						<img id="img" src="images/person_add_18px.svg"
 							title="Collaborator" title-direction="bottom">
 
 
 						<!-- ----------------	color set ----------->
 						<div class="dropup btn-group">
-							<img alt="list" src="images/color.png" data-toggle="dropdown"
-								class="footerimg" title="Change Color" title-direction="bottom">
+							<img id="img" src="images/color.png" data-toggle="dropdown"
+								title="Change Color" title-direction="bottom">
 							<div class="dropdown-menu">
 								<div>
 									<img alt="" src="images/white.png"
@@ -81,12 +81,12 @@
 
 						<!------------ archive -------------->
 
-						<img src="images/archive.svg" data-ng-click="unArchiveNotes(x)"
+						<img id="img" src="images/archive.svg" data-ng-click="unArchiveNotes(x)"
 							title="Unarchive" title-direction="bottom">
 
 						<div class="dropdown btn-group">
-							<img alt="list" src="images/list.png" data-toggle="dropdown"
-								class="footerimg" title="More" title-direction="bottom">
+							<img src="images/list.png" data-toggle="dropdown"
+								id="img" title="More" title-direction="bottom">
 							<ul class="dropdown-menu">
 								<li><a data-ng-click="deleteNote(x.id)">Delete forever</a></li>
 								<li><a data-ng-click="restoreNotes(x)">Restore</a></li>
@@ -96,7 +96,7 @@
 				</div>
 				<!-- reminder -- div----->
 				<div data-ng-if="x.reminder!=undefined" id="remindershow">
-					<img alt="Reminder" src="images/clock.png"> {{x.reminder |
+					<img id="img" src="images/clock.png"> {{x.reminder |
 					date:"MMM d,h:mm:ss a"}} <span data-ng-click="deleteReminder(x)"
 						data-ng-show="showimg" id="reminderdelbtn" title="Delete Reminder"
 						title-direction="bottom"> &#10062;</span>
@@ -125,5 +125,5 @@
 		</div>
 
 	</div>
-<div class="row">others</div>
+
 							

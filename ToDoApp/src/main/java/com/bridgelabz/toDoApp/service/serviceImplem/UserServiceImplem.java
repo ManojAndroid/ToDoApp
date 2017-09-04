@@ -37,5 +37,10 @@ public class UserServiceImplem{
 		return userDaoImp.uploadeProfile(userid,profile);
 		
 	}
+	public boolean resetPassword(int userid,String password) 
+	{
+
+		return userDaoImp.resetPassword(userid,password);
+	}
 
 }

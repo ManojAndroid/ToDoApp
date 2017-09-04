@@ -14,7 +14,7 @@
 										<!-- reminder --set----->
 										
 											<div class="dropdown btn-group">
-												<img alt="reminder" src="images/remindericon.svg" data-toggle="dropdown" class="footerimg" title="Remind me" title-direction="bottom">
+												<img id="img" src="images/remindericon.svg" data-toggle="dropdown" title="Remind me" title-direction="bottom">
 												<ul class="dropdown-menu" id="reminderdiv" >
 												<li><a>Reminder:</a></li>
 													<li><a data-ng-click="setReminder(x,'today')" >Later Today <span id="reminderspan">8:00 PM</span></a></li>
@@ -24,12 +24,12 @@
 													<li><a>Pick Place</a></li>
 												</ul>
 											</div>
-											<img alt="collaborator" src="images/person_add_18px.svg" title="Collaborator" title-direction="bottom">
+											<img id="img" src="images/person_add_18px.svg" title="Collaborator" title-direction="bottom">
 											
 											
 										<!-- ----------------	color set ----------->
 											<div class="dropup btn-group">
-												<img alt="list" src="images/color.png" data-toggle="dropdown" class="footerimg" title="Change Color" title-direction="bottom">
+												<img id="img" src="images/color.png" data-toggle="dropdown" title="Change Color" title-direction="bottom">
 												<div class="dropdown-menu">
 													<div>
 														<img alt="" src="images/white.png"
@@ -52,10 +52,10 @@
 												</div>
 											</div>
 											<!------------ archive -------------->
-											<img  src="images/archive.svg"   data-ng-click="unArchiveNotes(x)" title="Unarchive"  title-direction="bottom">
+											<img id="img" src="images/archive.svg"   data-ng-click="unArchiveNotes(x)" title="Unarchive"  title-direction="bottom">
 											
 											<div class="dropdown btn-group">
-												<img alt="list" src="images/list.png" data-toggle="dropdown" class="footerimg" title="More" title-direction="bottom">
+												<img id="img" src="images/list.png" data-toggle="dropdown" title="More" title-direction="bottom">
 												<ul class="dropdown-menu">
 													<li><a data-ng-click="deleteNote(x.id)">Delete Note</a></li>
 													<li><a>add label</a></li>
@@ -69,6 +69,21 @@
 									<img alt="Reminder" src="images/clock.png"> {{x.reminder | date:"MMM d,h:mm:ss a"}} 
 									<span data-ng-click="deleteReminder(x)" data-ng-show="showimg" id="reminderdelbtn"  title="Delete Reminder" title-direction="bottom">  &#10062;</span>
 									</div>
+										<!---------------- scraping div --------------->
+								<div data-ng-if="x.webscripingtitle!=undefined" id="scrapdiv">
+									<div id="scrapimag">
+										<img style="height: 100%;width: 100%;" data-ng-src="{{x.webscripingimage}}"
+											>
+									</div>
+									<div id="scraptitle">
+										<div id="scraphost">{{x.webscripingtitle}}</div>
+										<div id="scraphh">
+										<a style="text-decoration:none">{{x.webscripinghost}}</a>
+											<a href="{{x.description}}" target="_blank" style="text-decoration:none"><img src="images/newwindow.svg"title="Go to link" title-direction="bottom"></a>
+										</div>
+									</div>
+								</div>
+							</div>
 								</div>
 							</div>
 							</div>

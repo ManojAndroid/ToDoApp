@@ -7,11 +7,10 @@
 
 </div>
 <div class="modal-footer" >
-		<img alt="reminder" src="images/remindericon.svg">
-		 <img alt="reminder" src="images/remindericon.svg">
-			 <img alt="reminder" src="images/remindericon.svg">
+      <img id="img"src="images/remindericon.svg"data-toggle="dropdown" title="Remind me"title-direction="bottom">
+	  <img  id="img" src="images/person_add_18px.svg"title="Collaborator" title-direction="bottom">
 		<div class="dropup btn-group">
-			<img alt="list" src="images/color.png" data-toggle="dropdown">
+			<img id="img" src="images/color.png" data-toggle="dropdown">
 			<div class="dropdown-menu">
 				<div>
 					<img alt="" src="images/white.png"data-ng-click="$ctrl.notecolor='rgb(250, 250, 250)'"id="colorimag"> 
@@ -25,6 +24,8 @@
 				</div>
 			</div>
 		</div>
+		<img id="img"src="images/archive.svg" title="Archive" title-direction="bottom">
+		 <img id="img" src="images/list.png" title="more" title-direction="bottom">
 	<button class="btn btn-primary" type="button" data-ng-click="$ctrl.update()">Done</button>
 </div>
 </div>
