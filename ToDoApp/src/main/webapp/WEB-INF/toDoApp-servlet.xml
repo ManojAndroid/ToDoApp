@@ -17,6 +17,26 @@
 	<mvc:resources location="/js/" mapping="js/**"></mvc:resources>
 	<mvc:resources location="/bower_components/" mapping="/bower_components/**"></mvc:resources>
 	
+	
+	
+<!-- 	 <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+  <property name="brokerURL">
+   <value>tcp://localhost:61616</value>
+  </property>
+ </bean>
+ <bean id="destination" class="org.apache.activemq.command.ActiveMQQueue">
+  <constructor-arg value="technicalkeedaQueue" />
+ </bean>
+
+ <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+  <property name="connectionFactory" ref="connectionFactory" />
+  <property name="defaultDestination" ref="destination" />
+ </bean>
+ 
+ <bean id="messageSender" class="com.bridgelabz.toDoApp.social.JmsMessaging">
+  <property name="jmsTemplate" ref="jmsTemplate"/>
+ </bean> -->
+	
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="resources/messages" />
@@ -44,6 +64,7 @@
 				<value>com.bridgelabz.toDoApp.model.User</value>
 				<value>com.bridgelabz.toDoApp.model.ToDo</value>
 				<value>com.bridgelabz.toDoApp.model.Token</value>
+				<value>com.bridgelabz.toDoApp.model.Collaborator</value>
 			</list>
 		</property>
 		<!--Hibernate properties -->

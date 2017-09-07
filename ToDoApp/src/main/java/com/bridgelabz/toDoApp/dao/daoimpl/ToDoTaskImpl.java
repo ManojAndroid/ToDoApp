@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bridgelabz.toDoApp.dao.daoInterface.ToDoTaskDao;
+import com.bridgelabz.toDoApp.model.Collaborator;
 import com.bridgelabz.toDoApp.model.ToDo;
 /**
  * @author bridgeit
@@ -78,10 +79,18 @@ public class ToDoTaskImpl implements ToDoTaskDao
 			System.out.println("get all"+toDo);
 			return toDo;
 	}
-	public List<ToDo> gateSingleTask(int noteid) {
+	public ToDo gateSingleTask(int noteid) {
 		Session session = sessionFactory.openSession();
 		Query query = session.createQuery("from ToDo where taskid = "+noteid);
-		List<ToDo> toDo= query.list();
+		ToDo toDo= (ToDo) query.list();
 		return toDo;
+	}
+	public void saveCollaborator(Collaborator collaborator) 
+	{
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		session.save(collaborator);
+		transaction.commit();
+		
 	}
 }

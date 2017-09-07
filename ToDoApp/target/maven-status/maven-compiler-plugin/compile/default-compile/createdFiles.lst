@@ -31,6 +31,7 @@ com/bridgelabz/toDoApp/social/FacebookController.class
 com/bridgelabz/toDoApp/model/GoogleAccessToken.class
 com/bridgelabz/toDoApp/model/User.class
 com/bridgelabz/toDoApp/JSONResponse/ErrorResponse.class
+com/bridgelabz/toDoApp/model/Collaborator.class
 com/bridgelabz/toDoApp/model/UserImage.class
 com/bridgelabz/toDoApp/controller/LogOutController.class
 com/bridgelabz/toDoApp/controller/ToDoAppController.class

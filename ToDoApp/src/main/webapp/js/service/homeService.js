@@ -41,6 +41,19 @@ myApp.service('homeService', function($http) {
 			
 		})
 	};
+/***************Note collaborate******************/
+	
+	
+	this.collaborate = function(data)
+	{
+		return $http({
+			url : "rest/collaborate",
+			method : "post",
+			headers: {'accToken': localStorage.getItem("accesstoken")}
+			
+		})
+	};
+	
 	/***************Note Delete******************/
 	
 	

@@ -1,0 +1,23 @@
+<div>
+<div  class="modal-header" style="font-weight: 700;font-size: 20px;"  >collaborator</div>
+<div class="modal-header" id="modal-body"   data-ng-src="$ctrl.profile" ><img id="colprofile" src="{{$ctrl.profile}}">
+<div id="collowner">
+<div style="font-weight:600;font-family: 'Roboto',arial,sans-serif;"   data-ng-model="$ctrl.firstname " >{{ $ctrl.firstname }} {{ $ctrl.lastname }} <span>(owner)</span></div>
+<div style="font-weight: 600; font-family: 'Roboto',arial,sans-serif;"   data-ng-model="$ctrl.lastname" ></div>
+<div  style="color: rgba(0,0,0,.54);font-family: 'Roboto',arial,sans-serif;" data-ng-model="$ctrl.email" >{{ $ctrl.email }}</div>
+</div>
+</div>
+
+<div class="modal-header" id="modal-body" data-ng-src="$ctrl.profile" ><img id="colprofile" src="{{$ctrl.profile}}">
+<div id="collowner">
+<div style="margin-top:17px; outline: none;" contenteditable1 contenteditable="true"placeholder="Person or email to share with" data-ng-model="$ctrl.shareEmail"></div>
+</div>
+</div>
+
+<div class="modal-footer" id="colfoter">
+<div style="float: right;">
+	<button style="border: none;" type="button" data-ng-click="">CANCEL</button>
+	<button style="border: none;" type="button" data-ng-click="$ctrl.collaborate()">SAVE</button>
+</div>
+</div>
+</div>

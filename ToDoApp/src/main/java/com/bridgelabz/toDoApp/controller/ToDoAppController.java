@@ -1,6 +1,7 @@
 package com.bridgelabz.toDoApp.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,8 +16,10 @@ import com.bridgelabz.toDoApp.JSONResponse.Response;
 import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.ToDo;
 import com.bridgelabz.toDoApp.model.User;
+import com.bridgelabz.toDoApp.model.Collaborator;
 import com.bridgelabz.toDoApp.model.WebScrap;
 import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
+import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
 import com.bridgelabz.toDoApp.util.WebScraping;
 
 /**
@@ -27,15 +30,18 @@ import com.bridgelabz.toDoApp.util.WebScraping;
 @RestController
 public class ToDoAppController {
 	@Autowired
+	private UserServiceImplem userService;
+	@Autowired
 	ToDoTaskServices toDoTaskServices;
 	@Autowired
 	private UserResponse userResponse;
 	@Autowired
-	 private ErrorResponse errorResponse;
+	private ErrorResponse errorResponse;
 	@Autowired
 	WebScrap scrap;
 	@Autowired
 	WebScraping scraping;
+
 	/**
 	 * toDoSave, method is used to save the user task in database
 	 * 
@@ -55,20 +61,17 @@ public class ToDoAppController {
 		toDo.setWebscripingimage(scrap.getImage());
 		toDo.setWebscripinghost(scrap.getHost());
 		toDo.setUser(user);
-		try 
-		{
+		try {
 			toDoTaskServices.toDoSaveTask(toDo);
 			userResponse.setStatus(1);
 			userResponse.setMessage("ToDo Created Sucessfully");
 			userResponse.setUser(null);
-			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
-		} 
-		catch (Exception exception)
-		{
+			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+		} catch (Exception exception) {
 			exception.printStackTrace();
 			errorResponse.setStatus(-1);
 			errorResponse.setMessage("  Internal server error....");
-			return new ResponseEntity<Response>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Response>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
@@ -83,8 +86,8 @@ public class ToDoAppController {
 	 * @return {@link ResponseEntity}
 	 */
 	@PutMapping(value = "/rest/todoupdate")
-	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo,HttpServletRequest request) {
-		
+	public ResponseEntity<Response> toDoUpdate(@RequestBody ToDo toDo, HttpServletRequest request) {
+
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
 		System.out.println("inside todoupdate");
@@ -93,14 +96,12 @@ public class ToDoAppController {
 			userResponse.setStatus(1);
 			userResponse.setMessage("ToDo Updated Sucessfully");
 			userResponse.setUser(null);
-			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
-		} 
-		catch (Exception exception) 
-		{
+			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+		} catch (Exception exception) {
 			exception.printStackTrace();
 			errorResponse.setStatus(-1);
 			errorResponse.setMessage("  Internal server error....");
-			return new ResponseEntity<Response>(errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Response>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 	}
@@ -114,18 +115,17 @@ public class ToDoAppController {
 	 * @return {@link ResponseEntity}
 	 */
 	@RequestMapping(value = "/rest/tododelete/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Response> toDoDelete(@PathVariable("id") int id) 
-	{
+	public ResponseEntity<Response> toDoDelete(@PathVariable("id") int id) {
 		try {
 			toDoTaskServices.ToDodeleteTask(id);
 			userResponse.setStatus(1);
 			userResponse.setMessage("ToDo Deleted Sucessfully");
-			return new ResponseEntity<Response>(userResponse,HttpStatus.OK);
+			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
 		} catch (Exception exception) {
 			exception.printStackTrace();
 			errorResponse.setStatus(-1);
 			errorResponse.setMessage("  Internal server error....");
-			return new ResponseEntity<Response>( errorResponse,HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Response>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -144,17 +144,15 @@ public class ToDoAppController {
 		int uid = user.getId();
 		try {
 			List<ToDo> toDoAllTask = toDoTaskServices.getAllTaskList(uid);
-			
-			if(toDoAllTask!=null)
-			{
+
+			if (toDoAllTask != null) {
 				System.out.println(toDoAllTask.toString());
-				return new ResponseEntity<List<ToDo>>(toDoAllTask,HttpStatus.OK);
+				return new ResponseEntity<List<ToDo>>(toDoAllTask, HttpStatus.OK);
 			}
 			System.out.println(toDoAllTask.toString());
 			return new ResponseEntity<List<ToDo>>(HttpStatus.UNAUTHORIZED);
-			
-		} catch (Exception exception)
-		{
+
+		} catch (Exception exception) {
 			exception.printStackTrace();
 			return new ResponseEntity<List<ToDo>>(HttpStatus.INTERNAL_SERVER_ERROR);
 
@@ -168,21 +166,32 @@ public class ToDoAppController {
 	 *            {@link ToDo}
 	 * @return {@link ResponseEntity}
 	 */
-	@RequestMapping(value = "/rest/getsingletask/{id}", method = RequestMethod.GET)
-	public ResponseEntity<List<ToDo>> getSingleTask(@PathVariable("id") int id) {
-
+	@RequestMapping(value = "/rest/collaborate", method = RequestMethod.POST)
+	public ResponseEntity<Response> Collaborator( @RequestBody Map< String,Object> colldata) {
+		
+		System.out.println("inside coll controller");
+		System.out.println("inside coll controller" + colldata.get("sharenoteid"));
+		int notid = (Integer) colldata.get("sharenoteid");
+		String shareEmail = (String) colldata.get("sharenoteid");
 		try {
-			List<ToDo> toDosingleTask = toDoTaskServices.getSingleTask(id);
-			if (toDosingleTask != null) {
-				System.out.println(toDosingleTask.toString());
-				return new ResponseEntity<List<ToDo>>(HttpStatus.OK);
-			}
-
-			return new ResponseEntity<List<ToDo>>(HttpStatus.UNAUTHORIZED);
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			return new ResponseEntity<List<ToDo>>(HttpStatus.INTERNAL_SERVER_ERROR);
-
+		ToDo toDo =  toDoTaskServices.getSingleTask(notid);
+		User owneruser= toDo.getUser();
+		User shareuser= userService.getUserByEmail(shareEmail);
+		
+		Collaborator collaborator=new Collaborator();
+		collaborator.setOwner(owneruser);
+		collaborator.setSharewith(shareuser);
+		collaborator.setSharenoteid(toDo);
+		toDoTaskServices.saveCollaborator(collaborator);
+		 return new ResponseEntity<Response>(HttpStatus.OK); 
 		}
+	
+		 catch (Exception exception)
+		{ 
+		exception.printStackTrace();
+		return new ResponseEntity<Response>(HttpStatus.INTERNAL_SERVER_ERROR);
+		  
+		  }
+
 	}
 }

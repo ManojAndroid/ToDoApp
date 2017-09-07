@@ -263,7 +263,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 		$scope.gridview1 = true;
 		$scope.listview1 = false;
-		$scope.listgridtoggle = "col-lg-4 col-md-6 col-sm-12 col-xs-12 grid item "
+		$scope.listgridtoggle = "col-lg-3 col-md-6 col-sm-12 col-xs-12 grid item "
 		localStorage.setItem("view", "grid");
 	}
 
@@ -372,6 +372,47 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			size : 'md',
 		});
 	}
+	
+	/** ************** collaborator Model PopUp************** */
+	$scope.collaboratorPopup = function(x) {
+		console.log("inside collaborator");
+		$scope.modalInstance = $uibModal.open({
+			templateUrl : 'template/Collaborator.html',
+			controller : function($scope, $uibModalInstance) {
+				this.firstname = x.user.firstname;
+				this.lastname = x.user.lastname;
+				this.email = x.user.email;
+				this.profile = x.user.profile;
+				this.sharenoteid=x.id;
+				console.log( "user"+x.id);
+				/** **************Note Update************** */
+				this.collaborate = function() {
+					var $ctrl = this;
+					var collabprateNotedata = {};
+
+					collabprateNotedata.shareEmail =  $ctrl.shareEmail;
+					console.log( "share email",collabprateNotedata.shareEmail);
+					collabprateNotedata.sharenoteid = $ctrl.sharenoteid;
+					console.log( "note id"+collabprateNotedata.sharenoteid);
+				var httpObj = homeService.collaborate(collabprateNotedata);
+
+					httpObj.then(function(response) {
+						
+					});
+
+					$uibModalInstance.close();
+
+				}
+
+			},
+			controllerAs : '$ctrl',
+			size : 'md',
+		});
+	}
+	
+	
+	
+	
 	$scope.hideTitle = function() {
 
 		$scope.myVarheader = !$scope.myVarheader;

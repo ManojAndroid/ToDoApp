@@ -2,9 +2,11 @@
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceImplem/UserAccessTokenService.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/validator/UserValidation.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/filter/ToDoAppFilter.java
+/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/model/Collaborator.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/JSONResponse/ErrorResponse.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/model/WebScrap.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/util/WebScraping.java
+/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/JmsMessaging.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/LoginController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceImplem/UserServiceImplem.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/GenerateNewAccessTokenController.java

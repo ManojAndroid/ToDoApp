@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.bridgelabz.toDoApp.model.Collaborator;
 import com.bridgelabz.toDoApp.model.ToDo;
 /**
  * @author bridgeit
@@ -35,6 +36,9 @@ public List<ToDo> gateAll(int id);
  * @param id
  * @return
  */
-public List<ToDo>gateSingleTask(int id);
+public ToDo gateSingleTask(int id);
+
+public void saveCollaborator(Collaborator collaborator);
+
  
 }

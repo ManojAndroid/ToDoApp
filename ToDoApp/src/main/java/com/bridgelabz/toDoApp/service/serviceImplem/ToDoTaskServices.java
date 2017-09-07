@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bridgelabz.toDoApp.dao.daoInterface.ToDoTaskDao;
+import com.bridgelabz.toDoApp.model.Collaborator;
 import com.bridgelabz.toDoApp.model.ToDo;
 /**
  * @author bridgeit
@@ -50,11 +51,14 @@ public List<ToDo> getAllTaskList(int id)
 {
 	 return toDoTaskDao.gateAll(id);
 }
-public List<ToDo> getSingleTask(int id)
+public ToDo getSingleTask(int id)
 {
 	 return toDoTaskDao.gateSingleTask(id);
 }
-
+public void saveCollaborator(Collaborator collaborator) 
+{
+	 toDoTaskDao.saveCollaborator(collaborator);
+}
 
 
 }
