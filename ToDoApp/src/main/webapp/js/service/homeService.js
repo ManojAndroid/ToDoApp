@@ -49,6 +49,7 @@ myApp.service('homeService', function($http) {
 		return $http({
 			url : "rest/collaborate",
 			method : "post",
+			data:data,
 			headers: {'accToken': localStorage.getItem("accesstoken")}
 			
 		})

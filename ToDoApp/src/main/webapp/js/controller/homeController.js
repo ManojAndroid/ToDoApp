@@ -1,4 +1,4 @@
-myApp.controller('homeController', function($scope, $state, homeService,$uibModal,fileReader) {
+myApp.controller('homeController', function($scope, $state, homeService,$uibModal,fileReader,$window) {
 	console.log("insidehomecontroller");
 	
 	$scope.notecard = true;
@@ -13,7 +13,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	
 	
 	/** **************Restore notes method************** */
-	$scope.refresh = function($window) {
+	$scope.refresh = function() {
 		window.location.reload();
 	}
 	
@@ -349,6 +349,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 					editNotedata.description = $ctrl.description;
 					editNotedata.notecolor = $ctrl.notecolor;
 					editNotedata.user = $ctrl.user;
+                     console.log("update data"+editNotedata);
 					var httpObj = homeService.noteUpdate(editNotedata);
 
 					httpObj.then(function(response) {
@@ -394,6 +395,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 					console.log( "share email",collabprateNotedata.shareEmail);
 					collabprateNotedata.sharenoteid = $ctrl.sharenoteid;
 					console.log( "note id"+collabprateNotedata.sharenoteid);
+					console .log("object"+collabprateNotedata);
 				var httpObj = homeService.collaborate(collabprateNotedata);
 
 					httpObj.then(function(response) {

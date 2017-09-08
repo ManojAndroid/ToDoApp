@@ -168,11 +168,9 @@ public class ToDoAppController {
 	 */
 	@RequestMapping(value = "/rest/collaborate", method = RequestMethod.POST)
 	public ResponseEntity<Response> Collaborator( @RequestBody Map< String,Object> colldata) {
-		
-		System.out.println("inside coll controller");
-		System.out.println("inside coll controller" + colldata.get("sharenoteid"));
+	System.out.println("inside coll controller" + colldata.get("sharenoteid"));
 		int notid = (Integer) colldata.get("sharenoteid");
-		String shareEmail = (String) colldata.get("sharenoteid");
+		String shareEmail = (String) colldata.get("shareEmail");
 		try {
 		ToDo toDo =  toDoTaskServices.getSingleTask(notid);
 		User owneruser= toDo.getUser();

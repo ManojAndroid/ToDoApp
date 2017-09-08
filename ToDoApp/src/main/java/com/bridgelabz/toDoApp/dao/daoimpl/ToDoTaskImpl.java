@@ -2,9 +2,11 @@ package com.bridgelabz.toDoApp.dao.daoimpl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -79,10 +81,14 @@ public class ToDoTaskImpl implements ToDoTaskDao
 			System.out.println("get all"+toDo);
 			return toDo;
 	}
+
 	public ToDo gateSingleTask(int noteid) {
+		System.out.println("inside dao impl");
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("from ToDo where taskid = "+noteid);
-		ToDo toDo= (ToDo) query.list();
+		Criteria criteria = session.createCriteria(ToDo.class);
+		criteria.add(Restrictions.eq("id", noteid));
+		ToDo toDo = (ToDo) criteria.uniqueResult();
+		System.out.println(toDo);
 		return toDo;
 	}
 	public void saveCollaborator(Collaborator collaborator) 

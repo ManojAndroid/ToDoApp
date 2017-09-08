@@ -15491,3 +15491,8 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:142)
 	... 26 more
 ERROR	2017-09-07 19:20:03,981	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-09-08 09:26:09,165	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-09-08 10:39:02,862	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-09-08 10:47:34,117	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-19]	Logging successful!
+ERROR	2017-09-08 12:42:29,165	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-09-08 13:05:21,653	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-17]	Logging successful!
