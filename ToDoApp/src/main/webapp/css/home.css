@@ -345,9 +345,10 @@ img {
 /* ************ ***** Reminder Css*****************************/
 #reminderdiv
 {
-	width:350px;
-	height:200px;
-	padding-left:20px;
+    width: 280px;
+    height: 164px;
+    padding-left: 4px;
+}
 }
 #remindersmalldiv{
     padding-top: 10px;

@@ -332,10 +332,13 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			templateUrl : 'template/PopUp.html',
 			controller : function($scope, $uibModalInstance) {
 				this.id = x.id;
-
 				this.title = x.title;
 				this.description = x.description;
 				this.notecolor = x.notecolor;
+				this.image = x.image;
+				this.webscripingtitle = x.webscripingtitle;
+				this.webscripingimage = x.webscripingimage;
+				this.webscripinghost = x.webscripinghost;
 				this.user = x.user;
 				console.log("idddddd: " + this.title);
 				console.log("archive status" + x.archive);
@@ -348,6 +351,10 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 					editNotedata.title = $ctrl.title;
 					editNotedata.description = $ctrl.description;
 					editNotedata.notecolor = $ctrl.notecolor;
+					editNotedata.image = $ctrl.image;
+					editNotedata.webscripingtitle = $ctrl.webscripingtitle;
+					editNotedata.webscripingimage = $ctrl.webscripingimage;
+					editNotedata.webscripinghost = $ctrl.webscripinghost;
 					editNotedata.user = $ctrl.user;
                      console.log("update data"+editNotedata);
 					var httpObj = homeService.noteUpdate(editNotedata);
@@ -356,7 +363,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 						if (response.status == 200) {
 							console.log(response.data);
 							console.log("Note Sucessfullly Updated!!");
-							$scope.getNote();
+							$state.reload();
 						} else {
 							console.log(" user loggedout faield");
 							console.log(response.data.status);

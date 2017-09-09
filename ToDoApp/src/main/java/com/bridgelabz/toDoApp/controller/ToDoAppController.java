@@ -1,5 +1,6 @@
 package com.bridgelabz.toDoApp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -137,24 +138,28 @@ public class ToDoAppController {
 	 * @return {@link ResponseEntity}
 	 */
 	@RequestMapping(value = "/rest/getlist", method = RequestMethod.GET)
-	public ResponseEntity<List<ToDo>> toDoTaskList(HttpServletRequest request) {
+	public ResponseEntity<List> toDoTaskList(HttpServletRequest request) {
 
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
 		int uid = user.getId();
 		try {
 			List<ToDo> toDoAllTask = toDoTaskServices.getAllTaskList(uid);
+			List collaboratorTask=toDoTaskServices.getAllCollaList(uid);
+			List allNotes=new ArrayList();
+			allNotes.addAll(toDoAllTask);
+			allNotes.addAll(collaboratorTask);
 
-			if (toDoAllTask != null) {
-				System.out.println(toDoAllTask.toString());
-				return new ResponseEntity<List<ToDo>>(toDoAllTask, HttpStatus.OK);
+			if (allNotes != null) {
+				System.out.println(allNotes.toString());
+				return new ResponseEntity<List>(allNotes, HttpStatus.OK);
 			}
-			System.out.println(toDoAllTask.toString());
-			return new ResponseEntity<List<ToDo>>(HttpStatus.UNAUTHORIZED);
+			System.out.println(allNotes.toString());
+			return new ResponseEntity<List>(HttpStatus.UNAUTHORIZED);
 
 		} catch (Exception exception) {
 			exception.printStackTrace();
-			return new ResponseEntity<List<ToDo>>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<List>(HttpStatus.INTERNAL_SERVER_ERROR);
 
 		}
 	}

@@ -99,4 +99,13 @@ public class ToDoTaskImpl implements ToDoTaskDao
 		transaction.commit();
 		
 	}
+	public List getAllCollaList(int userid)
+	{
+
+			Session session = sessionFactory.openSession();
+			Query query = session.createQuery(" select sharenoteid from Collaborator where sharewith_userid = "+userid);
+			List collaborator= query.list();
+			System.out.println("get all"+collaborator);
+			return collaborator;
+	}
 }

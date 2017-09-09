@@ -26,15 +26,15 @@ public class Collaborator implements Serializable {
 	@Column(name="CollId")
 	private int id;
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "ownerId")
+	@JoinColumn
 	private User owner;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "ShareWithId")
+	@JoinColumn
 	private User sharewith;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "ShareNoteId")
+	@JoinColumn(name = "sharenoteid")
 	private ToDo sharenoteid;
 	public int getId() {
 		return id;

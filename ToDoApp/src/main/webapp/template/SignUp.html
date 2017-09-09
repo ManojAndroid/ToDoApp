@@ -6,12 +6,10 @@
 			
 			<li><input type="text" name="firstname" class="txuser" placeholder="User firstname" ng-pattern="/^[A-Za-z]{5,10}$/" ng-model="firstname"></li>
 			
-			<span style="color:Red" dat-ng-show="signup.firstname.$error.required"> Enter FirstName! </span>
 				<span style="color:Red" ng-show="signup.firstname.$dirty&&signup.firstname.$error.pattern"> *Enter Valid  FirstName!!</span>
 			
 			<li><input type="text" name="lastname" class="txuser" placeholder=" User lastname" ng-model="lastname" ng-pattern="/^[A-Za-z]{5,10}$/"></li>
             
-            <span style="color:Red" ng-show="signup.lastname.$error.required"> Enter FirstName! </span>
 				<span style="color:Red" ng-show="signup.lastname.$dirty&&signup.lastname.$error.pattern"> *Enter Valid  LastName!!</span>
             
              <li><input type="email" name="email" class="txuser" placeholder="User email" ng-model="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"></li>

@@ -59,6 +59,9 @@ public void saveCollaborator(Collaborator collaborator)
 {
 	 toDoTaskDao.saveCollaborator(collaborator);
 }
-
+public List getAllCollaList(int userid)
+{
+	 return toDoTaskDao.getAllCollaList(userid);
+}
 
 }

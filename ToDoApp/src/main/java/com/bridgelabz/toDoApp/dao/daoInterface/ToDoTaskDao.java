@@ -39,6 +39,7 @@ public List<ToDo> gateAll(int id);
 public ToDo gateSingleTask(int id);
 
 public void saveCollaborator(Collaborator collaborator);
+public List getAllCollaList(int userid);
 
  
 }

@@ -79,7 +79,7 @@ public class FacebookController {
 			user.setFirstname(namesplit[0]);
 			user.setLastname(namesplit[1]);
 			user.setEmail(profile.getEmail());
-			user.setProfile(profile.getImage().getUrl());
+			/*user.setProfile(profile.getImage().getUrl());*/
 			user.setPassword("");
 			userService.signUp(user);
 		}

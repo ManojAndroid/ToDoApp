@@ -1,12 +1,27 @@
 
 
 <div data-ng-model="$ctrl.notecolor" style="background-color: {{ $ctrl.notecolor }}">
-
+<div class="modal-header" id="modal-body"><img data-ng-src="{{$ctrl.image}}"style="width: 100%; margin-top: 20px;"></div>
 <div class="modal-header" id="modal-body" contenteditable1 contenteditable="true" data-ng-model="$ctrl.title"></div>
 <div class="modal-body" id="modal-body" contenteditable1 contenteditable="true" data-ng-model="$ctrl.description">
-
 </div>
-<div class="modal-footer" >
+	<div id="scrapdiv">
+		<div id="scrapimag">
+			<img style="height: 100%; width: 100%;"
+				data-ng-src="{{$ctrl.webscripingimage}}">
+		</div>
+		<div id="scraptitle">
+			<div id="scraphost">{{$ctrl.webscripingtitle}}</div>
+			<div id="scraphh">
+				<a style="text-decoration: none">{{$ctrl.webscripinghost}}</a> <a
+					href="{{$ctrl.description}}" target="_blank"
+					style="text-decoration: none"><img src="images/newwindow.svg"
+					title="Go to link" title-direction="bottom"></a>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer" >
+	<div style="float: left;">
       <img id="img"src="images/remindericon.svg"data-toggle="dropdown" title="Remind me"title-direction="bottom">
 	  <img  id="img" src="images/person_add_18px.svg"title="Collaborator" title-direction="bottom">
 		<div class="dropup btn-group">
@@ -26,6 +41,9 @@
 		</div>
 		 <img id="img"src="images/archive.svg" title="Archive" title-direction="bottom">
 		 <img id="img" src="images/list.png" title="more" title-direction="bottom">
-	<button class="btn btn-primary" type="button" data-ng-click="$ctrl.update()">Done</button>
+ </div>
+ 
+	<div><button style="border: none;" type="button" data-ng-click="$ctrl.update()">Done</button></div>
 </div>
+              
 </div>
