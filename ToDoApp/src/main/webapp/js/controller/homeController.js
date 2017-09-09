@@ -72,7 +72,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		});
 	};
 	/** **************pin method************** */
-
+	var count=0;
+	console.log("count,",count);
 	$scope.pinNote = function(x)
 	{
 		if (x.pin == false) {
@@ -80,6 +81,9 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			var httpObj = homeService.noteUpdate(x);
 			httpObj.then(function(response) {
 				if (response.status == 200) {
+					
+					$scope.count=count++;
+					console.log("count,",count);
 					$scope.getNote();
 				} 
 			});
@@ -94,6 +98,8 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 
 			httpObj.then(function(response) {
 				if (response.status == 200) {
+					$scope.count=count--;
+					console.log("count,",count);
 					$scope.getNote();
 				} else {
 					console.log("Pinned fld");
