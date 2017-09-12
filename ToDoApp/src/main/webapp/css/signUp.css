@@ -106,3 +106,39 @@
 		font-family: 'Cuprum', sans-serif;
 		
 	} 
+	
+	
+.panel-primary {
+	height:230px;
+	margin-top:40px;
+    border-color:#f5f5f5 !important;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0
+	rgba(0, 0, 0, 0.25) !important;
+}
+.panel-primary > .panel-heading {
+    color: #fff !important;
+    background-color: #337ab7 !important;
+    border:#337ab7!important; 
+    
+}
+#inputbutn{
+    height: 25px;
+    background: #ffffff;
+    padding: 5px 10px 5px 24px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px solid #cdcdcd;
+    border-bottom: 2px solid #cdcdcd;
+    color: #808080;
+    font-size: 14pt;
+    font-family: 'calibri';
+    background: #ffffff url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+    font-family: 'Cuprum', sans-serif;
+    outline: none;
+	
+}
+#btn{
+       margin-top: -5px
+            
+}
+	

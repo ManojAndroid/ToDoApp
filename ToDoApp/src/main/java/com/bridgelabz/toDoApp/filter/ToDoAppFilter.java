@@ -10,7 +10,6 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.util.UserToken;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ToDoAppFilter implements Filter
 {

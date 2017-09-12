@@ -1,6 +1,7 @@
 package com.bridgelabz.toDoApp.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,9 @@ import com.bridgelabz.toDoApp.JSONResponse.Response;
 import com.bridgelabz.toDoApp.JSONResponse.UserResponse;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
+import com.bridgelabz.toDoApp.social.JavaMail;
 import com.bridgelabz.toDoApp.util.CryptoUtil;
+import com.bridgelabz.toDoApp.util.OtpNumber;
 import com.bridgelabz.toDoApp.validator.UserValidation;
 
 /**
@@ -43,6 +46,10 @@ public class UserController {
 	private UserResponse userResponse;
 	@Autowired
 	private ErrorResponse errorResponse;
+	@Autowired
+	private JavaMail javaMail;
+	@Autowired
+	private OtpNumber otpNumber;
 
 	/**
 	 * @param user
@@ -117,8 +124,6 @@ public class UserController {
 	public ResponseEntity<Response> getEmail(@RequestBody User user,HttpServletRequest request) throws Exception {
 		User user1 = userService.getUserByEmail(user.getEmail());
 		
-		System.out.println("user1.getId()");
-		
 		try {
 			if (user1 == null) {
 				userResponse.setStatus(-1);
@@ -129,6 +134,8 @@ public class UserController {
 			}
 
 			else {
+				System.out.println(user.getEmail());
+			    javaMail.javaMail(user.getEmail());
 				userResponse.setStatus(1);
 				userResponse.setMessage("email Found");
 				userResponse.setUser(user1);
@@ -181,10 +188,37 @@ public class UserController {
 		}
 
 	}
+	@PostMapping(value = "/otp")
+	public ResponseEntity<Response> checkOtpNumber(@RequestBody Map< String,Object> otp ) throws Exception {
+		
+		
+		 boolean otpnumber=OtpNumber.OtpValidation((String)otp.get("otpnumber"));
+		 System.out.println(otpnumber);
+		try {
+			if (otpnumber == true) {
+				userResponse.setStatus(1);
+				userResponse.setMessage("otp matched Sucessfully");
+				userResponse.setUser(null);
+				return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+			}
 
-	private ServletContext getServletContext() {
-		// TODO Auto-generated method stub
-		return null;
+			else {
+				userResponse.setStatus(-1);
+				userResponse.setMessage("otp invalid or time out....try Again");
+				userResponse.setUser(null);
+				return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
+			}
+
+		}
+
+		catch (Exception exception) {
+			exception.printStackTrace();
+			userResponse.setStatus(-1);
+			userResponse.setMessage("  Internal server error....");
+			return new ResponseEntity<Response>(userResponse, HttpStatus.NOT_ACCEPTABLE);
+		}
+
 	}
+
 
 }

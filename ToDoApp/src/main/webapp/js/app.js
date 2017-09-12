@@ -58,6 +58,12 @@ var myApp = angular.module(
 				templateUrl : "template/ResetPassword.html",
 				controller : "signupController"
 			})
+			
+			.state('otppage', {
+				url : '/otppage',
+				templateUrl : "template/OtpEnter.html",
+				controller : "signupController"
+			})
 
 			$urlRouterProvider.otherwise('/signin');
 

@@ -49,9 +49,6 @@ public class UserToken
     	if(token!=null)
     	{
     		long diff =	(new Date().getTime())-(token.getCreatedtime().getTime());
-    		System.out.println("created time"+(token.getCreatedtime().getTime()));
-    		System.out.println("current time"+(new Date().getTime()));
-    		System.out.println("difference time"+diff);
     		long differencetimeinminute=TimeUnit.MILLISECONDS.toMinutes(diff);
     		System.out.println("difference"+differencetimeinminute);
     		if(differencetimeinminute>180)

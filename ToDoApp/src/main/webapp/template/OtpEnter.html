@@ -1,0 +1,24 @@
+<center>
+<div id="container-fluid">
+	<div class="row come-in">
+	<div class="col-lg-4"></div>
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Enter OtpNumber</div>
+				<div class="panel-body">
+					<form method="post">
+					<p style="color: green;" ng-if="isOtp">Otp successfully sent on your email</p>
+						<input  id="inputbutn" type="text" data-ng-model="otpnumber" style="margin-top: -5px"
+							placeholder="Enter Otp Number" maxlength="4" min="4" required="required" ><br>
+						<p style="color: red;">{{errmsg}}</p>
+						<button id="btn" class="btn btn-primary btn-responsive" data-ng-click="otpNumber()">Submit</button>
+					</form>
+					<button  ng-if="isResendBtn" id="btn" class="btn btn-primary btn-default" data-ng-click="ResendOtp()">Resend Otp</button>
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+</div>
+</center>

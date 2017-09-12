@@ -1,11 +1,63 @@
 myApp.controller( 'signupController',function($scope, $state,signupService)
 {
+	$scope.isOtp=true;
+	$scope.isResendBtn=false;
 	
-	/******************user Forget Password******************/
-	$scope.forgetPassword = function()
+	
+	
+	
+/*	var resentotpemail=null;
+	*//******************user reset password Resendotp*****************//*
+		$scope.ResendOtp = function()
+	{
+		
+		console.log("resentotpemail",resentotpemail)
+		var httpObj = signupService.forgetPassword(email);
+		httpObj.then(function(response)
+				{
+						if (response.data.status ==1)
+						{
+							console.log(response);
+							$scope.userid=response.data.user.id;
+							$state.go('otppage');
+						} 
+						else
+						{
+							console.log(response);
+						    $scope.errmsg="Enter Valid Email!";
+							$state.go('otppage');
+						}
+					})
+	}*/
+	/******************user reset password otp*****************/
+	$scope.otpNumber = function()
 	{
 		console.log("inside signupcontroller");
-
+		$scope.isOtp=false;
+		var otpdata={};
+		otpdata.otpnumber = $scope.otpnumber;
+		var httpObj = signupService.otpNumber(otpdata);
+		httpObj.then(function(response)
+				{
+						if (response.data.status ==1)
+						{
+						   console.log(response.data);
+							$state.go('resetpassword');
+							
+						} 
+						else
+						{
+							console.log(response.data);
+							$scope.isResendBtn=true;
+							$scope.errmsg="Entered otp is  invalid ..Try Again!!!";
+							$state.go('otppage');
+						}
+					})
+	}
+	/******************user Forget Password******************/
+	
+	$scope.forgetPassword = function()
+	{
 		var email={};
 		email.email = $scope.email;
 		var httpObj = signupService.forgetPassword(email);
@@ -13,16 +65,15 @@ myApp.controller( 'signupController',function($scope, $state,signupService)
 				{
 						if (response.data.status ==1)
 						{
-							
+							console.log(response);
 							$scope.userid=response.data.user.id;
-							console.log($scope.userid);
-							console.log("Email is Available");
-							$state.go('resetpassword');
+							$scope.user=response.data.user.email;
+							$state.go('otppage');
 						} 
 						else
 						{
-						$scope.errmsg="This Email is Not Exist......Enter Existing Email";
-							console.log(response.data);
+							console.log(response);
+						    $scope.errmsg="Enter Valid Email!";
 							$state.go('forgetpassword');
 						}
 					})
@@ -41,13 +92,12 @@ myApp.controller( 'signupController',function($scope, $state,signupService)
 				{
 						if (response.data.status ==1)
 						{
-							console.log(response.data);
-							console.log("Email is Available");
+							console.log("Password Reset Sucessfully!");
 							$state.go('signin');
 						} 
 						else
 						{
-						$scope.errmsg="This Email is Not Exist......Enter Existing Email";
+						$scope.errmsg="Password Reset Faild ... Try Again";
 							console.log(response.data);
 							$state.go('resetpassword');
 						}
@@ -55,7 +105,7 @@ myApp.controller( 'signupController',function($scope, $state,signupService)
     	   }
        else
 	{
-    	   $scope.errmsgpswd="Password is not Matching";
+    	   $scope.errmsgpswd="Password is not Matching..Enter Same Password!!";
     	   $state.go('resetpassword');
     	   
 	}

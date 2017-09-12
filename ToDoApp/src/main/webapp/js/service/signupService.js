@@ -24,4 +24,14 @@ myApp.service('signupService', function($http) {
 			data : data
 		})
 	};
+	
+	
+	
+	this.otpNumber = function(data) {
+		return $http({
+			url : "otp",
+			method : "post",
+			data : data
+		})
+	};
 });

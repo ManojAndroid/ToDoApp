@@ -65,7 +65,8 @@ package com.bridgelabz.toDoApp.social;
 			token.setAccesstoken(accessToken);
 			token.setUser(user);
 			tokenService.tokenSave(token);
-			response.setHeader("accesstoken", token.getAccesstoken());
+			response.setHeader("accToken", token.getAccesstoken());
+			System.out.println("token get"+response.getHeader("accToken"));
 			//get user profile 
 			if(user==null)
 			{
