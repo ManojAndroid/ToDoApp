@@ -68,11 +68,11 @@ myApp.service('homeService', function($http) {
 		})
 	};
 	
-	this.uploadProfile = function(imagedata) {
+	this.uploadProfile = function(data) {
 		return $http({
 			url : "uploadprofile",
 			method : "put",
-			data:imagedata,
+			data:data,
 		})
 	};
 	

@@ -11,4 +11,6 @@ public interface UserDao
 	public User getUserByEmail(String email);
 	public boolean	uploadeProfile( int userid, String profile);
 	public boolean	resetPassword( int userid, String password);
+	public boolean	userEmailAuthtokenValidation( int userid, String password);
+	public void userStatusSave(int userid, boolean status);
 }

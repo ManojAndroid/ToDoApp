@@ -35,13 +35,16 @@
 						</div>
 						<div class="dropdown-menu" id="profilepp">
 							<div>
-								<div id="rounddiv">
+							<div id="rounddiv">
+									<span data-ng-click="profilePopup()"><img alt="" data-ng-src="{{profileimag}}" id="popupprofile"></span>
+							
+							<!-- 	<div id="rounddiv">
 									<span data-ng-click="addprofile()"><img alt="" data-ng-src="{{profileimag}}" id="popupprofile"></span>
 							       <input type="file" data-ng-file-select="onFileSelect($files)" data-ng-model="profileimag" id="addprof" style="display: none;">
-									<!-- {{firstChar}} -->
+									{{firstChar}}
 									<div id="profilechangediv">
-										<!-- <input type="image" value="Change"> -->
-									</div>
+										<input type="image" value="Change">
+									</div> -->
 								</div>
 							</div>
 							<div id="profileppright">
@@ -49,7 +52,7 @@
 									<font color="#0e0e0f">{{name}}</font>
 								</h4>
 								<h6>{{email}}</h6>
-								<a href="#">Google+ Profile–Privacy</a> <br>
+								<!-- <a href="#">Google+ Profile–Privacy</a> <br> -->
 							</div>
 							<div id="profilefooter">
 								<div id="profilrbtn">
@@ -104,14 +107,10 @@
 						data-ng-click="noteInput()"></div>
 					<div id="footer" data-ng-show="myVarfooter">
 						<div>
-							<img id="img"src="images/remindericon.svg"data-toggle="dropdown" title="Remind me"title-direction="bottom">
-							 <img  id="img" src="images/person_add_18px.svg"title="Collaborator" title-direction="bottom">
 							<span data-ng-click="addImage()"><img id="img"
 								src="images/imap.svg" title="Add Image" title-direction="bottom"></span> <input type="file"
 								data-ng-file-select="onFileSelect($files)" data-ng-model="imageSrc"
 								id="addImg" style="display: none;"> 
-								<img id="img"
-								src="images/archive.svg" title="Archive" title-direction="bottom"> <img id="img" src="images/list.png" title="more" title-direction="bottom">
 							<input type="button" data-ng-click="hideTitle()"
 								class="buttonsave" value="Done">
 						</div>
@@ -178,8 +177,6 @@
 												title="More" title-direction="bottom">
 											<ul class="dropdown-menu">
 												<li><a data-ng-click="trashNotes(x)">Delete Note</a></li>
-												<li><a>add label</a></li>
-												<li><a>add drawing</a></li>
 											</ul>
 										</div>
 									</div>

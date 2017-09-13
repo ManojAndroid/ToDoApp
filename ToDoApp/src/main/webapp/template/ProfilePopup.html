@@ -1,0 +1,16 @@
+
+<div  class="modal-header" style="font-weight: 700;font-size: 20px;"  >Select Profile Photo</div>
+<div class="modal-header" >
+		
+				<span data-ng-click="$ctrl.addprofile()">
+					<button style="border-color: white;">Select a photo from your computer</button></span> <input
+					type="file" data-ng-file-select="onFileSelect($files)"
+					data-ng-model=" $ctrl.profileimag" id="addprof" style="display: none;">
+		
+</div>
+<div class="modal-header">
+<div style="float: right;">
+<button style="border: none;" type="button" data-ng-click="$ctrl.profileUploade()">Set as profile photo</button>
+</div>
+</div>
+

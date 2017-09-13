@@ -51,7 +51,7 @@ public class UserDaoImp implements UserDao {
 		Session session = sessionFactory.openSession();
 		Criteria criteria = session.createCriteria(User.class);
 		criteria.add(Restrictions.conjunction().add(Restrictions.eq("email", email))
-				.add(Restrictions.eq("password", password)));
+				.add(Restrictions.eq("password", password)).add(Restrictions.eq("status",Boolean.TRUE)));
 		User signinresult = (User) criteria.uniqueResult();
 		
 		if (signinresult != null) {
@@ -117,6 +117,41 @@ public class UserDaoImp implements UserDao {
 	}
 	
 	
+	public boolean userEmailAuthtokenValidation(int userid,String useremailtoken) {
+
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.conjunction().add(Restrictions.eq("id", userid))
+				.add(Restrictions.eq("useremailtoken", useremailtoken)));
+		User signinresult = (User) criteria.uniqueResult();
+		
+		if (signinresult != null) {
+			
+			return true;
+		}
+		return false;
+	}
+
+	public void userStatusSave(int userid, boolean status)
+	{
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		String hql=null;
+		try {
+	    hql = "update User set status = :status " + " where id = :userid";
+		Query query = session.createQuery(hql);
+		query.setParameter("status", status);
+		query.setParameter("userid", userid);
+		int result = query.executeUpdate();
+		transaction.commit();
+			
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			
+		}
+		
+	}
 	
 	
 	

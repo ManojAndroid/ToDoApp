@@ -1,7 +1,6 @@
 myApp.controller( 'signupController',function($scope, $state,signupService)
 {
-	$scope.isOtp=true;
-	$scope.isResendBtn=false;
+	$scope.showsignup=true;
 	
 	
 	
@@ -130,16 +129,17 @@ myApp.controller( 'signupController',function($scope, $state,signupService)
 
 	httpObj.then(function(response)
 {
-		if (response.status ==200)
+		if (response.data.status ==1)
 		{
 			console.log(response.data);
-			$state.go('signin');
+			$scope.showsignup=false;
+			$state.go('signup');
 		} 
 		else
 		{
 			console.log("Registration unsuccessfull");
 			console.log(response.status);
-			$state.go('signin');
+			$state.go('signup');
 		}
 	})
 

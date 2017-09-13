@@ -23,6 +23,10 @@ public class User implements Serializable {
 	private String email;
 	private String mobile;
 	private String password;
+	private String useremailtoken;
+	private boolean status;
+	@Lob
+	@Column(columnDefinition="mediumblob")
 	private String profile;
 	
 
@@ -82,11 +86,29 @@ public class User implements Serializable {
 	public void setProfile(String string) {
 		this.profile = string;
 	}
+	
+
+	public String getUseremailtoken() {
+		return useremailtoken;
+	}
+
+	public void setUseremailtoken(String useremailtoken) {
+		this.useremailtoken = useremailtoken;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", mobile=" + mobile + ", password=" + password + ", profile=" + profile + "]";
+				+ ", mobile=" + mobile + ", password=" + password + ", useremailtoken=" + useremailtoken + ", status="
+				+ status + ", profile=" + profile + "]";
 	}
 
 	

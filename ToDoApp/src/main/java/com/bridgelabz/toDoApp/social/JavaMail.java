@@ -52,5 +52,35 @@ public class JavaMail
 		}
 
 	}
+	public void userEmailAuth( String useremail ,String userEmailAuthToken,int userid)
+	{
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		});
+
+		try
+		{
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(username));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(useremail));
+			message.setSubject("click link");
+			message.setText("http://localhost:8008/ToDoApp/activatestatuscode/"+userid+"/"+userEmailAuthToken);
+			message.setSentDate(new Date());
+			Transport.send(message);
+			System.out.println("Done");
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
 
 }

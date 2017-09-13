@@ -43,4 +43,16 @@ public class UserServiceImplem{
 		return userDaoImp.resetPassword(userid,password);
 	}
 
+	public boolean userEmailAuthtokenValidation(int userid, String useremailtoken) 
+	{
+		return userDaoImp.userEmailAuthtokenValidation(userid,useremailtoken);
+		
+	}
+
+	public void userStatusSave(int userid, boolean status)
+	{
+		 userDaoImp.userStatusSave(userid,status);
+		
+	}
+
 }

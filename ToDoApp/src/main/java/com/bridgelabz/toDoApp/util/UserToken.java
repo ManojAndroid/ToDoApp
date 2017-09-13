@@ -21,6 +21,7 @@ public class UserToken
 	@Autowired
 	UserAccessTokenService tokenServices;
 	
+	
 	public Token generateNewAccessToken()
 	{
 	

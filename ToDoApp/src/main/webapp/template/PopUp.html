@@ -22,8 +22,6 @@
 	</div>
 	<div class="modal-footer" >
 	<div style="float: left;">
-      <img id="img"src="images/remindericon.svg"data-toggle="dropdown" title="Remind me"title-direction="bottom">
-	  <img  id="img" src="images/person_add_18px.svg"title="Collaborator" title-direction="bottom">
 		<div class="dropup btn-group">
 			<img id="img" src="images/color.png" data-toggle="dropdown">
 			<div class="dropdown-menu">
@@ -40,15 +38,6 @@
 			</div>
 		</div>
 		 <!-- 	---------- archive ------------ -->
-		<img  id="img" src="images/archive.svg" data-ng-click="$ctrl.archiveNotes(x)"title="Archive" title-direction="bottom">
-		 <div class="dropdown btn-group">
-		 <img  id="img" src="images/list.png" data-toggle="dropdown"title="More" title-direction="bottom">
-			<ul class="dropdown-menu">
-			<li><a data-ng-click="trashNotes(x)">Delete Note</a></li>
-				<li><a>add label</a></li>
-				<li><a>add drawing</a></li>
-				</ul>
-		</div>
  </div>
  
 	<div><button style="border: none;" type="button" data-ng-click="$ctrl.update()">Done</button></div>

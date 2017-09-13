@@ -1,11 +1,15 @@
 package com.bridgelabz.toDoApp.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.Consumes;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +19,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.toDoApp.JSONResponse.ErrorResponse;
@@ -56,12 +63,15 @@ public class UserController {
 	 * @param result
 	 * @return
 	 * @throws Exception
+	 * 
+	 * 
 	 */
 	@PostMapping(value = "/signup", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Response> signUp(@RequestBody User user, BindingResult result) throws Exception {
 		System.out.println("insidebackend");
 		userValidation.validate(user, result);
-
+		String userEmailAuthToken=UUID.randomUUID().toString().replace("-", "");
+		user.setUseremailtoken(userEmailAuthToken);
 		if (result.hasErrors()) {
 			logger.error("Registration Failed.... try Again");
 			List<FieldError> list = result.getFieldErrors();
@@ -72,11 +82,14 @@ public class UserController {
 		}
 		try {
 			user.setPassword(CryptoUtil.getDigest(user.getPassword()));
+			
 			userService.signUp(user);
 			logger.info("Registered successfully!");
 			userResponse.setStatus(1);
 			userResponse.setMessage("Sucessfully Registered");
 			userResponse.setUser(null);
+			javaMail.userEmailAuth(user.getEmail(), userEmailAuthToken, user.getId());
+			
 
 			return new ResponseEntity<Response>(userResponse, HttpStatus.OK);
 		} catch (Exception exception) {
@@ -87,14 +100,32 @@ public class UserController {
 			return new ResponseEntity<Response>(errorResponse, HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
+	
+	@RequestMapping(value = "/activatestatuscode/{userid}/{token}",method=RequestMethod.GET)
+	public ResponseEntity<Response> activateStatusCode(@PathVariable("userid") int userid,@PathVariable("token") String useremailtoken,HttpServletResponse response) {
+		
+	boolean status=	userService.userEmailAuthtokenValidation(userid,useremailtoken);
+	if(status==true)
+	{
+		userService.userStatusSave(userid,status);
+		try {
+			response.sendRedirect("http://localhost:8008/ToDoApp/#!/signin");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+		
+		return new ResponseEntity<Response>(HttpStatus.OK);
 
+	}
+	
 	@PutMapping(value = "/uploadprofile")
 	public ResponseEntity<Response> userProfile(@RequestBody User user) throws Exception {
 		System.out.println("inside uploade profile" + user);
 		System.out.println(user.getId());
 		System.out.println(user.getProfile());
 		boolean profileresult = userService.uploadeProfile(user.getId(), user.getProfile());
-		System.out.println(profileresult);
+		System.out.println("inside uploade profile" +profileresult);
 
 		try {
 			if (profileresult == true) {

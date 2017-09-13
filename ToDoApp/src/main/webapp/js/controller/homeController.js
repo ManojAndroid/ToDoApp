@@ -18,9 +18,9 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	}
 	
 	/** **************addprofile************** */
-	$scope.addprofile = function() {
+	/*$scope.addprofile = function() {
 		document.getElementById("addprof").click();
-	}
+	}*/
 	$scope.uploadeprofile = function() {
 		document.getElementById("addprof").click();
 		
@@ -331,6 +331,47 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			}
 		});
 	}
+	/** **************Model PopUp************** */
+	$scope.profilePopup = function() {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl : 'template/ProfilePopup.html',
+			scope:$scope,
+			controller : function($scope, $uibModalInstance) {
+				this.addprofile = function() {
+					document.getElementById("addprof").click();
+				}
+				
+				this.profileUploade = function() {
+					var $ctrl = this;
+					var data = {};
+					data.profile = $ctrl.profileimag;
+				    data.id=$scope.userId
+				      console.log("data.profile ",data.profile );
+				     console.log("data.id ",data.id );
+			   
+					  var httpObj = homeService.uploadProfile(data);
+
+					httpObj.then(function(response) {
+						if (response.data.status == 1) {
+							console.log(response.data);
+							console.log("profile Sucessfullly Updated!!");
+							$state.reload();
+						} else {
+							console.log(" profile Updated fld");
+							console.log(response.data.status);
+
+						}
+					});
+
+					$uibModalInstance.close();
+
+				}
+
+			},
+			controllerAs : '$ctrl',
+			size : 'md',
+		});
+	}
 
 	/** **************Model PopUp************** */
 	$scope.openModal = function(x) {
@@ -398,6 +439,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 				this.email = x.user.email;
 				this.profile = x.user.profile;
 				this.sharenoteid=x.id;
+				console.log(x.user.id);
 				console.log( "user"+x.id);
 				/** **************Note Update************** */
 				this.collaborate = function() {
