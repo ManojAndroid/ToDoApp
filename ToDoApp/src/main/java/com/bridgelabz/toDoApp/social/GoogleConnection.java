@@ -38,7 +38,6 @@ public class GoogleConnection
 				
 				e.printStackTrace();
 			}
-			System.out.println("inside google authentication"+googleLoginURL);
 			return googleLoginURL;
 		}
 		

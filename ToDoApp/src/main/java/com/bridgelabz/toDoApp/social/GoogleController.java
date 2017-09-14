@@ -14,11 +14,13 @@ package com.bridgelabz.toDoApp.social;
     import com.bridgelabz.toDoApp.model.User;
     import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
     import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
+import com.bridgelabz.toDoApp.util.UserToken;
 
 	@RestController
 	public class GoogleController 
 	{
-
+		@Autowired
+		UserToken userToken;
 		@Autowired
 		private UserServiceImplem userService;
 		@Autowired
@@ -56,18 +58,11 @@ package com.bridgelabz.toDoApp.social;
 			}
 			
 			String authCode = request.getParameter("code");
-			System.out.println("authcode "+authCode);
 			String accessToken = googleConnection.getAccessToken(authCode);
 			
 			GmailProfile profile= googleConnection.getUserProfile(accessToken);
 			User user = userService.getUserByEmail(profile.getEmails().get(0).getValue());
-			
-			token.setAccesstoken(accessToken);
-			token.setUser(user);
-			tokenService.tokenSave(token);
-			response.setHeader("accToken", token.getAccesstoken());
-			System.out.println("token get"+response.getHeader("accToken"));
-			//get user profile 
+			System.out.println("userdetail"+user);
 			if(user==null)
 			{
 				user = new User();
@@ -80,8 +75,10 @@ package com.bridgelabz.toDoApp.social;
 				user.setProfile(profile.getImage().getUrl());
 				userService.signUp(user);
 			}
-			HttpSession session = request.getSession();
-			session.setAttribute("UserSession", user);
+			
+			Token gmaillogintoken = userToken.generateToken();
+			token.setUser(user);
+			tokenService.tokenSave(gmaillogintoken);
 			response.sendRedirect("http://localhost:8008/ToDoApp/#!/home");
 		}
 

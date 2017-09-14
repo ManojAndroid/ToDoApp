@@ -37,14 +37,6 @@
 							<div>
 							<div id="rounddiv">
 									<span data-ng-click="profilePopup()"><img alt="" data-ng-src="{{profileimag}}" id="popupprofile"></span>
-							
-							<!-- 	<div id="rounddiv">
-									<span data-ng-click="addprofile()"><img alt="" data-ng-src="{{profileimag}}" id="popupprofile"></span>
-							       <input type="file" data-ng-file-select="onFileSelect($files)" data-ng-model="profileimag" id="addprof" style="display: none;">
-									{{firstChar}}
-									<div id="profilechangediv">
-										<input type="image" value="Change">
-									</div> -->
 								</div>
 							</div>
 							<div id="profileppright">
@@ -118,16 +110,19 @@
 				</div>
 
 				<!----------------------------- including archivehtml --------------------->
-				<div data-ng-include="'template/reminder.html'"data-ng-show="reminderpage"></div>
-				<div class="row" style="margin-bottom: 20px;"> pinned  
+				
+				
 				<div data-ng-include="'template/Pin.html'"data-ng-show="pinpage"></div>
-				</div>
+				<div   style="margin-top: 20px;" data-ng-show="othersName">others</div>
 				<div data-ng-include="'template/archiveNotes.html'" data-ng-show="archivepage"></div>
 				<div data-ng-include="'template/trash.html'"data-ng-show="trashpage"></div>
+				<div data-ng-include="'template/reminder.html'"data-ng-show="reminderpage"></div>
 				<!-- -------------- -------- Listgrid view ------------------- -->
-                  <div  class="row" style="margin-top: 20px;">others
-				<div data-ng-repeat="x in records | filter:searchNote"data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false">
-					<div data-ng-class="listgridtoggle" data-ng-show="homepage"data-ng-style="{'background-color':x.notecolor}"data-ng-if="x.archive==false && x.trash==false && x.pin==false">
+                  
+                  
+                 
+				<div  data-ng-repeat="x in records | filter:searchNote"data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" data-ng-if="x.archive==false && x.trash==false && x.pin==false">
+					<div data-ng-class="listgridtoggle" data-ng-show="homepage"data-ng-style="{'background-color':x.notecolor}">
 						<div style="float: right;height:0px;" ><img src="images/pin.svg" data-ng-click="pinNote(x)"title="Pin note" title-direction="bottom" data-ng-show="showimg" ></div>
 							<img data-ng-src="{{x.image}}"style="width: 100%; margin-top: 20px;">
 							<div>
@@ -207,7 +202,6 @@
 						
 						<div class="col-lg-2"></div>
 					</div>
-				</div>
 				</div>
 			</div>
 		</div>

@@ -60,7 +60,6 @@ public class LoginController {
 				Token token = userToken.generateToken();
 				token.setUser(signinresult);
 				tokenService.tokenSave(token);
-				token.setUser(null);
 				userResponse.setStatus(1);
 				userResponse.setMessage("logging sucessfully");
 				userResponse.setToken(token);

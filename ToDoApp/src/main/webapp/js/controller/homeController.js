@@ -1,6 +1,17 @@
 myApp.controller('homeController', function($scope, $state, homeService,$uibModal,fileReader,$window) {
 	console.log("insidehomecontroller");
 	
+	
+	/*var promise = $http.get('http://localhost:8008/ToDoApp/googleConnection', {
+	    params: query
+	}).then(function(response) {
+	  console.log('Content-Range: ' + response.headers('googleaccToken'));
+	  console.log( response.data);
+	  
+	});*/
+	
+	/*console.log("token",data.headers('googleaccToken');*/
+	
 	$scope.notecard = true;
 	$scope.homepage = true;
 	$scope.pinpage = true;
@@ -17,38 +28,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		window.location.reload();
 	}
 	
-	/** **************addprofile************** */
-	/*$scope.addprofile = function() {
-		document.getElementById("addprof").click();
-	}*/
-	$scope.uploadeprofile = function() {
-		document.getElementById("addprof").click();
-		
-		var userprofile= {};
-	    userprofile.profile = $scope.profile;
-		userprofile.id=$scope.userId
-		userprofile.profile==$scope.profileimag;
-	    var httpObj = homeService.uploadProfile(userprofile);
-	      httpObj.then(function(response)
-       {
-		if (response.status ==200)
-		{
-			console.log(response.data);
-			console.log("Image uploaded");
-			$scope.getNote();
-		} 
-		else
-		{
-			console.log("Image uploading fld");
-			console.log(response.status);
-			
-		}
-	})
-	}
-	/** **************addimage  method************** */
-	$scope.addImage = function() {
-		document.getElementById("addImg").click();
-	}
+	
 	/** **************Share on face book method************** */
 	$scope.facebookshare = function(x) {
 		FB.init({
@@ -72,8 +52,6 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		});
 	};
 	/** **************pin method************** */
-	var count=0;
-	console.log("count,",count);
 	$scope.pinNote = function(x)
 	{
 		if (x.pin == false) {
@@ -81,9 +59,6 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			var httpObj = homeService.noteUpdate(x);
 			httpObj.then(function(response) {
 				if (response.status == 200) {
-					
-					$scope.count=count++;
-					console.log("count,",count);
 					$scope.getNote();
 				} 
 			});
@@ -92,18 +67,14 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	/** **************pin method************** */
 
 	$scope.unPinNote = function(x) {
-		console.log("inside unpinnote")
 			x.pin = false;
 			var httpObj = homeService.noteUpdate(x);
 
 			httpObj.then(function(response) {
 				if (response.status == 200) {
-					$scope.count=count--;
-					console.log("count,",count);
 					$scope.getNote();
 				} else {
 					console.log("Pinned fld");
-					console.log(response.data.status);
 
 				}
 			});
@@ -284,38 +255,41 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		$scope.myVarfooter = true;
 	}
 	/** ************get All Notes*********************** */
-	$scope.getNote = function() {
-		var records = homeService.noteGetAll();
-		records
-				.then(function(resp) {
-					$scope.records = resp.data.reverse();
-					$scope.reminder = resp.data[0].reminder;
-					$scope.email = resp.data[0].user.email;
-					$scope.name = resp.data[0].user.firstname;
-					$scope.profileimag = resp.data[0].user.profile;
-					$scope.userId=resp.data[0].user.id;
-					$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu',
-							'Fri', 'Sat' ][new Date().getDay()];
-					$scope.archive = resp.data[0].archive;
+					$scope.getNote = function() {
+						var records = homeService.noteGetAll();
+						records.then(function(resp) {
+							
+							$scope.records = resp.data.reverse();
+							
+							$scope.hideShowPin($scope.records);
+							
+							$scope.reminder = resp.data[0].reminder;
+							$scope.email = resp.data[0].user.email;
+							$scope.name = resp.data[0].user.firstname;
+							$scope.profileimag = resp.data[0].user.profile;
+							$scope.userId = resp.data[0].user.id;
+							$scope.weekday = [ 'Sun', 'Mon', 'Tue', 'Wed',
+									'Thu', 'Fri', 'Sat' ][new Date().getDay()];
+							$scope.archive = resp.data[0].archive;
 
-				});
-	}
+						});
+					}
 
 	/** ******************Note Delete************* */
-	$scope.deleteNote = function(taskid) {
-		var httpObj = homeService.noteDelete(taskid);
-		httpObj.then(function(response) {
-			if (response.status == 200) {
-				console.log(response.data);
-				console.log(" note Sucessfullly Deleted!!");
-				$scope.getNote();
-			} else {
-				console.log(" note Deletion Fld!!");
-				console.log(response.data.status);
+					$scope.deleteNote = function(taskid) {
+						var httpObj = homeService.noteDelete(taskid);
+						httpObj.then(function(response) {
+							if (response.status == 200) {
+								console.log(response.data);
+								console.log(" note Sucessfullly Deleted!!");
+								$scope.getNote();
+							} else {
+								console.log(" note Deletion Fld!!");
+								console.log(response.data.status);
 
-			}
-		});
-	}
+							}
+						});
+					}
 	/** ************Log Out*************************** */
 	$scope.logout = function() {
 		var httpObj = homeService.logoutUser();
@@ -331,13 +305,15 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			}
 		});
 	}
-	/** **************Model PopUp************** */
+	/** **************profilepopup************** */
 	$scope.profilePopup = function() {
 		$scope.modalInstance = $uibModal.open({
 			templateUrl : 'template/ProfilePopup.html',
 			scope:$scope,
 			controller : function($scope, $uibModalInstance) {
-				this.addprofile = function() {
+				
+				this.addprofile = function() 
+				{
 					document.getElementById("addprof").click();
 				}
 				
@@ -346,10 +322,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 					var data = {};
 					data.profile = $ctrl.profileimag;
 				    data.id=$scope.userId
-				      console.log("data.profile ",data.profile );
-				     console.log("data.id ",data.id );
-			   
-					  var httpObj = homeService.uploadProfile(data);
+				    var httpObj = homeService.uploadProfile(data);
 
 					httpObj.then(function(response) {
 						if (response.data.status == 1) {
@@ -504,5 +477,28 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		});
 
 	};
+	
+	
+	/*pinned others hide and show*/
+	$scope.hideShowPin = function(allNotes) {
+		console.log("allNotes ", allNotes);
+		$scope.counter = 0;
+		for (var i = 0; i < allNotes.length; i++) {
+			if (allNotes[i].pin == true) {
+				$scope.counter++;
+			}
+		}
+		console.log("$scope.counter ",$scope.counter);
+		if ($scope.counter > 0 && $scope.reminderpage == false && $scope.trashpage == false && $scope.archivepage == false) {
+			$scope.pinpage = true;
+			$scope.othersName =true;
+			$scope.displayPinName =true;
+		} else {
+			$scope.pinpage = false;
+			$scope.othersName = false;
+			$scope.displayPinName =false;
+		}
+	}
 	$scope.getNote();
+	
 });

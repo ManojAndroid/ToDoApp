@@ -9,4 +9,14 @@ myApp.service('signinService', function($http) {
 			
 		})
 	};
+	
+	/*this.loginWithGoogle = function() {
+		return $http({
+			url : "loginWithFacebook",
+			method : "post",
+			data : user
+			
+		})
+	};*/
+	
 });
