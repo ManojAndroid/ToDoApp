@@ -1,16 +1,15 @@
-myApp.controller('homeController', function($scope, $state, homeService,$uibModal,fileReader,$window) {
+myApp.controller('homeController', function($scope, $state, homeService,$uibModal,fileReader,$window,$cookies,$cookieStore) {
 	console.log("insidehomecontroller");
 	
+	console.log("localStorage.getItem",localStorage.getItem("accesstoken"));
 	
-	/*var promise = $http.get('http://localhost:8008/ToDoApp/googleConnection', {
-	    params: query
-	}).then(function(response) {
-	  console.log('Content-Range: ' + response.headers('googleaccToken'));
-	  console.log( response.data);
-	  
-	});*/
-	
-	/*console.log("token",data.headers('googleaccToken');*/
+	if(localStorage.getItem("accesstoken")==null)
+		{
+	          var gmailtoken = $cookies.get("gmaillogintoken");
+	          localStorage.setItem("accesstoken",gmailtoken);
+              $cookies.remove("gmaillogintoken");
+   
+		}
 	
 	$scope.notecard = true;
 	$scope.homepage = true;
@@ -297,6 +296,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 			if (response.status == 200) {
 				console.log(response.data);
 				console.log(" user Sucessfullly loggedout!!");
+				localStorage.removeItem("accesstoken");
 				$state.go('signin');
 			} else {
 				console.log(" user loggedout faield");

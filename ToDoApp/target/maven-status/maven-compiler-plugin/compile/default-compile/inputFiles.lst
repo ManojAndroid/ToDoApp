@@ -6,7 +6,6 @@
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/JSONResponse/ErrorResponse.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/model/WebScrap.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/util/WebScraping.java
-/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/JmsMessaging.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/LoginController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/service/serviceImplem/UserServiceImplem.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/GenerateNewAccessTokenController.java
@@ -30,9 +29,11 @@
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/FacebookConnection.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/GoogleConnection.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/FacebookController.java
+/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/util/OtpNumber.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/LogOutController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/controller/ToDoAppController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/GoogleController.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/model/GmailProfile.java
+/home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/social/JavaMail.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/dao/daoimpl/UserDaoImp.java
 /home/bridgeit/toDoApp/ToDoApp/src/main/java/com/bridgelabz/toDoApp/dao/daoInterface/TokenInterface.java

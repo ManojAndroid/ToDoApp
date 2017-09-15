@@ -142,7 +142,12 @@ public class ToDoAppController {
 
 		HttpSession httpSession = request.getSession();
 		User user = (User) httpSession.getAttribute("UserSession");
+		
+		
+		
 		int uid = user.getId();
+		
+		System.out.println("inside getallnote controller------"+uid);
 		try {
 			List<ToDo> toDoAllTask = toDoTaskServices.getAllTaskList(uid);
 			List collaboratorTask=toDoTaskServices.getAllCollaList(uid);

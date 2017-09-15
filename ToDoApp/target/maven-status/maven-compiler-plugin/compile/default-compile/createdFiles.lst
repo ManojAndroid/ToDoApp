@@ -3,6 +3,7 @@ com/bridgelabz/toDoApp/model/FacebookAccessToken.class
 com/bridgelabz/toDoApp/dao/daoimpl/TokenImplement.class
 com/bridgelabz/toDoApp/filter/ToDoAppFilter.class
 com/bridgelabz/toDoApp/social/GoogleController.class
+com/bridgelabz/toDoApp/util/OtpNumber.class
 com/bridgelabz/toDoApp/util/UserToken.class
 com/bridgelabz/toDoApp/JSONResponse/UserResponse.class
 com/bridgelabz/toDoApp/model/FaceBookProfile.class
@@ -12,6 +13,7 @@ com/bridgelabz/toDoApp/model/ToDo.class
 com/bridgelabz/toDoApp/validator/UserValidation.class
 com/bridgelabz/toDoApp/JSONResponse/Response.class
 com/bridgelabz/toDoApp/dao/daoInterface/ToDoTaskDao.class
+com/bridgelabz/toDoApp/social/JavaMail$1.class
 com/bridgelabz/toDoApp/dao/daoimpl/ToDoTaskImpl.class
 com/bridgelabz/toDoApp/service/serviceImplem/UserServiceImplem.class
 com/bridgelabz/toDoApp/model/GmailProfile.class
@@ -21,6 +23,7 @@ com/bridgelabz/toDoApp/controller/UserController.class
 com/bridgelabz/toDoApp/model/WebScrap.class
 com/bridgelabz/toDoApp/model/GoogleEmails.class
 com/bridgelabz/toDoApp/dao/daoInterface/TokenInterface.class
+com/bridgelabz/toDoApp/social/JavaMail$2.class
 com/bridgelabz/toDoApp/dao/daoimpl/UserDaoImp.class
 com/bridgelabz/toDoApp/util/WebScraping.class
 com/bridgelabz/toDoApp/util/CryptoUtil.class
@@ -35,3 +38,4 @@ com/bridgelabz/toDoApp/model/Collaborator.class
 com/bridgelabz/toDoApp/model/UserImage.class
 com/bridgelabz/toDoApp/controller/LogOutController.class
 com/bridgelabz/toDoApp/controller/ToDoAppController.class
+com/bridgelabz/toDoApp/social/JavaMail.class

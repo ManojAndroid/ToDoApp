@@ -1,7 +1,4 @@
-var myApp = angular.module(
-		'toDoApp',
-		[ 'ui.router', 'ngSanitize', 'ui.bootstrap', 'tooltips',
-				'720kb.datepicker' ]).config(
+var myApp = angular.module('toDoApp',[ 'ui.router', 'ngSanitize', 'ui.bootstrap', 'tooltips','720kb.datepicker','ngCookies' ]).config(
 		function($stateProvider, $urlRouterProvider) {
 
 			console.log("inside APPPJS");

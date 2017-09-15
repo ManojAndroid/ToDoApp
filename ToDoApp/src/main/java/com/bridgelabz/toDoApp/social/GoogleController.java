@@ -3,7 +3,9 @@ package com.bridgelabz.toDoApp.social;
 
 	import java.io.IOException;
 	import java.util.UUID;
-	import javax.servlet.http.HttpServletRequest;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 	import javax.servlet.http.HttpServletResponse;
 	import javax.servlet.http.HttpSession;
 	import org.springframework.beans.factory.annotation.Autowired;
@@ -75,10 +77,14 @@ import com.bridgelabz.toDoApp.util.UserToken;
 				user.setProfile(profile.getImage().getUrl());
 				userService.signUp(user);
 			}
-			
+			HttpSession httpSession = request.getSession();
+			httpSession.setAttribute("UserSession", user);
 			Token gmaillogintoken = userToken.generateToken();
 			token.setUser(user);
 			tokenService.tokenSave(gmaillogintoken);
+			System.out.println("token.getAccesstoken()"+gmaillogintoken);
+			  Cookie cookie = new Cookie("gmaillogintoken",gmaillogintoken.getAccesstoken());
+			  response.addCookie(cookie);
 			response.sendRedirect("http://localhost:8008/ToDoApp/#!/home");
 		}
 
