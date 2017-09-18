@@ -4,14 +4,14 @@
 <div class="modal-header" >
 		
 				<span data-ng-click="$ctrl.addprofile()">
-					<button ng-if="$ctrl.profileimag==null">Select a photo from your computer</button></span> 
+					<button data-ng-if="$ctrl.profileimag==null">Select a photo from your computer</button></span> 
 					
 					<input
 					type="file" data-ng-file-select="onFileSelect($files)"
 					data-ng-model=" $ctrl.profileimag" id="addprof" style="display: none;">
 		
-		<div  ng-if="$ctrl.profileimag != null">
-		<img alt="" ng-src="{{$ctrl.profileimag}}" style="width:50%;" >
+		<div  data-ng-if="$ctrl.profileimag != null">
+		<img alt="" data-ng-src="{{$ctrl.profileimag}}" style="width:50%;" >
 		</div>
 </div>
 <hr>

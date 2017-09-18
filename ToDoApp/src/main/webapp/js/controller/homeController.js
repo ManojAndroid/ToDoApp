@@ -27,6 +27,10 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 		window.location.reload();
 	}
 	
+	$scope.addImage = function() 
+				{
+					document.getElementById("addImg").click();
+				}
 	
 	/** **************Share on face book method************** */
 	$scope.facebookshare = function(x) {
