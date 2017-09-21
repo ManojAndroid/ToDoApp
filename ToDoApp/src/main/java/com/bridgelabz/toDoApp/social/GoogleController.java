@@ -74,9 +74,11 @@ import com.bridgelabz.toDoApp.util.UserToken;
 				user.setLastname(namesplit[1]);
 				user.setEmail(profile.getEmails().get(0).getValue());
 				user.setPassword("");
-				user.setProfile(profile.getImage().getUrl());
+				
 				userService.signUp(user);
 			}
+			user.setProfile(profile.getImage().getUrl());
+			userService.uploadeProfile(user.getId(), user.getProfile());
 			HttpSession httpSession = request.getSession();
 			httpSession.setAttribute("UserSession", user);
 			Token gmaillogintoken = userToken.generateToken();

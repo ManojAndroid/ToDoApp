@@ -1,4 +1,55 @@
 /* Toggle Styles */
+#scrapingdiv {
+			font-size: 10px;
+			height: 50px;
+			padding-top: 7px;
+			overflow: hidden;
+			white-space: nowrap;
+			min-height: 48px;
+			text-overflow: ellipsis;
+		}
+		
+		
+		#scrapimag {
+			width: 56px;
+			margin-top: -2px;
+			height: 43px;
+			margin-bottom: -6px;
+			padding-left: -5px;
+			height: 43px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		#scraptitle {
+			float: right;
+			width: 100%;
+			margin-top: -48px;
+			min-height: 48px;
+			overflow: hidden;
+			word-break: break-word;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			padding-left: 64px;
+		}
+		#scraphost {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			margin-top: 15px;
+			overflow: hidden;
+			word-break: break-word;
+			font-family: 'Roboto Condensed', arial, sans-serif;
+			padding-left: 12px
+		}
+		#scraphh {
+			margin-top: 5px;
+			padding-left: 12px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-break: break-word;
+			white-space: nowrap;
+		}
 #wrapper {
 	padding-left: 0;
 	-webkit-transition: all 1s ease;
@@ -93,7 +144,6 @@ img {
 }
 
 .navbar-inverse {
-	background-color: #222;
 	border-color: #fb0 !important;
 }
 
@@ -133,14 +183,32 @@ img {
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
 	text-decoration: none;
 }
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color:  #fb0!important;
-    background-color:  #fb0 ;
-}
-.modal-content {
-	margin-right: 43px!important;
 
-	}
+/* /* navbar color */
+.navahome {
+	border-color: #fb0 !important;
+	background-color: #fb0;
+}
+
+.navarchive {
+	border-color: rgb(96, 125, 139) !important;
+	background-color: rgb(96, 125, 139);
+}
+
+.navareminder {
+	border-color: #1d708c !important;
+	background-color: #1d708c;
+}
+
+.navatrash {
+	border-color: rgb(99, 99, 99) !important;
+	background-color: rgb(99, 99, 99);
+}
+
+.modal-content {
+	margin-right: 43px !important;
+}
+
 #p {
 	font-size: -webkit-xxx-large;
 	color: black;
@@ -300,19 +368,20 @@ img {
 }
 
 #rounddivsmall {
-    border-radius: 27px;
-    background: #90948a;
-    width: 31px;
-    height: 36px;
-    margin-right: 10px;
-    margin-top:10%;
-    text-transform: uppercase;
-    margin-left: 40px;
+	border-radius: 27px;
+	background: #90948a;
+	width: 31px;
+	height: 36px;
+	margin-right: 10px;
+	margin-top: 10%;
+	text-transform: uppercase;
+	margin-left: 40px;
 }
-#menuimg{
-	
-    margin-left: 28px;
+
+#menuimg {
+	margin-left: 28px;
 }
+
 #modal-body {
 	outline: none;
 	text-transform: capitalize;
@@ -335,7 +404,6 @@ img {
 	margin: 20px 0px 10px 5px;
 	min-width: 210px;
 	max-width: 630px;
-	
 }
 
 /* ***********update popup css ***************/
@@ -423,100 +491,40 @@ img {
 		height: 45px;
 		margin-top: -7px;
 	}
+}
 	@media only screen and (min-width: 1200px) {
 		#query {
 			width: 549px;
 			height: 45px;
 			margin-top: -7px;
 		}
-		/* @media ( min-width : 768px) {
-			#query {
-				width: 527px !important;
-				vertical-align: middle !important;
-			} */
-			
-	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color:non !important;
-}		
-			
-			
-			
-			
-			#scrapdiv {
-				font-size: 10px;
-				height: 50px;
-				padding-top: 7px;
-				overflow: hidden;
-				white-space: nowrap;
-				min-height: 48px;
-				text-overflow: ellipsis;
-			}
-			#scrapimag {
-				width: 56px;
-				margin-top: -2px;
-				height: 43px;
-				margin-bottom: -6px;
-				padding-left: -5px;
-				height: 43px;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-			}
+
+	}
+		#colfoter {
+			background-color: rgba(0, 0, 0, 0.07);
 		}
-	}
-	#scraptitle {
-		float: right;
-		width: 100%;
-		margin-top: -48px;
-		min-height: 48px;
-		overflow: hidden;
-		word-break: break-word;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		padding-left: 64px;
-	}
-	#scraphost {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		margin-top: 15px;
-		overflow: hidden;
-		word-break: break-word;
-		font-family: 'Roboto Condensed', arial, sans-serif;
-		padding-left: 12px
-	}
-	#scraphh {
-		margin-top: 5px;
-		padding-left: 12px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		word-break: break-word;
-		white-space: nowrap;
-	}
-	#collowner {
-		float: right;
-		margin-top: -7px;
-		margin-right: 320px;
-	}
-	#colfoter {
-		background-color: rgba(0, 0, 0, 0.07);
-	}
-	#colprofile {
-		width: 37px;
-		border-radius: 23px;
-		margin-left: 2px;
-		margin-top: -7px;
-		height: 37px;
-	}
-	#colheader {
-		font-weight: 800;
-		font-size: 20px;
-		padding-left: 31px;
-	}
-	/* <profilepopup csss */
-	.prfselect {
-		border-color: white;
-		margin-top: 24px;
-		margin-bottom: -37px;
-	}
-}
+		#colprofile {
+			width: 37px;
+			border-radius: 23px;
+			margin-left: 2px;
+			margin-top: -7px;
+			height: 37px;
+		}
+		#colheader {
+			font-weight: 800;
+			font-size: 20px;
+			padding-left: 31px;
+		}
+		/* <profilepopup csss */
+		.prfselect {
+			border-color: white;
+			margin-top: 24px;
+			margin-bottom: -37px;
+		}
+		
+		#collowner {
+			float: right;
+			margin-top: -7px;
+			margin-right: 260px;
+		}
+		

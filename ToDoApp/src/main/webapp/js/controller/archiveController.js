@@ -9,9 +9,11 @@ myApp.controller('archiveCtrl', function($scope,$controller)
 		$scope.archivepage=true;
 		$scope.reminderpage=false;
 		$scope.todoname="Archive";
-		$scope.notecolor = "archive";
+		$scope.notecolor = "archive ";
 		$scope.notecard=false;
 		$scope.notecardmgtop="top";
+		$scope.navbarcolor="navarchive";
+		
 		
 	}
 });

@@ -27,7 +27,7 @@
 <script type="text/javascript" src="bower_components/packery/dist/packery.pkgd.min.js"></script>
 <script type="text/javascript" src="bower_components/packery-angular/dist/packery-angular.min.js"></script>
 <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
-
+<script type="text/javascript" src="bower_components/angular-img-cropper/dist/angular-img-cropper.min.js"></script>
 
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controller/signinController.js"></script>

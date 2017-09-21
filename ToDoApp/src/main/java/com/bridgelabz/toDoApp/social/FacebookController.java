@@ -16,6 +16,7 @@ import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserServiceImplem;
 import com.bridgelabz.toDoApp.util.UserToken;
+import com.fasterxml.jackson.databind.JsonNode;
 @RestController
 public class FacebookController {
 
@@ -67,23 +68,28 @@ public class FacebookController {
 		
 		String authCode = request.getParameter("code");
 		String accessToken = facebookConnection.getFbAccessToken(authCode);
-		FaceBookProfile profile= facebookConnection.getFbUserProfile(accessToken);
-		User user = userService.getUserByEmail(profile.getEmail());
+		System.out.println("fbaccessToken "+ accessToken);
+		JsonNode profile= facebookConnection.getFbUserProfile(accessToken);
+		System.out.println("fb profile :" +profile);
+		User user = userService.getUserByEmail(profile.get("email").asText());
 		//get user profile 
 		if(user==null){
 			user = new User();
-		    String name = profile.getName();
+		    String name = profile.get("name").asText();
 		    String namesplit[]=name.split(" ");
 			user.setFirstname(namesplit[0]);
 			user.setLastname(namesplit[1]);
-			user.setEmail(profile.getEmail());
-			/*user.setProfile(profile.getImage().getUrl());*/
+			user.setEmail(profile.get("email").asText());
+			user.setProfile(profile.get("picture").get("data").get("url").asText());
 			user.setPassword("");
 			userService.signUp(user);
 		}
+		user.setProfile(profile.get("picture").get("data").get("url").asText());
+		userService.uploadeProfile(user.getId(), user.getProfile());
 		HttpSession httpSession = request.getSession();
 		httpSession.setAttribute("UserSession", user);
 		Token facebooklogintoken = userToken.generateToken();
+		
 		token.setUser(user);
 		tokenService.tokenSave(facebooklogintoken);
 		System.out.println("token.getAccesstoken()"+facebooklogintoken);

@@ -3,7 +3,7 @@
 	<div class="container-fluid " id="container" data-ng-class="notecolor">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				data-toggle="collapse" data-target="#navbar" 
 				aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
 				 <span class="icon-bar"></span> 
@@ -16,7 +16,7 @@
 			<div style="margin-top: 10px;width: 174px; position:fixed; margin-left: 40px;"><font size="5px;" color="black" data-ng-class="notecolor">{{todoname}}</font></div>
 		</div>
             </div>
-		<div id="navbar" class="navbar-collapse collapse">
+		<div id="navbar" class="navbar-collapse collapse" data-ng-class="navbarcolor">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a data-ng-click="refresh()">
 				 <img id="menuimg"src="images/refresh.svg" title="Refresh" title-direction="bottom"></a></li>
@@ -53,7 +53,7 @@
 				</li>
 			</ul>
 
-			<form class="navbar-form navbar-right" action="#" method="GET">
+			<form class="navbar-form navbar-right"  method="GET">
 				<input type="text" class="form-control" placeholder="Search..."id="query" autocomplete="off" data-ng-model="searchNote">
 			</form>
 		</div>
@@ -109,7 +109,6 @@
 				<div data-ng-include="'template/reminder.html'"data-ng-show="reminderpage"></div>
 				<!-- -------------- -------- Listgrid view ------------------- -->
                   
-                  
                  
 				<div  data-ng-repeat="x in records | filter:searchNote"data-ng-mouseover="showimg=true" data-ng-mouseleave="showimg=false" data-ng-if="x.archive==false && x.trash==false && x.pin==false">
 					<div data-ng-class="listgridtoggle" data-ng-show="homepage"data-ng-style="{'background-color':x.notecolor}">
@@ -129,7 +128,6 @@
 												<li><a data-ng-click="setReminder(x,'today')">Later Today <span id="reminderspan">8:00 PM</span></a></li>
 												<li><a data-ng-click="setReminder(x,'tomorrow')">Tomorrow<span id="reminderspan">8:00 AM</span></a></li>
 												<li><a data-ng-click="setReminder(x,'weekday')">Next Week <span id="reminderspan"> {{weekday}},8:00 AM</span></a></li>
-												<li><img alt="Reminder" src="images/clock.png">Pick Date And Time</li><li><a>Pick Place</a></li>
 											</ul>
 										</div>
 										<img id="img" src="images/person_add_18px.svg" 
@@ -175,7 +173,7 @@
 										title-direction="bottom">&#10062;</span>
 								</div>
 								<!-- -------------- scraping div ------------- -->
-								<div data-ng-if="x.webscripingtitle!=undefined" id="scrapdiv">
+								<div data-ng-if="x.webscripingtitle!=undefined" id="scrapingdiv">
 									<div id="scrapimag">
 										<img style="height: 100%;width: 100%;" data-ng-src="{{x.webscripingimage}}"
 											>
@@ -192,7 +190,10 @@
 						
 						<div class="col-lg-2"></div>
 					</div>
+				
+				
 				</div>
+				
 			</div>
 		</div>
 	</div> 

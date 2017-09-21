@@ -19,6 +19,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	$scope.archivepage = false;
 	$scope.reminderpage = false;
 	$scope.todoname = "Google Keep";
+	$scope.navbarcolor="navahome";
 	$scope.checkreminder = new Date();
 	
 	
@@ -235,7 +236,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	$scope.showlist = function() {
 		$scope.gridview1 = false;
 		$scope.listview1 = true;
-		$scope.listgridtoggle = "col-lg-12 col-md-10 col-sm-12 col-xs-12 list item"
+		$scope.listgridtoggle = "col-lg-12 col-sm-12 col-xs-12 list item"
 		localStorage.setItem("view", "list");
 	}
 
@@ -333,6 +334,7 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 							console.log(response.data);
 							console.log("profile Sucessfullly Updated!!");
 							$state.reload();
+							alert("profile Sucessfullly Updated!!");
 						} else {
 							console.log(" profile Updated fld");
 							console.log(response.data.status);

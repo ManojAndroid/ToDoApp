@@ -11,7 +11,10 @@
 					data-ng-model=" $ctrl.profileimag" id="addprof" style="display: none;">
 		
 		<div  data-ng-if="$ctrl.profileimag != null">
-		<img alt="" data-ng-src="{{$ctrl.profileimag}}" style="width:50%;" >
+		<img  data-ng-src="{{$ctrl.profileimag}}" style="width:50%;" >
+		 <div class="cropArea">
+      <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+      </div>
 		</div>
 </div>
 <hr>

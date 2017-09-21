@@ -12,5 +12,6 @@ myApp.controller('trashCtrl', function($scope,$controller)
 		$scope.notecolor = "trash";
 		$scope.notecard=false;
 		$scope.notecardmgtop="top";
+		$scope.navbarcolor="navatrash";
 	}
 });

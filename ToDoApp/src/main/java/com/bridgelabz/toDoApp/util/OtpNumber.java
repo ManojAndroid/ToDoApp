@@ -9,12 +9,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class OtpNumber {
 	static String otp;
+
 	static Date date=null;
 	public static String generateOTP( )
 	{
 		 int randomPin   =(int)(Math.random()*9000)+1000;
 	     otp  =String.valueOf(randomPin);
 		 date=new Date();
+		 System.out.println("your otp number"+ otp );
 		 return otp;
 	}
 	

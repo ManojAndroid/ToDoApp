@@ -16920,3 +16920,95 @@ ERROR	2017-09-18 11:10:15,703	0	com.bridgelabz.toDoApp.controller.LoginControlle
 ERROR	2017-09-18 11:10:32,471	16768	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
 ERROR	2017-09-18 11:42:18,504	1922801	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-12]	Logging successful!
 ERROR	2017-09-18 12:19:24,592	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-18]	Logging successful!
+ERROR	2017-09-18 15:27:51,705	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-09-18 15:34:31,995	400290	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-09-18 15:52:20,932	1469227	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-09-18 16:02:02,656	2050951	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-1]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-13]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,657	2050952	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-14]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-12]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-11]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,661	2050956	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-18]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,662	2050957	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-16]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:02,670	2050965	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 16:02:32,714	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-8]	Logging successful!
+ERROR	2017-09-18 16:17:39,047	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-09-18 16:18:48,333	69286	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-09-18 16:19:59,124	140077	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-2]	Logging successful!
+ERROR	2017-09-18 17:07:57,730	3018683	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-6]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:07:57,731	3018684	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-7]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:07:57,733	3018686	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-12]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:07:57,732	3018685	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-2]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:07:57,732	3018685	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-8]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:07:57,731	3018684	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-11]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:07:57,731	3018684	org.hibernate.engine.jdbc.spi.SqlExceptionHelper	[http-bio-8008-exec-9]	An SQLException was provoked by the following failure: java.lang.InterruptedException
+ERROR	2017-09-18 17:09:34,738	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-09-18 17:23:28,991	834253	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-8]	Logging successful!
+ERROR	2017-09-18 18:38:22,456	5327718	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-09-19 09:40:21,796	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-09-19 09:45:01,579	279783	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-2]	Logging successful!
+ERROR	2017-09-19 09:46:19,582	357786	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-10]	Logging successful!
+ERROR	2017-09-19 09:47:35,946	434150	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-09-19 09:53:34,595	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-09-19 10:09:01,522	926927	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-1]	Logging successful!
+ERROR	2017-09-19 10:19:46,941	1572346	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-4]	Logging successful!
+ERROR	2017-09-19 11:20:14,416	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-14]	Logging successful!
+ERROR	2017-09-19 11:29:24,923	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-27]	Logging successful!
+ERROR	2017-09-19 11:31:29,830	124907	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-22]	Logging successful!
+ERROR	2017-09-19 15:21:10,546	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-33]	Logging successful!
+ERROR	2017-09-19 16:19:36,458	3505912	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-41]	Logging successful!
+ERROR	2017-09-19 16:21:23,338	3612792	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-33]	Logging successful!
+ERROR	2017-09-19 16:49:28,314	5297768	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-33]	Logging successful!
+ERROR	2017-09-19 17:04:53,317	6222771	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-54]	Logging successful!
+ERROR	2017-09-19 17:16:20,023	6909477	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-51]	Logging successful!
+ERROR	2017-09-19 17:17:12,376	6961830	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-51]	Logging successful!
+ERROR	2017-09-21 09:44:04,870	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-09-21 09:48:32,813	267943	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-3]	Logging successful!
+ERROR	2017-09-21 09:49:57,970	353100	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-2]	Logging successful!
+ERROR	2017-09-21 09:54:10,358	605488	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-9]	Logging successful!
+ERROR	2017-09-21 14:41:15,287	1	org.springframework.web.context.ContextLoader	[localhost-startStop-1]	Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'radisConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'redis.host' in value "${redis.host}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5068)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5584)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1572)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1562)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'redis.host' in value "${redis.host}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:831)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1086)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	... 22 more
+ERROR	2017-09-21 15:02:11,622	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-36]	Logging successful!
+ERROR	2017-09-21 15:06:41,121	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-35]	Logging successful!
+ERROR	2017-09-21 18:32:26,409	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-6]	Logging successful!
+ERROR	2017-09-21 18:37:24,843	0	com.bridgelabz.toDoApp.controller.LoginController	[http-bio-8008-exec-14]	Logging successful!
