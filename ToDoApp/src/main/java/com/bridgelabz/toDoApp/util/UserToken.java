@@ -3,15 +3,27 @@ import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.model.User;
-import com.bridgelabz.toDoApp.service.serviceImplem.ToDoTaskServices;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
 @Component
 public class UserToken 
 {
+	
+/*	 private static final String KEY = "Student";
+     
+	    private RedisTemplate<String,  Token> redisTemplate;
+	    private HashOperations hashOps;*/
+	
+	
+	
+	
 	
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
@@ -36,6 +48,7 @@ public class UserToken
 		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
 		token.setRefreshtoken(UUID.randomUUID().toString().replace("-", ""));
 		token.setCreatedtime(new Date());
+		saveToken(token);
 		return token;
 
 		
@@ -90,4 +103,35 @@ public class UserToken
     	return false;	
     	  
       }
+      
+      private static final String KEY = "Token";
+      
+      private RedisTemplate<String, Token> redisTemplate;
+      private HashOperations<String, Integer, Token> hashOps;
+   
+      @Autowired
+      private UserToken(RedisTemplate redisTemplate) {
+          this.redisTemplate = redisTemplate;
+      }
+   
+      @PostConstruct
+      private void init() {
+          hashOps = redisTemplate.opsForHash();
+      }
+       
+      public void saveToken(Token token) {
+          hashOps.put(KEY, token.getId(), token);
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 }

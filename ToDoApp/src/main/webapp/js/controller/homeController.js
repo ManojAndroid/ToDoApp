@@ -3,8 +3,9 @@ myApp.controller('homeController', function($scope, $state, homeService,$uibModa
 	
 	console.log("localStorage.getItem",localStorage.getItem("accesstoken"));
 	
-	if(localStorage.getItem("accesstoken")==null)
+	if($cookies.get("gmaillogintoken")!=null)
 		{
+		      localStorage.removeItem("accesstoken");
 	          var gmailtoken = $cookies.get("gmaillogintoken");
 	          localStorage.setItem("accesstoken",gmailtoken);
               $cookies.remove("gmaillogintoken");
