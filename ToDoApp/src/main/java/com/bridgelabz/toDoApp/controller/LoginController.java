@@ -59,6 +59,7 @@ public class LoginController {
 				logger.error("Logging successful!");
 				Token token = userToken.generateToken();
 				token.setUser(signinresult);
+				userToken.saveToken(token);
 				tokenService.tokenSave(token);
 				userResponse.setStatus(1);
 				userResponse.setMessage("logging sucessfully");

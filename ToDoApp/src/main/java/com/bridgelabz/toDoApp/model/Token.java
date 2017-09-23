@@ -30,6 +30,7 @@ public class Token implements Serializable
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name="userid")
     private User user;
+    
 	public String getAccesstoken()
 	{
 		return accesstoken;

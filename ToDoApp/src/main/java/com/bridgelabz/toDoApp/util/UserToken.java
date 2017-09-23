@@ -9,20 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import com.bridgelabz.toDoApp.model.Token;
 import com.bridgelabz.toDoApp.model.User;
 import com.bridgelabz.toDoApp.service.serviceImplem.UserAccessTokenService;
+@Repository
 @Component
+
 public class UserToken 
 {
-	
-/*	 private static final String KEY = "Student";
-     
-	    private RedisTemplate<String,  Token> redisTemplate;
-	    private HashOperations hashOps;*/
-	
-	
-	
+	 private static final String KEY = "accesstoken";
 	
 	
 	@SuppressWarnings("unused")
@@ -48,7 +45,6 @@ public class UserToken
 		token.setAccesstoken(UUID.randomUUID().toString().replace("-", ""));
 		token.setRefreshtoken(UUID.randomUUID().toString().replace("-", ""));
 		token.setCreatedtime(new Date());
-		saveToken(token);
 		return token;
 
 		
@@ -58,8 +54,8 @@ public class UserToken
 	
       public User validateToken(String accesstoken)
       {
-    	Token token=tokenServices.getToken(accesstoken);
-    	System.out.println("token"+token);
+    	Token token=findToken(accesstoken);
+    	System.out.println("tokenyyyyyyyyyyyyyyredis:"+findToken(accesstoken));
     	if(token!=null)
     	{
     		long diff =	(new Date().getTime())-(token.getCreatedtime().getTime());
@@ -104,10 +100,10 @@ public class UserToken
     	  
       }
       
-      private static final String KEY = "Token";
+     
       
       private RedisTemplate<String, Token> redisTemplate;
-      private HashOperations<String, Integer, Token> hashOps;
+      private HashOperations<String, String, Token> hashOps;
    
       @Autowired
       private UserToken(RedisTemplate redisTemplate) {
@@ -120,10 +116,13 @@ public class UserToken
       }
        
       public void saveToken(Token token) {
-          hashOps.put(KEY, token.getId(), token);
+    	  System.out.println("inside redis set"+token);
+          hashOps.put(KEY, token.getAccesstoken(), token);
       }
       
-      
+      public Token findToken(String accesstoken) {
+          return (Token) hashOps.get(KEY, accesstoken);
+      }
       
       
       
